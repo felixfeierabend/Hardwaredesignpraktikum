@@ -1,0 +1,9 @@
+|combinatorial_circuit
+operand_a_i => and_o.IN0
+operand_a_i => or_o.IN0
+operand_b_i => and_o.IN1
+operand_b_i => or_o.IN1
+and_o <= and_o.DB_MAX_OUTPUT_PORT_TYPE
+or_o <= or_o.DB_MAX_OUTPUT_PORT_TYPE
+
+

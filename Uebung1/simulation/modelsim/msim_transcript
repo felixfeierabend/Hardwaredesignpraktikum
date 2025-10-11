@@ -1,0 +1,144 @@
+# Reading pref.tcl
+# do HardwareDesignUE1_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:58:34 on Oct 11,2025
+# vcom -reportprogress 300 -93 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd 
+# -- Loading package STANDARD
+# ** Error: (vcom-11) Could not find work.combinatorial_circuit.
+# ** Error (suppressible): C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd(1): (vcom-1195) Cannot find expanded name "work.combinatorial_circuit".
+# ** Note: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd(1): VHDL Compiler exiting
+# End time: 11:58:34 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./HardwareDesignUE1_run_msim_rtl_vhdl.do line 8
+# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd}"
+vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:58:47 on Oct 11,2025
+# vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd 
+# -- Loading package STANDARD
+# ** Error: (vcom-11) Could not find work.combinatorial_circuit.
+# ** Error (suppressible): C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd(1): (vcom-1195) Cannot find expanded name "work.combinatorial_circuit".
+# ** Note: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd(1): VHDL Compiler exiting
+# End time: 11:58:47 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/entity_combinatorial_circuit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:58:47 on Oct 11,2025
+# vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/entity_combinatorial_circuit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity combinatorial_circuit
+# End time: 11:58:47 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/tb_combinatorial_circuit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:58:47 on Oct 11,2025
+# vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/tb_combinatorial_circuit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_combinatorial_circuit
+# -- Compiling architecture bhv_tb_combinatorial_circuit of tb_combinatorial_circuit
+# -- Loading entity combinatorial_circuit
+# End time: 11:58:47 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript work.tb_combinatorial_circuit(bhv_tb_combinatorial_circuit)
+# vsim -gui -l msim_transcript work.tb_combinatorial_circuit(bhv_tb_combinatorial_circuit) 
+# Start time: 11:59:00 on Oct 11,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_combinatorial_circuit(bhv_tb_combinatorial_circuit)
+# ** Error: (vsim-3173) Entity 'C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/simulation/modelsim/rtl_work.combinatorial_circuit' has no architecture.
+# Load interrupted
+# Error loading design
+# End time: 11:59:00 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:15 on Oct 11,2025
+# vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading entity combinatorial_circuit
+# -- Compiling architecture bhv_combinatorial_circuit of combinatorial_circuit
+# End time: 11:59:15 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/entity_combinatorial_circuit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:17 on Oct 11,2025
+# vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/entity_combinatorial_circuit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity combinatorial_circuit
+# End time: 11:59:17 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/entity_combinatorial_circuit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:20 on Oct 11,2025
+# vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/entity_combinatorial_circuit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity combinatorial_circuit
+# End time: 11:59:20 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:22 on Oct 11,2025
+# vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/architecture_combinatorial_circuit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading entity combinatorial_circuit
+# -- Compiling architecture bhv_combinatorial_circuit of combinatorial_circuit
+# End time: 11:59:22 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/tb_combinatorial_circuit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:59:23 on Oct 11,2025
+# vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1/tb_combinatorial_circuit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_combinatorial_circuit
+# -- Compiling architecture bhv_tb_combinatorial_circuit of tb_combinatorial_circuit
+# -- Loading entity combinatorial_circuit
+# End time: 11:59:23 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript work.tb_combinatorial_circuit
+# vsim -gui -l msim_transcript work.tb_combinatorial_circuit 
+# Start time: 11:59:36 on Oct 11,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_combinatorial_circuit(bhv_tb_combinatorial_circuit)
+# Loading work.combinatorial_circuit(bhv_combinatorial_circuit)
+add wave -position insertpoint  \
+sim:/tb_combinatorial_circuit/s_operand_a \
+sim:/tb_combinatorial_circuit/s_operand_b \
+sim:/tb_combinatorial_circuit/s_and_o \
+sim:/tb_combinatorial_circuit/s_or_o
+run
+# image file format "bmp" is unknown
+# image file format "bmp" is unknown
+# image file format "bmp" is unknown
+# End time: 15:18:55 on Oct 11,2025, Elapsed time: 3:19:19
+# Errors: 0, Warnings: 0

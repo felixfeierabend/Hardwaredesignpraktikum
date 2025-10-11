@@ -1,0 +1,7 @@
+architecture bhv_adder of work.entity_adder is
+begin
+	ADDER : process(operand_a_i, operand_b_i)
+	begin
+		result_o <= operand_a_i + opereand_b_i;
+	end process;
+end architecture bhv_adder;

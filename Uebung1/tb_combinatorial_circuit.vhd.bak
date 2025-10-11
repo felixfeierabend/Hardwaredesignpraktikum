@@ -1,0 +1,15 @@
+entity tb_combinatorial_circuit of entity_combinatorial_circuit is
+end entity;
+
+architecture bhv_tb_combinatorial_circuit of tb_combinatorial_circuit is
+	signal s_operand_a : std_ulogic;
+	signal s_operand_b : std_ulogic;
+begin
+	port map(
+		operand_a_i => s_operand_a;
+		operand_b_i => s_operand_b:
+	);
+	
+	
+	
+end architecture bhv_tb_combinatorial_circuit;

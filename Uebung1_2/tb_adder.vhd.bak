@@ -1,0 +1,12 @@
+entity tb_adder is 
+end entity tb_adder;
+
+architecture bhv_tb_adder of tb_adder is
+	
+	constant tb_BITWIDTH : natural := 4;
+	
+	signal 
+
+begin
+end architecture bhv_tb_adder;
+

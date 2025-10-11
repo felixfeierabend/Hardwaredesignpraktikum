@@ -1,0 +1,80 @@
+# Reading pref.tcl
+# do Uebung1_2_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1_2/architecture_adder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:10:01 on Oct 11,2025
+# vcom -reportprogress 300 -93 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1_2/architecture_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# ** Error: (vcom-11) Could not find work.adder.
+# ** Error (suppressible): C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1_2/architecture_adder.vhd(6): (vcom-1195) Cannot find expanded name "work.adder".
+# ** Note: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1_2/architecture_adder.vhd(6): VHDL Compiler exiting
+# End time: 20:10:01 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./Uebung1_2_run_msim_rtl_vhdl.do line 8
+# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1_2/architecture_adder.vhd}"
+vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1_2/entity_adder.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:10:15 on Oct 11,2025
+# vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1_2/entity_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder
+# End time: 20:10:15 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1_2/architecture_adder.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:10:17 on Oct 11,2025
+# vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1_2/architecture_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity adder
+# -- Compiling architecture bhv_adder of adder
+# End time: 20:10:17 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1_2/tb_adder_3_bit.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:10:20 on Oct 11,2025
+# vcom -reportprogress 300 -work work C:/DEV/Uni/WS2025/Hardwaredesign/Uebung1_2/tb_adder_3_bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_adder_3_bit
+# -- Compiling architecture bhv_tb_adder_3_bit of tb_adder_3_bit
+# -- Loading entity adder
+# End time: 20:10:20 on Oct 11,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -gui -l msim_transcript work.tb_adder_3_bit
+# vsim -gui -l msim_transcript work.tb_adder_3_bit 
+# Start time: 20:10:31 on Oct 11,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_adder_3_bit(bhv_tb_adder_3_bit)
+# Loading ieee.numeric_std(body)
+# Loading work.adder(bhv_adder)
+add wave -position insertpoint  \
+sim:/tb_adder_3_bit/tb_operand_a_i \
+sim:/tb_adder_3_bit/tb_operand_b_i \
+sim:/tb_adder_3_bit/tb_result_o
+run
+# End time: 20:23:00 on Oct 11,2025, Elapsed time: 0:12:29
+# Errors: 0, Warnings: 0
