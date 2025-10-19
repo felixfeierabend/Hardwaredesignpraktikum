@@ -7,7 +7,7 @@ end entity tb_adder;
 architecture bhv_tb_adder of tb_adder is
 	constant tb_BITWIDTH : natural := 2; -- test-case 2
 	
-	signal tb_operand_a_i : std_Ulogic_vector(tb_BITWIDTH - 1 downto 0);
+	signal tb_operand_a_i : std_ulogic_vector(tb_BITWIDTH - 1 downto 0);
 	signal tb_operand_b_i : std_ulogic_vector(tb_BITWIDTH - 1 downto 0);
 	signal tb_result_o : std_ulogic_vector(tb_BITWIDTH downto 0);
 
