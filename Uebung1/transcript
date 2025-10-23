@@ -1,0 +1,14 @@
+# Reading pref.tcl
+run sim.do
+# No Design Loaded!
+load sim.do
+# couldn't load library "sim.do": invalid argument
+
+
+
+
+
+
+
+
+

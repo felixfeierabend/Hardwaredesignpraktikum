@@ -1,0 +1,2 @@
+entity fsm_board is 
+end entity;

@@ -1,0 +1,11 @@
+library ieee;
+use std_logic_1164.all;
+
+use work.all;
+
+architecture Bhv_Pwm of Pwm is 
+
+begin
+
+end architecture Bhv_Pwm;
+

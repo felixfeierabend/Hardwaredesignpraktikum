@@ -1,0 +1,97 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/DEV/Uni/WS2025/Hardwaredesign/Uebung1
+Ecombinatorial_circuit
+w1760021375
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+8entity_combinatorial_circuit.vhd
+Fentity_combinatorial_circuit.vhd
+l0
+L4 1
+VKk7Q<;Oio:BI;dBP[oMK83
+!s100 PcdUEgC0KGn9bA`47Y[<Q1
+Z3 OV;C;2020.1;71
+32
+Z4 !s110 1760360964
+!i10b 1
+Z5 !s108 1760360964.000000
+!s90 -reportprogress|300|-work|work|entity_combinatorial_circuit.vhd|
+!s107 entity_combinatorial_circuit.vhd|
+!i113 1
+Z6 o-work work
+Z7 tExplicit 1 CvgOpt 0
+Abhv_combinatorial_circuit
+w1760090716
+R1
+R2
+Z8 DEx4 work 21 combinatorial_circuit 0 22 Kk7Q<;Oio:BI;dBP[oMK83
+!i122 1
+8architecture_combinatorial_circuit.vhd
+Farchitecture_combinatorial_circuit.vhd
+l2
+L1 13
+VNQnYmVL6D[_7?]]Mm5eU^3
+!s100 EJ8Q>QCK5oKXbdUi@>^A12
+R3
+32
+R4
+!i10b 1
+R5
+!s90 -reportprogress|300|-work|work|architecture_combinatorial_circuit.vhd|
+!s107 architecture_combinatorial_circuit.vhd|
+!i113 1
+R6
+R7
+Etb_combinatorial_circuit
+Z9 w1760021896
+R1
+R2
+!i122 1
+R0
+Z10 8tb_combinatorial_circuit.vhd
+Z11 Ftb_combinatorial_circuit.vhd
+l0
+L4 1
+V:k[1[U2_6;`QHXS0PK4gI2
+!s100 fR;4R[MS_nc25cDjICglm1
+R3
+32
+Z12 !s110 1760360965
+!i10b 1
+R5
+Z13 !s90 -reportprogress|300|-work|work|tb_combinatorial_circuit.vhd|
+!s107 tb_combinatorial_circuit.vhd|
+!i113 1
+R6
+R7
+Abhv_tb_combinatorial_circuit
+R8
+R1
+R2
+DEx4 work 24 tb_combinatorial_circuit 0 22 :k[1[U2_6;`QHXS0PK4gI2
+!i122 1
+l12
+L7 35
+VD@42NW;E_EUQzOKb?e<RS2
+!s100 b6`@R4QDZIg:oQkUXZ7iQ3
+R3
+32
+R12
+!i10b 1
+R5
+R13
+Z14 !s107 tb_combinatorial_circuit.vhd|
+!i113 1
+R6
+R7

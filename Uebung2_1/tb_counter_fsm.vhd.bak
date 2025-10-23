@@ -1,0 +1,13 @@
+entity tb_fsm_counter is 
+end entity;
+
+architecture bhv_tb_fsm_counter of tb_fsm_counter is
+	constant tb_BITWIDTH : natural := 4;
+	constant tb_counter_end_value : natural := 9;
+	
+	signal tb_rst : std_ulogic := '0';
+	signal tb_clk : std_ulogic := '1';
+	
+begin
+
+end architecture bhv_tb_fsm_counter;

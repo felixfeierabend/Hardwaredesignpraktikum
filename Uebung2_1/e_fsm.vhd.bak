@@ -1,0 +1,10 @@
+entity fsm is 
+	port(
+		clk_i : in std_ulogic;
+		rst_i : in std_ulogic;
+		counter_i : in integer;
+		start_button_i : in std_ulogic;
+		counter_restart_strobe_o : out std_ulogic := '0';
+		led_o : out std_ulogic := '0';
+	);
+end entity;

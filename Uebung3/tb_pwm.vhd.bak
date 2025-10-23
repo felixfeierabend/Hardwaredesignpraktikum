@@ -1,0 +1,5 @@
+library ieee;
+use std_logic_1164.all;
+
+entity tb_pwm is 
+end entity tb_pwm;

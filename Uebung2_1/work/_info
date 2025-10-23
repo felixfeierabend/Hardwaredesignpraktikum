@@ -1,0 +1,169 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1
+Ecounter
+w1760897328
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 293
+R0
+8e_counter.vhd
+Fe_counter.vhd
+l0
+L5 1
+V6b^z5]WJF3FgB1n35EfcF2
+!s100 _UMmXi;8meAZNMR]b5WM]3
+Z4 OV;C;2020.1;71
+32
+Z5 !s110 1760912081
+!i10b 1
+Z6 !s108 1760912081.000000
+!s90 -reportprogress|300|-work|work|e_counter.vhd|
+!s107 e_counter.vhd|
+!i113 1
+Z7 o-work work
+Z8 tExplicit 1 CvgOpt 0
+Abhv_counter
+w1760903040
+Z9 DEx4 work 7 counter 0 22 6b^z5]WJF3FgB1n35EfcF2
+R1
+R2
+R3
+!i122 294
+8a_counter.vhd
+Fa_counter.vhd
+l9
+L7 23
+V?HZ^OYb`XmPMe?CS=XaTl3
+!s100 eRD<djKJTFE4Q9o1geUMU2
+R4
+32
+R5
+!i10b 1
+R6
+!s90 -reportprogress|300|-work|work|a_counter.vhd|
+!s107 a_counter.vhd|
+!i113 1
+R7
+R8
+Efsm
+w1760890584
+R1
+R2
+R3
+!i122 294
+R0
+8e_fsm.vhd
+Fe_fsm.vhd
+l0
+L5 1
+V4DQc4QDPd86Dz>DW^YYI81
+!s100 EKS_LhAIgA[U<[`NJlFOD3
+R4
+32
+R5
+!i10b 1
+R6
+!s90 -reportprogress|300|-work|work|e_fsm.vhd|
+!s107 e_fsm.vhd|
+!i113 1
+R7
+R8
+Abhv_fsm
+w1760912065
+Z10 DEx4 work 3 fsm 0 22 4DQc4QDPd86Dz>DW^YYI81
+DPx4 work 15 std_definitions 0 22 TgGan7;6MhIGaBnjZgG9I3
+R1
+R2
+R3
+!i122 295
+8a_fsm.vhd
+Fa_fsm.vhd
+l12
+L8 59
+VV]Xb?1e8bb8EW2ZBA];W43
+!s100 oFb:c`g0YRi2Qbo=]hfh93
+R4
+32
+R5
+!i10b 1
+R6
+!s90 -reportprogress|300|-work|work|a_fsm.vhd|
+!s107 a_fsm.vhd|
+!i113 1
+R7
+R8
+Pstd_definitions
+!i122 292
+w1760890071
+R0
+8std_definitions.vhd
+Fstd_definitions.vhd
+l0
+L4 1
+VTgGan7;6MhIGaBnjZgG9I3
+!s100 h2GUZVd17`FSii1d`IV]W0
+R4
+32
+R5
+!i10b 1
+R6
+!s90 -reportprogress|300|-work|work|std_definitions.vhd|
+!s107 std_definitions.vhd|
+!i113 1
+R7
+R8
+Etb_fsm_counter
+Z11 w1760911771
+R1
+R2
+R3
+!i122 295
+R0
+Z12 8tb_counter_fsm.vhd
+Z13 Ftb_counter_fsm.vhd
+l0
+L6 1
+Vfhm4FSQU?U[mc[I5n8G0T2
+!s100 YolVio71<FiaXNmI037]A1
+R4
+32
+R5
+!i10b 1
+R6
+Z14 !s90 -reportprogress|300|-work|work|tb_counter_fsm.vhd|
+Z15 !s107 tb_counter_fsm.vhd|
+!i113 1
+R7
+R8
+Abhv_tb_fsm_counter
+R10
+R9
+R1
+R2
+R3
+Z16 DEx4 work 14 tb_fsm_counter 0 22 fhm4FSQU?U[mc[I5n8G0T2
+!i122 295
+l20
+Z17 L9 59
+Z18 VZU?iYkGg<Ee0HWbE9HBo^3
+Z19 !s100 kLcK`@eh@^`:i8Fc1odlE1
+R4
+32
+R5
+!i10b 1
+R6
+R14
+R15
+!i113 1
+R7
+R8
