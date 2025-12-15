@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "PWM_o",
+					"strict" : false
+				},
+				{
+					"name" : "Clk_i",
+					"strict" : false
+				},
+				{
+					"name" : "Reset_i",
+					"strict" : false
+				},
+				{
+					"name" : "Comparator_i",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

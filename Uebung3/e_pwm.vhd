@@ -11,7 +11,7 @@ port(
 	reset_i : in std_ulogic;
 	Period_counter_val_i : in unsigned (COUNTER_LEN - 1 downto 0);
 	ON_counter_val_i : in unsigned (COUNTER_LEN - 1 downto 0);
-	PWM_pin_o : out std_ulogic
+	PWM_pin_o : out std_ulogic := '1'
 );
 
 end entity PWM;

@@ -1,0 +1,236 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/DEV/Uni/WS2025/Hardwaredesign/Uebung4
+Eboardadc
+Z1 w1762782240
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 99
+R0
+8boardADC_e.vhd
+FboardADC_e.vhd
+l0
+L4 1
+VdgJff<WE:?fZKL9=1iX0b1
+!s100 6[N9AG8C8Z0X<FD=f:KEC0
+Z4 OV;C;2020.1;71
+32
+Z5 !s110 1764319434
+!i10b 1
+Z6 !s108 1764319434.000000
+!s90 -reportprogress|300|-work|work|boardADC_e.vhd|
+!s107 boardADC_e.vhd|
+!i113 1
+Z7 o-work work
+Z8 tExplicit 1 CvgOpt 0
+Abhv_boardadc
+Z9 DEx4 work 8 deltaadc 0 22 f]A5CB34Ufc_nzMghWQb^2
+Z10 DEx4 work 3 pwm 0 22 En_baNQ[jUAeJUC:h9ZQZ3
+Z11 DEx4 work 16 strobe_generator 0 22 WCV_:Z[c5ROjT4G:OURCo2
+Z12 DEx4 work 8 boardadc 0 22 dgJff<WE:?fZKL9=1iX0b1
+Z13 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R3
+!i122 100
+8boardADC_a.vhd
+FboardADC_a.vhd
+l11
+L6 41
+VE:_bXe2SggY[1h[_eDi3^1
+!s100 dUS9DRnQ9ffaG^P;d:TT_1
+R4
+32
+R5
+!i10b 1
+R6
+!s90 -reportprogress|300|-work|work|boardADC_a.vhd|
+!s107 boardADC_a.vhd|
+!i113 1
+R7
+R8
+Edeltaadc
+w1762780099
+R2
+R3
+!i122 97
+R0
+8DeltaADC_e.vhd
+FDeltaADC_e.vhd
+l0
+L4 1
+Vf]A5CB34Ufc_nzMghWQb^2
+!s100 b^`A<gfMDfXSL;2QU=BP]3
+R4
+32
+Z14 !s110 1764319433
+!i10b 1
+Z15 !s108 1764319433.000000
+!s90 -reportprogress|300|-work|work|DeltaADC_e.vhd|
+!s107 DeltaADC_e.vhd|
+!i113 1
+R7
+R8
+Abhv_deltaadc
+w1763317365
+R9
+R3
+R2
+R13
+!i122 98
+8DeltaADC_a.vhd
+FDeltaADC_a.vhd
+l12
+L6 44
+V4Q0A6<G[B2SP5KkHf>o^l3
+!s100 d;`5``hR2XoS47W1zj:2o0
+R4
+32
+R14
+!i10b 1
+R15
+!s90 -reportprogress|300|-work|work|DeltaADC_a.vhd|
+!s107 DeltaADC_a.vhd|
+!i113 1
+R7
+R8
+Epwm
+w1761240682
+R13
+R2
+R3
+!i122 96
+R0
+8e_pwm.vhd
+Fe_pwm.vhd
+l0
+L5 1
+VEn_baNQ[jUAeJUC:h9ZQZ3
+!s100 ?K9ll=ZN1DjH_9B8782Sk1
+R4
+32
+R14
+!i10b 1
+!s108 1764319432.000000
+!s90 -reportprogress|300|-work|work|e_pwm.vhd|
+!s107 e_pwm.vhd|
+!i113 1
+R7
+R8
+Abhv_pwm
+w1762780940
+R10
+R13
+R2
+R3
+!i122 97
+8a_pwm.vhd
+Fa_pwm.vhd
+l11
+L7 28
+VE:o=ik:4TDATLdQWc1Zgb0
+!s100 RC`KP0[>nX7[hD4XeocUm3
+R4
+32
+R14
+!i10b 1
+R15
+!s90 -reportprogress|300|-work|work|a_pwm.vhd|
+!s107 a_pwm.vhd|
+!i113 1
+R7
+R8
+Estrobe_generator
+Z16 w1762101294
+R2
+R3
+!i122 98
+R0
+8strb_gen_e.vhd
+Fstrb_gen_e.vhd
+l0
+L4 1
+VWCV_:Z[c5ROjT4G:OURCo2
+!s100 SFaSC=G5ZNzdjbUjUNm8n0
+R4
+32
+R5
+!i10b 1
+R15
+!s90 -reportprogress|300|-work|work|strb_gen_e.vhd|
+!s107 strb_gen_e.vhd|
+!i113 1
+R7
+R8
+Abhv_strobe_generator
+R11
+R2
+R3
+!i122 99
+8strb_gen_a.vhd
+Fstrb_gen_a.vhd
+l7
+L5 20
+VB[gzH0];T?<nccibdZ7[N0
+!s100 FYTQ3l32QfG[JjJJk:0aU0
+R4
+32
+R5
+!i10b 1
+R6
+!s90 -reportprogress|300|-work|work|strb_gen_a.vhd|
+!s107 strb_gen_a.vhd|
+!i113 1
+R7
+R8
+Etb_delta_adc
+Z17 w1762782292
+R13
+R2
+R3
+!i122 100
+R0
+Z18 8tb_DeltaADC.vhd
+Z19 Ftb_DeltaADC.vhd
+l0
+L6 1
+Ve>kUXEjWa[AdP:zZ?odml2
+!s100 RK``8bmMDS791KU3VK>oX3
+R4
+32
+R5
+!i10b 1
+R6
+Z20 !s90 -reportprogress|300|-work|work|tb_DeltaADC.vhd|
+Z21 !s107 tb_DeltaADC.vhd|
+!i113 1
+R7
+R8
+Abhv_tb_delta_adc
+R12
+R13
+R2
+R3
+Z22 DEx4 work 12 tb_delta_adc 0 22 e>kUXEjWa[AdP:zZ?odml2
+!i122 100
+l18
+Z23 L9 41
+Z24 V0Sa32KP;EB?^chndXdL^i0
+Z25 !s100 V@[1S41N?30gNR0YiGPE=2
+R4
+32
+R5
+!i10b 1
+R6
+R20
+R21
+!i113 1
+R7
+R8

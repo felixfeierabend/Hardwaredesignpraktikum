@@ -1,0 +1,576 @@
+Analysis & Synthesis report for Uebung6
+Sun Nov 30 22:20:55 2025
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: synchronizer_chain:sync_in
+ 13. Parameter Settings for User Entity Instance: boardADC:adc
+ 14. Parameter Settings for User Entity Instance: boardADC:adc|strobe_generator:strobe_gen
+ 15. Parameter Settings for User Entity Instance: boardADC:adc|PWM:pwm
+ 16. Parameter Settings for User Entity Instance: boardADC:adc|DeltaADC:delta_adc
+ 17. Parameter Settings for User Entity Instance: HoldValueOnStrb:holdValOnStrb
+ 18. Parameter Settings for User Entity Instance: Tilt:tilt
+ 19. Parameter Settings for User Entity Instance: servo_controller:servoPwm|PWM:pwm
+ 20. Port Connectivity Checks: "bin2bcd:bin2bcd"
+ 21. Port Connectivity Checks: "servo_controller:servoPwm|PWM:pwm"
+ 22. Port Connectivity Checks: "boardADC:adc|PWM:pwm"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Nov 30 22:20:55 2025       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; Uebung6                                     ;
+; Top-level Entity Name           ; Tilt_board                                  ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 79                                          ;
+; Total pins                      ; 26                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 3                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
+; Top-level entity name                                                           ; Tilt_board         ; Uebung6            ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; bin2bcd_ea.vhd                   ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/bin2bcd_ea.vhd         ;         ;
+; boardADC_e.vhd                   ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/boardADC_e.vhd         ;         ;
+; boardADC_a.vhd                   ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/boardADC_a.vhd         ;         ;
+; strb_gen_e.vhd                   ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/strb_gen_e.vhd         ;         ;
+; strb_gen_a.vhd                   ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/strb_gen_a.vhd         ;         ;
+; DeltaADC_e.vhd                   ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/DeltaADC_e.vhd         ;         ;
+; DeltaADC_a.vhd                   ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/DeltaADC_a.vhd         ;         ;
+; synchronizer_chain.vhd           ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/synchronizer_chain.vhd ;         ;
+; ServoControl_e.vhd               ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/ServoControl_e.vhd     ;         ;
+; ServoControl_a.vhd               ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/ServoControl_a.vhd     ;         ;
+; pwm_e.vhd                        ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/pwm_e.vhd              ;         ;
+; pwm_a.vhd                        ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/pwm_a.vhd              ;         ;
+; tb_HoldValueOnStrb.vhd           ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/tb_HoldValueOnStrb.vhd ;         ;
+; HoldValueOnStrb_e.vhd            ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/HoldValueOnStrb_e.vhd  ;         ;
+; HoldValueOnStrb_a.vhd            ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/HoldValueOnStrb_a.vhd  ;         ;
+; Tilt_e.vhd                       ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_e.vhd             ;         ;
+; Tilt_a.vhd                       ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_a.vhd             ;         ;
+; Tilt_board_ea.vhd                ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd      ;         ;
+; tb_digital.vhd                   ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/tb_digital.vhd         ;         ;
+; bcd_to_7seg_ea.vhd               ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/bcd_to_7seg_ea.vhd     ;         ;
+; std_package.vhd                  ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/std_package.vhd        ;         ;
+; tb_deltaAdc.vhd                  ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/tb_deltaAdc.vhd        ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 76          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 122         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 27          ;
+;     -- 5 input functions                    ; 11          ;
+;     -- 4 input functions                    ; 15          ;
+;     -- <=3 input functions                  ; 69          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 79          ;
+;                                             ;             ;
+; I/O pins                                    ; 26          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 3           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clk_i~input ;
+; Maximum fan-out                             ; 71          ;
+; Total fan-out                               ; 684         ;
+; Average fan-out                             ; 2.67        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Entity Name        ; Library Name ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+--------------------+--------------+
+; |Tilt_board                         ; 122 (0)             ; 79 (0)                    ; 0                 ; 3          ; 26   ; 0            ; |Tilt_board                                          ; Tilt_board         ; work         ;
+;    |Tilt:tilt|                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |Tilt_board|Tilt:tilt                                ; Tilt               ; work         ;
+;    |boardADC:adc|                   ; 78 (0)              ; 56 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Tilt_board|boardADC:adc                             ; boardADC           ; work         ;
+;       |DeltaADC:delta_adc|          ; 19 (19)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |Tilt_board|boardADC:adc|DeltaADC:delta_adc          ; DeltaADC           ; work         ;
+;       |PWM:pwm|                     ; 18 (18)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Tilt_board|boardADC:adc|PWM:pwm                     ; PWM                ; work         ;
+;       |strobe_generator:strobe_gen| ; 41 (41)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |Tilt_board|boardADC:adc|strobe_generator:strobe_gen ; strobe_generator   ; work         ;
+;    |servo_controller:servoPwm|      ; 44 (0)              ; 20 (0)                    ; 0                 ; 2          ; 0    ; 0            ; |Tilt_board|servo_controller:servoPwm                ; servo_controller   ; work         ;
+;       |PWM:pwm|                     ; 44 (44)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |Tilt_board|servo_controller:servoPwm|PWM:pwm        ; PWM                ; work         ;
+;    |synchronizer_chain:sync_in|     ; 0 (0)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Tilt_board|synchronizer_chain:sync_in               ; synchronizer_chain ; work         ;
++-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Two Independent 18x18           ; 1           ;
+; Independent 18x18 plus 36       ; 2           ;
+; Total number of DSP blocks      ; 3           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 3           ;
++---------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++------------------------------------------------------+---------------------------------------------+
+; Register name                                        ; Reason for Removal                          ;
++------------------------------------------------------+---------------------------------------------+
+; HoldValueOnStrb:holdValOnStrb|last_valid_value[0..7] ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 8                ;                                             ;
++------------------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 79    ;
+; Number of registers using Synchronous Clear  ; 55    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 39    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Tilt_board|boardADC:adc|DeltaADC:delta_adc|counter_value[7] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: synchronizer_chain:sync_in ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; chain_length   ; 2     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: boardADC:adc ;
++----------------+---------+--------------------------------+
+; Parameter Name ; Value   ; Type                           ;
++----------------+---------+--------------------------------+
+; resolution     ; 8       ; Signed Integer                 ;
+; sample_rate    ; 1000000 ; Signed Integer                 ;
++----------------+---------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: boardADC:adc|strobe_generator:strobe_gen ;
++----------------+---------+------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                       ;
++----------------+---------+------------------------------------------------------------+
+; strobe_freq    ; 1000000 ; Signed Integer                                             ;
++----------------+---------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: boardADC:adc|PWM:pwm ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; counter_len    ; 8     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: boardADC:adc|DeltaADC:delta_adc ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; resolution     ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HoldValueOnStrb:holdValOnStrb ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; resolution     ; 8     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt:tilt ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; resolution     ; 8     ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: servo_controller:servoPwm|PWM:pwm ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; counter_len    ; 20    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:bin2bcd"                                                                               ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; binary_i[15..8] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; thousands_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; tenthousands_o  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "servo_controller:servoPwm|PWM:pwm"  ;
++------------------------------+-------+----------+--------------+
+; Port                         ; Type  ; Severity ; Details      ;
++------------------------------+-------+----------+--------------+
+; period_counter_val_i[19..16] ; Input ; Info     ; Stuck at VCC ;
+; period_counter_val_i[13..10] ; Input ; Info     ; Stuck at GND ;
+; period_counter_val_i[8..7]   ; Input ; Info     ; Stuck at GND ;
+; period_counter_val_i[5..0]   ; Input ; Info     ; Stuck at GND ;
+; period_counter_val_i[15]     ; Input ; Info     ; Stuck at GND ;
+; period_counter_val_i[14]     ; Input ; Info     ; Stuck at VCC ;
+; period_counter_val_i[9]      ; Input ; Info     ; Stuck at VCC ;
+; period_counter_val_i[6]      ; Input ; Info     ; Stuck at VCC ;
++------------------------------+-------+----------+--------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "boardADC:adc|PWM:pwm"             ;
++----------------------------+-------+----------+--------------+
+; Port                       ; Type  ; Severity ; Details      ;
++----------------------------+-------+----------+--------------+
+; period_counter_val_i[7..3] ; Input ; Info     ; Stuck at VCC ;
+; period_counter_val_i[2]    ; Input ; Info     ; Stuck at GND ;
+; period_counter_val_i[1]    ; Input ; Info     ; Stuck at VCC ;
+; period_counter_val_i[0]    ; Input ; Info     ; Stuck at GND ;
++----------------------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 79                          ;
+;     CLR               ; 3                           ;
+;     CLR SCLR          ; 36                          ;
+;     SCLR              ; 19                          ;
+;     plain             ; 21                          ;
+; arriav_lcell_comb     ; 124                         ;
+;     arith             ; 67                          ;
+;         1 data inputs ; 60                          ;
+;         2 data inputs ; 7                           ;
+;     normal            ; 57                          ;
+;         0 data inputs ; 2                           ;
+;         2 data inputs ; 2                           ;
+;         4 data inputs ; 15                          ;
+;         5 data inputs ; 11                          ;
+;         6 data inputs ; 27                          ;
+; arriav_mac            ; 3                           ;
+; boundary_port         ; 26                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.52                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sun Nov 30 22:20:48 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Uebung6 -c Uebung6
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file bin2bcd_ea.vhd
+    Info (12022): Found design unit 1: bin2bcd-rtl File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/bin2bcd_ea.vhd Line: 16
+    Info (12023): Found entity 1: bin2bcd File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/bin2bcd_ea.vhd Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file boardadc_e.vhd
+    Info (12023): Found entity 1: boardADC File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/boardADC_e.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file boardadc_a.vhd
+    Info (12022): Found design unit 1: boardADC-bhv_boardADC File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/boardADC_a.vhd Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file strb_gen_e.vhd
+    Info (12023): Found entity 1: strobe_generator File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/strb_gen_e.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file strb_gen_a.vhd
+    Info (12022): Found design unit 1: strobe_generator-bhv_strobe_generator File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/strb_gen_a.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file deltaadc_e.vhd
+    Info (12023): Found entity 1: DeltaADC File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/DeltaADC_e.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file deltaadc_a.vhd
+    Info (12022): Found design unit 1: DeltaADC-bhv_DeltaADC File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/DeltaADC_a.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file synchronizer_chain.vhd
+    Info (12022): Found design unit 1: synchronizer_chain-bhv_synchronizer_chain File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/synchronizer_chain.vhd Line: 19
+    Info (12023): Found entity 1: synchronizer_chain File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/synchronizer_chain.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file servocontrol_e.vhd
+    Info (12023): Found entity 1: servo_controller File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/ServoControl_e.vhd Line: 8
+Info (12021): Found 1 design units, including 0 entities, in source file servocontrol_a.vhd
+    Info (12022): Found design unit 1: servo_controller-bhv_servo_controller File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/ServoControl_a.vhd Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file pwm_e.vhd
+    Info (12023): Found entity 1: PWM File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/pwm_e.vhd Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file pwm_a.vhd
+    Info (12022): Found design unit 1: Pwm-Bhv_Pwm File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/pwm_a.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file tb_holdvalueonstrb.vhd
+    Info (12022): Found design unit 1: tb_HoldValueOnStrb-bhv_tb_HoldValueOnStrb File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/tb_HoldValueOnStrb.vhd Line: 10
+    Info (12023): Found entity 1: tb_HoldValueOnStrb File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/tb_HoldValueOnStrb.vhd Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file holdvalueonstrb_e.vhd
+    Info (12023): Found entity 1: HoldValueOnStrb File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/HoldValueOnStrb_e.vhd Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file holdvalueonstrb_a.vhd
+    Info (12022): Found design unit 1: HoldValueOnStrb-bhv_HoldValueOnStrb File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/HoldValueOnStrb_a.vhd Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file tilt_e.vhd
+    Info (12023): Found entity 1: Tilt File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_e.vhd Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file tilt_a.vhd
+    Info (12022): Found design unit 1: Tilt-bhv_Tilt File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_a.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file tilt_board_ea.vhd
+    Info (12022): Found design unit 1: Tilt_board-bhv_Tilt_board File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 18
+    Info (12023): Found entity 1: Tilt_board File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file tb_digital.vhd
+    Info (12022): Found design unit 1: tb_digital-bhv_tb_digital File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/tb_digital.vhd Line: 10
+    Info (12023): Found entity 1: tb_digital File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/tb_digital.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file bcd_to_7seg_ea.vhd
+    Info (12022): Found design unit 1: bcd_to_7seg-rtl File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/bcd_to_7seg_ea.vhd Line: 13
+    Info (12023): Found entity 1: bcd_to_7seg File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/bcd_to_7seg_ea.vhd Line: 7
+Info (12021): Found 1 design units, including 0 entities, in source file std_package.vhd
+    Info (12022): Found design unit 1: std_package File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/std_package.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file tb_deltaadc.vhd
+    Info (12022): Found design unit 1: tb_delta_adc-bhv_tb_delta_adc File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/tb_deltaAdc.vhd Line: 10
+    Info (12023): Found entity 1: tb_delta_adc File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/tb_deltaAdc.vhd Line: 6
+Info (12127): Elaborating entity "Tilt_board" for the top level hierarchy
+Info (12128): Elaborating entity "synchronizer_chain" for hierarchy "synchronizer_chain:sync_in" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 38
+Info (12128): Elaborating entity "boardADC" for hierarchy "boardADC:adc" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 49
+Info (12128): Elaborating entity "strobe_generator" for hierarchy "boardADC:adc|strobe_generator:strobe_gen" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/boardADC_a.vhd Line: 14
+Info (12128): Elaborating entity "PWM" for hierarchy "boardADC:adc|PWM:pwm" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/boardADC_a.vhd Line: 23
+Warning (10492): VHDL Process Statement warning at pwm_a.vhd(25): signal "ON_counter_val_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/pwm_a.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at pwm_a.vhd(27): signal "Period_counter_val_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/pwm_a.vhd Line: 27
+Info (12128): Elaborating entity "DeltaADC" for hierarchy "boardADC:adc|DeltaADC:delta_adc" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/boardADC_a.vhd Line: 35
+Info (12128): Elaborating entity "HoldValueOnStrb" for hierarchy "HoldValueOnStrb:holdValOnStrb" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 63
+Info (12128): Elaborating entity "Tilt" for hierarchy "Tilt:tilt" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 75
+Info (12128): Elaborating entity "servo_controller" for hierarchy "servo_controller:servoPwm" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 84
+Info (12128): Elaborating entity "PWM" for hierarchy "servo_controller:servoPwm|PWM:pwm" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/ServoControl_a.vhd Line: 12
+Warning (10492): VHDL Process Statement warning at pwm_a.vhd(25): signal "ON_counter_val_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/pwm_a.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at pwm_a.vhd(27): signal "Period_counter_val_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/pwm_a.vhd Line: 27
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:bin2bcd" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 92
+Info (12128): Elaborating entity "bcd_to_7seg" for hierarchy "bcd_to_7seg:bcd2sevenseg_ones" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 100
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sevenseg_o[20]" is stuck at VCC File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[19]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[18]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[17]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[16]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[15]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[14]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[13]" is stuck at VCC File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[12]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[11]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[10]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[9]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[8]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[7]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[6]" is stuck at VCC File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[5]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[4]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[3]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[2]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[1]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+    Warning (13410): Pin "sevenseg_o[0]" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung6/Tilt_board_ea.vhd Line: 14
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 162 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 23 output pins
+    Info (21061): Implemented 133 logic cells
+    Info (21062): Implemented 3 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4936 megabytes
+    Info: Processing ended: Sun Nov 30 22:20:55 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:17
+
+

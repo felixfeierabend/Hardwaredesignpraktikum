@@ -1,0 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.all;
+
+entity tb_delta_adc is 
+end entity;
+
+architecture bhv_tb_delta_adc of tb_delta_adc is
+	constant RESOLUTION : natural := 3;
+	constant SAMPLE_RATE : natural := 2;
+
+	signal clk : std_ulogic := '0';
+	signal adc_valid_strb : std_ulogic;
+	signal pwm : std_ulogic;
+	signal comparator : std_ulogic := 1;
+	
+begin
+
+	adc : work.boardADC 
+	generic map (
+		RESOLUTION => RESOLUTION,
+		SAMPLE_RATE => SAMPLE_RATE
+	)
+	port map(
+	);
+
+
+end architecture;

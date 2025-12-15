@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+use work.all;
+
+entity tb_HoldValueOnStrb is
+	constant RESOLUTION : natural := 7;
+	signal valid_strb : std_ulogic := '0';
+	signal adc_val : std_ulogic_vector (RESOLUTION - 1 downto 0);
+end entity;
+
+architecture bhv_tb_HoldValueOnStrb is
+begin
+
+	holdValueOnStrb : entity work.HoldValueOnStrb
+	generic map (
+		RESOLUTION => RESOLUTION
+	)
+	port map (
+		
+	);
+	
+
+end architecture;

@@ -1,0 +1,65 @@
+|fsm_board
+board_clk_i => counter:COUNTER.clk_i
+board_clk_i => start_sync[0].CLK
+board_clk_i => start_sync[1].CLK
+board_clk_i => fsm:FSM.clk_i
+board_rst_i => start_sync[0].ACLR
+board_rst_i => start_sync[1].ACLR
+board_rst_i => counter:COUNTER.rst_i
+board_rst_i => fsm:FSM.rst_i
+board_start_button_i => start_sync[0].DATAIN
+board_led_o <= <GND>
+
+
+|fsm_board|counter:COUNTER
+clk_i => counter_value_o[0]~reg0.CLK
+clk_i => counter_value_o[1]~reg0.CLK
+clk_i => counter_value_o[2]~reg0.CLK
+clk_i => counter_value_o[3]~reg0.CLK
+clk_i => next_counter[0].CLK
+clk_i => next_counter[1].CLK
+clk_i => next_counter[2].CLK
+clk_i => next_counter[3].CLK
+restart_strobe_i => next_counter.OUTPUTSELECT
+restart_strobe_i => next_counter.OUTPUTSELECT
+restart_strobe_i => next_counter.OUTPUTSELECT
+restart_strobe_i => next_counter.OUTPUTSELECT
+restart_strobe_i => counter_value_o.OUTPUTSELECT
+restart_strobe_i => counter_value_o.OUTPUTSELECT
+restart_strobe_i => counter_value_o.OUTPUTSELECT
+restart_strobe_i => counter_value_o.OUTPUTSELECT
+rst_i => next_counter.OUTPUTSELECT
+rst_i => next_counter.OUTPUTSELECT
+rst_i => next_counter.OUTPUTSELECT
+rst_i => next_counter.OUTPUTSELECT
+rst_i => counter_value_o.OUTPUTSELECT
+rst_i => counter_value_o.OUTPUTSELECT
+rst_i => counter_value_o.OUTPUTSELECT
+rst_i => counter_value_o.OUTPUTSELECT
+counter_value_o[0] <= counter_value_o[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_value_o[1] <= counter_value_o[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_value_o[2] <= counter_value_o[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+counter_value_o[3] <= counter_value_o[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fsm_board|fsm:FSM
+clk_i => counter_restart_strobe_o~reg0.CLK
+clk_i => led_fsm_state~1.DATAIN
+rst_i => next_led_fsm_state.OUTPUTSELECT
+rst_i => next_led_fsm_state.OUTPUTSELECT
+rst_i => next_led_fsm_state.OUTPUTSELECT
+rst_i => next_led_fsm_state.OUTPUTSELECT
+rst_i => next_led_fsm_state.OUTPUTSELECT
+rst_i => next_led_fsm_state.OUTPUTSELECT
+counter_i[0] => Equal0.IN3
+counter_i[1] => Equal0.IN1
+counter_i[2] => Equal0.IN0
+counter_i[3] => Equal0.IN2
+start_button_i => next_led_fsm_state.OUTPUTSELECT
+start_button_i => next_led_fsm_state.OUTPUTSELECT
+start_button_i => next_led_fsm_state.OUTPUTSELECT
+start_button_i => strobe_proc.IN0
+counter_restart_strobe_o <= counter_restart_strobe_o~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led_o <= led_o$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

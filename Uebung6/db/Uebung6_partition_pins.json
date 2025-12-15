@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "x_pwm_pin_o",
+					"strict" : false
+				},
+				{
+					"name" : "ServoX_pwm_pin_o",
+					"strict" : false
+				},
+				{
+					"name" : "clk_i",
+					"strict" : false
+				},
+				{
+					"name" : "rst_i",
+					"strict" : false
+				},
+				{
+					"name" : "x_comp_async_i",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

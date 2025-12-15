@@ -1,0 +1,104 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/DEV/Uni/WS2025/Hardwaredesign/Uebung7
+Eshift_register
+w1765745947
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 30
+R0
+8shift_register_e.vhd
+Fshift_register_e.vhd
+l0
+L5 1
+V1obT[8fH1CkS6F[gim_dM1
+!s100 RgLOSkBhHHOWdTU5=TSIJ2
+Z4 OV;C;2020.1;71
+32
+!s110 1765746037
+!i10b 1
+Z5 !s108 1765746037.000000
+!s90 -reportprogress|300|-work|work|shift_register_e.vhd|
+!s107 shift_register_e.vhd|
+!i113 1
+Z6 o-work work
+Z7 tExplicit 1 CvgOpt 0
+Abhv_shift_register
+w1765746033
+Z8 DEx4 work 14 shift_register 0 22 1obT[8fH1CkS6F[gim_dM1
+Z9 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+R1
+R2
+R3
+!i122 31
+8shift_register_a.vhd
+Fshift_register_a.vhd
+l15
+L6 41
+VfiK?06YR`a_027eQoV8NE1
+!s100 Ye_mV>e74ZCl9=]f0_>NX3
+R4
+32
+Z10 !s110 1765746038
+!i10b 1
+R5
+!s90 -reportprogress|300|-work|work|shift_register_a.vhd|
+!s107 shift_register_a.vhd|
+!i113 1
+R6
+R7
+Etb_moving_avg
+Z11 w1765742751
+R9
+R1
+R2
+R3
+!i122 31
+R0
+Z12 8tb_moving_avg_filter.vhd
+Z13 Ftb_moving_avg_filter.vhd
+l0
+L8 1
+V8EmYoooN1DKFC]dk];gOI2
+!s100 U_MamLfZcfechNAffO?[M1
+R4
+32
+R10
+!i10b 1
+Z14 !s108 1765746038.000000
+Z15 !s90 -reportprogress|300|-work|work|tb_moving_avg_filter.vhd|
+Z16 !s107 tb_moving_avg_filter.vhd|
+!i113 1
+R6
+R7
+Abhv_tb_moving_avg
+R8
+R9
+R1
+R2
+R3
+Z17 DEx4 work 13 tb_moving_avg 0 22 8EmYoooN1DKFC]dk];gOI2
+!i122 31
+l20
+Z18 L11 54
+Z19 VdFek]>YYgHR9=MSzXM3f33
+Z20 !s100 ]P^F0d2VN8576mGiKdDo63
+R4
+32
+R10
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R6
+R7

@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'clk_i'
+Slack : -5.103
+TNS   : -257.014
+
+Type  : Slow 1100mV 85C Model Setup 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : -3.228
+TNS   : -24.861
+
+Type  : Slow 1100mV 85C Model Hold 'clk_i'
+Slack : 0.377
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : 2.325
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_i'
+Slack : -0.394
+TNS   : -54.687
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : -0.394
+TNS   : -4.296
+
+Type  : Slow 1100mV 0C Model Setup 'clk_i'
+Slack : -5.193
+TNS   : -251.935
+
+Type  : Slow 1100mV 0C Model Setup 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : -3.364
+TNS   : -25.940
+
+Type  : Slow 1100mV 0C Model Hold 'clk_i'
+Slack : 0.172
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : 2.442
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk_i'
+Slack : -0.394
+TNS   : -59.511
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : -0.394
+TNS   : -4.224
+
+Type  : Fast 1100mV 85C Model Setup 'clk_i'
+Slack : -2.818
+TNS   : -109.795
+
+Type  : Fast 1100mV 85C Model Setup 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : -1.510
+TNS   : -11.540
+
+Type  : Fast 1100mV 85C Model Hold 'clk_i'
+Slack : 0.092
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : 1.144
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk_i'
+Slack : -0.339
+TNS   : -8.412
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : 0.095
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'clk_i'
+Slack : -2.572
+TNS   : -94.463
+
+Type  : Fast 1100mV 0C Model Setup 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : -1.494
+TNS   : -11.457
+
+Type  : Fast 1100mV 0C Model Hold 'clk_i'
+Slack : -0.098
+TNS   : -0.778
+
+Type  : Fast 1100mV 0C Model Hold 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : 1.145
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_i'
+Slack : -0.336
+TNS   : -8.510
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'boardADC:adc|strobe_generator:strobe_gen|strb_o'
+Slack : 0.108
+TNS   : 0.000
+
+------------------------------------------------------------

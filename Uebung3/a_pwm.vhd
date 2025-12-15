@@ -16,7 +16,7 @@ begin
 		end if;
 	end process;
 	
-	output_proc : process (counter_value, reset_i)
+	output_proc : process (counter_value)
 	begin
 		next_counter_value <= std_ulogic_vector(unsigned(counter_value) + to_unsigned(1, COUNTER_LEN - 1));
 	
@@ -28,7 +28,7 @@ begin
 			next_counter_value <= (others => '0');
 		end if;
 		
-		if rising_edge(reset_i) then
+		if (reset_i = '1') then
 			next_counter_value <= (others => '0');
 		end if;
 		

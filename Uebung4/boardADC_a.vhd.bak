@@ -1,0 +1,4 @@
+architecture bhv_boardADC of boardADC is 
+begin
+
+end architecture bhv_boardADC;

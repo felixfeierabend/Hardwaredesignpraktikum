@@ -1,5 +1,5 @@
 Analysis & Synthesis report for hwdp-ue3
-Thu Oct 23 19:33:40 2025
+Sun Nov 02 14:13:09 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -10,7 +10,10 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Parameter Settings for User Entity Instance: PWM:PWM
+  6. Port Connectivity Checks: "PWM:PWM"
+  7. Elapsed Time Per Partition
+  8. Analysis & Synthesis Messages
 
 
 
@@ -37,10 +40,10 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Oct 23 19:33:40 2025           ;
+; Analysis & Synthesis Status ; Failed - Sun Nov 02 14:13:09 2025           ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; hwdp-ue3                                    ;
-; Top-level Entity Name       ; e_pwm                                       ;
+; Top-level Entity Name       ; tb_pwm                                      ;
 ; Family                      ; Cyclone V                                   ;
 ; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
 ; Total registers             ; N/A until Partition Merge                   ;
@@ -58,7 +61,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; e_pwm              ; hwdp-ue3           ;
+; Top-level entity name                                                           ; tb_pwm             ; hwdp-ue3           ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -155,13 +158,47 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PWM:PWM ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; counter_len    ; 4     ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PWM:PWM"                                                                                                  ;
++----------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                       ; Type   ; Severity ; Details                                                                             ;
++----------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; reset_i                    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; period_counter_val_i[2..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; period_counter_val_i[3]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; on_counter_val_i[1..0]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; on_counter_val_i[3]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; on_counter_val_i[2]        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; pwm_pin_o                  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Oct 23 19:33:33 2025
+    Info: Processing started: Sun Nov 02 14:13:03 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hwdp-ue3 -c hwdp-ue3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -172,11 +209,22 @@ Info (12021): Found 1 design units, including 0 entities, in source file a_pwm.v
 Info (12021): Found 2 design units, including 1 entities, in source file tb_pwm.vhd
     Info (12022): Found design unit 1: tb_pwm-bhv_tb_pwm File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/tb_pwm.vhd Line: 8
     Info (12023): Found entity 1: tb_pwm File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/tb_pwm.vhd Line: 5
-Error (12007): Top-level design entity "e_pwm" is undefined
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4844 megabytes
-    Error: Processing ended: Thu Oct 23 19:33:40 2025
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:16
+Info (12127): Elaborating entity "tb_pwm" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at tb_pwm.vhd(12): used explicit default value for signal "tb_rst" because signal was never assigned a value File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/tb_pwm.vhd Line: 12
+Warning (10036): Verilog HDL or VHDL warning at tb_pwm.vhd(13): object "tb_pwm" assigned a value but never read File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/tb_pwm.vhd Line: 13
+Warning (10540): VHDL Signal Declaration warning at tb_pwm.vhd(14): used explicit default value for signal "tb_Period_counter_val_i" because signal was never assigned a value File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/tb_pwm.vhd Line: 14
+Warning (10540): VHDL Signal Declaration warning at tb_pwm.vhd(15): used explicit default value for signal "tb_ON_counter_val_i" because signal was never assigned a value File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/tb_pwm.vhd Line: 15
+Info (12128): Elaborating entity "PWM" for hierarchy "PWM:PWM" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/tb_pwm.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at a_pwm.vhd(23): signal "ON_counter_val_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/a_pwm.vhd Line: 23
+Warning (10492): VHDL Process Statement warning at a_pwm.vhd(25): signal "Period_counter_val_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/a_pwm.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at a_pwm.vhd(31): signal "reset_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/a_pwm.vhd Line: 31
+Warning (10631): VHDL Process Statement warning at a_pwm.vhd(19): inferring latch(es) for signal or variable "PWM_pin_o", which holds its previous value in one or more paths through the process File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/a_pwm.vhd Line: 19
+Info (10041): Inferred latch for "PWM_pin_o" at a_pwm.vhd(19) File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung3/a_pwm.vhd Line: 19
+Error (12061): Can't synthesize current design -- Top partition does not contain any logic
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 9 warnings
+    Error: Peak virtual memory: 4859 megabytes
+    Error: Processing ended: Sun Nov 02 14:13:09 2025
+    Error: Elapsed time: 00:00:06
+    Error: Total CPU time (on all processors): 00:00:15
 
 

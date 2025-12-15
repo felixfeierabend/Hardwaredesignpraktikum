@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+use work.all;
+
+architecture bhv_cmd_proc of work.cmd_proc is 
+begin
+	cmd_rom : entity work.command_rom 
+	port map (
+		
+	);
+end architecture bhv_cmd_proc;

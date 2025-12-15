@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+use work.all;
+
+entity tb_digital is
+end entity tb_digital;
+
+architecture bhv_tb_digital of tb_digital is begin
+
+end architecture bhv_tb_digital;

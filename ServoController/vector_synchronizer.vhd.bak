@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity vector_synchronizer is
+	generic (
+		BIT_LENGTH : natural;
+	)
+	port (
+		vector : in : std_ulogic_vector(BIT_LENGTH - 1 downto 0)
+	);
+end entity;

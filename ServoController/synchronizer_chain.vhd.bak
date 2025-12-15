@@ -1,0 +1,7 @@
+entity synchronizer_chain is 
+generic (
+);
+port (
+);
+
+end entity;

@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity shift_chain is
+	generic (
+		REG_LENGTH : natural;
+		BITWIDTH : natural
+	);
+	port (
+		data_i : in std_ulogic_vector (BITWIDTH - 1 downto 0);
+	);
+end entity;

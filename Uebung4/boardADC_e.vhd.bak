@@ -1,0 +1,14 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity boardADC is
+	ADC_valid_strb : out std_ulogic;
+	PWM_o : out std_ulogic;
+	Comparator_i : in std_ulogic;
+end entity boardADC;
+
+
+architecture bhv_boardADC of boardADC is 
+begin
+
+end architecture bhv_boardADC;

@@ -1,0 +1,23 @@
+|tb_pwm
+
+
+|tb_pwm|PWM:PWM
+clk_i => counter_value[0].CLK
+clk_i => counter_value[1].CLK
+clk_i => counter_value[2].CLK
+clk_i => counter_value[3].CLK
+reset_i => next_counter_value[3].OUTPUTSELECT
+reset_i => next_counter_value[2].OUTPUTSELECT
+reset_i => next_counter_value[1].OUTPUTSELECT
+reset_i => next_counter_value[0].OUTPUTSELECT
+Period_counter_val_i[0] => LessThan1.IN4
+Period_counter_val_i[1] => LessThan1.IN3
+Period_counter_val_i[2] => LessThan1.IN2
+Period_counter_val_i[3] => LessThan1.IN1
+ON_counter_val_i[0] => LessThan0.IN4
+ON_counter_val_i[1] => LessThan0.IN3
+ON_counter_val_i[2] => LessThan0.IN2
+ON_counter_val_i[3] => LessThan0.IN1
+PWM_pin_o <= PWM_pin_o$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

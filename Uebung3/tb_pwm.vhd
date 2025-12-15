@@ -10,7 +10,7 @@ architecture bhv_tb_pwm of tb_pwm is
 	
 	signal tb_clk : std_ulogic := '1';
 	signal tb_rst : std_ulogic := '0';
-	signal tb_pwm : std_ulogic;
+	signal tb_pwm : std_ulogic := '1';
 	signal tb_Period_counter_val_i : unsigned (tb_COUNTER_LEN - 1 downto 0) := "1000";
 	signal tb_ON_counter_val_i : unsigned (tb_COUNTER_LEN - 1 downto 0) := "0100";
 	

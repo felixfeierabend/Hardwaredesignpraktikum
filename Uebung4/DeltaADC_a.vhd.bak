@@ -1,0 +1,10 @@
+library ieee;
+
+use ieee.std_logic_1164.all;
+use work.all;
+
+architecture bhv_DeltaADC of DeltaADC is
+
+begin
+
+end architecture bhv_DeltaADC;

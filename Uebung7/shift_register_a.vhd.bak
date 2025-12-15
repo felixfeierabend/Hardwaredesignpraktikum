@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+architecture bhv_shift_register of shift_register is
+	signal shift_reg_mem : unsigned(0 to REG_LEN);
+	signal next_shift_reg_mem : unsigned (0 to REG_LEN);
+begin
+
+	reg_proc : process(clk_i)
+	begin
+		
+	end process reg_proc;
+
+end architecture bhv_shift_register;

@@ -1,0 +1,914 @@
+# Reading pref.tcl
+# vsim -gui . 
+# Start time: 17:59:12 on Dec 14,2025
+# ** Error (suppressible): (vsim-19) Failed to access library '' at "".
+# Invalid argument. (errno = EINVAL)
+# Error loading design
+# End time: 17:59:12 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+do sim.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:59:37 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 17:59:37 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 17:59:37 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# ** Error: shift_register_a.vhd(6): near "architecture": (vcom-1576) expecting STRING or IDENTIFIER or <<.
+# End time: 17:59:38 on Dec 14,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./sim.do line 5
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -work work shift_register_a.vhd"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:00:21 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:00:21 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:00:22 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# ** Error: shift_register_a.vhd(17): (vcom-1136) Unknown identifier "N".
+# ** Error: shift_register_a.vhd(17): Cannot resolve expression type of infix expression.
+# ** Error: shift_register_a.vhd(17): (vcom-1583) Illegal type converson from 'unknown' to 'ieee.NUMERIC_STD.UNSIGNED' (operand type is not known).
+# ** Error: shift_register_a.vhd(38): (vcom-1136) Unknown identifier "data_i0".
+# ** Error: shift_register_a.vhd(38): Type error resolving infix expression "+" as type ieee.NUMERIC_STD.SIGNED.
+# ** Error: shift_register_a.vhd(39): (vcom-1136) Unknown identifier "N".
+# ** Error: shift_register_a.vhd(39): (vcom-1591) Bad expression in right bound of range expression.
+# ** Error: shift_register_a.vhd(39): Cannot resolve expression type.
+# ** Error: shift_register_a.vhd(40): (vcom-1581) No feasible entries for infix operator '-'.
+# ** Error: shift_register_a.vhd(40): Type error resolving infix expression "-" as type std.STANDARD.INTEGER.
+# ** Note: shift_register_a.vhd(45): VHDL Compiler exiting
+# End time: 18:00:22 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 10, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./sim.do line 5
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -work work shift_register_a.vhd"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:04:29 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:04:29 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:04:29 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 18:04:29 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:04:29 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# ** Error: tb_moving_avg_filter.vhd(23): (vcom-1484) Unknown formal identifier "RESOLUTION".
+# ** Error: tb_moving_avg_filter.vhd(23): (vcom-1484) Unknown formal identifier "RESOLUTION".
+# ** Error: tb_moving_avg_filter.vhd(30): (vcom-1136) Unknown identifier "data_i".
+# ** Error: tb_moving_avg_filter.vhd(29): (vcom-1484) Unknown formal identifier "data_valid_strb_i".
+# ** Error: tb_moving_avg_filter.vhd(32): (vcom-1484) Unknown formal identifier "data_valid_strb_o".
+# ** Error: tb_moving_avg_filter.vhd(41): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(41): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(45): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(45): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(49): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(49): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(51): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(51): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(53): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(53): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(55): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(55): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Note: tb_moving_avg_filter.vhd(59): VHDL Compiler exiting
+# End time: 18:04:29 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 17, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./sim.do line 6
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -work work tb_moving_avg_filter.vhd"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:04:50 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:04:51 on Dec 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:04:51 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 18:04:51 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:04:51 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# ** Error: tb_moving_avg_filter.vhd(30): (vcom-1136) Unknown identifier "data_i".
+# ** Error: tb_moving_avg_filter.vhd(29): (vcom-1484) Unknown formal identifier "data_valid_strb_i".
+# ** Error: tb_moving_avg_filter.vhd(32): (vcom-1484) Unknown formal identifier "data_valid_strb_o".
+# ** Error: tb_moving_avg_filter.vhd(41): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(41): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(45): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(45): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(49): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(49): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(51): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(51): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(53): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(53): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(55): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(55): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Note: tb_moving_avg_filter.vhd(59): VHDL Compiler exiting
+# End time: 18:04:51 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 15, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./sim.do line 6
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -work work tb_moving_avg_filter.vhd"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:05:15 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:05:15 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:05:15 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 18:05:15 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:05:15 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# ** Error: tb_moving_avg_filter.vhd(29): (vcom-1484) Unknown formal identifier "data_valid_strb_i".
+# ** Error: tb_moving_avg_filter.vhd(32): (vcom-1484) Unknown formal identifier "data_valid_strb_o".
+# ** Error: tb_moving_avg_filter.vhd(41): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(41): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(45): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(45): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(49): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(49): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(51): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(51): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(53): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(53): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(55): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(55): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Note: tb_moving_avg_filter.vhd(59): VHDL Compiler exiting
+# End time: 18:05:16 on Dec 14,2025, Elapsed time: 0:00:01
+# Errors: 14, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./sim.do line 6
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -work work tb_moving_avg_filter.vhd"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:05:42 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:05:42 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:05:42 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 18:05:42 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:05:42 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# ** Error: tb_moving_avg_filter.vhd(41): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(41): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(45): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(45): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(49): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(49): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(51): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(51): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(53): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(53): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(55): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(55): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Note: tb_moving_avg_filter.vhd(59): VHDL Compiler exiting
+# End time: 18:05:42 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./sim.do line 6
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -work work tb_moving_avg_filter.vhd"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:05:58 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:05:58 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:05:58 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 18:05:59 on Dec 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:05:59 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# ** Error: tb_moving_avg_filter.vhd(41): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(41): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(45): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(45): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(49): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(49): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(51): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(51): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(53): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(53): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Error: tb_moving_avg_filter.vhd(55): (vcom-1394) Type conversion operand must be a single expression that is not a range.
+# ** Error: tb_moving_avg_filter.vhd(55): (vcom-1583) Illegal type converson from 'Integer' to 'ieee.NUMERIC_STD.UNSIGNED' (numeric to array).
+# ** Note: tb_moving_avg_filter.vhd(59): VHDL Compiler exiting
+# End time: 18:05:59 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./sim.do line 6
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -work work tb_moving_avg_filter.vhd"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:06:35 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:06:35 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:06:35 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 18:06:35 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:06:35 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# End time: 18:06:36 on Dec 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim work.tb_moving_avg 
+# Start time: 18:06:36 on Dec 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.tb_moving_avg(bhv_tb_moving_avg)
+# Loading work.shift_register(bhv_shift_register)
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 4 (3 downto 0). Right is 8 (7 downto 0).
+#    Time: 0 ps  Iteration: 0  Process: /tb_moving_avg/shift_register/line__17 File: shift_register_a.vhd
+# Fatal error in Architecture bhv_shift_register at shift_register_a.vhd line 17
+# 
+# HDL call sequence:
+# Stopped at shift_register_a.vhd 17 Architecture bhv_shift_register
+# 
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:07:42 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:07:42 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:07:43 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 18:07:43 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:07:43 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# End time: 18:07:43 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:07:46 on Dec 14,2025, Elapsed time: 0:01:10
+# Errors: 1, Warnings: 0
+# vsim work.tb_moving_avg 
+# Start time: 18:07:46 on Dec 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.tb_moving_avg(bhv_tb_moving_avg)
+# Loading work.shift_register(bhv_shift_register)
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 4 (3 downto 0). Right is 8 (7 downto 0).
+#    Time: 0 ps  Iteration: 0  Process: /tb_moving_avg/shift_register/line__17 File: shift_register_a.vhd
+# Fatal error in Architecture bhv_shift_register at shift_register_a.vhd line 17
+# 
+# HDL call sequence:
+# Stopped at shift_register_a.vhd 17 Architecture bhv_shift_register
+# 
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:10:22 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:10:22 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:10:22 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# ** Error: shift_register_a.vhd(17): near "(": (vcom-1576) expecting ')'.
+# ** Note: shift_register_a.vhd(45): VHDL Compiler exiting
+# End time: 18:10:22 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./sim.do line 5
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -work work shift_register_a.vhd"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:11:35 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:11:35 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:11:35 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 18:11:35 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:11:35 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# End time: 18:11:35 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:11:39 on Dec 14,2025, Elapsed time: 0:03:53
+# Errors: 2, Warnings: 0
+# vsim work.tb_moving_avg 
+# Start time: 18:11:39 on Dec 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.tb_moving_avg(bhv_tb_moving_avg)
+# Loading work.shift_register(bhv_shift_register)
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:30:59 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:30:59 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:30:59 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 18:31:00 on Dec 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:31:00 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# End time: 18:31:00 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:31:04 on Dec 14,2025, Elapsed time: 0:19:25
+# Errors: 0, Warnings: 0
+# vsim work.tb_moving_avg 
+# Start time: 18:31:04 on Dec 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.tb_moving_avg(bhv_tb_moving_avg)
+# Loading work.shift_register(bhv_shift_register)
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:41:26 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 18:41:26 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:41:26 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 18:41:26 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 18:41:26 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# End time: 18:41:26 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:41:34 on Dec 14,2025, Elapsed time: 0:10:30
+# Errors: 0, Warnings: 0
+# vsim work.tb_moving_avg 
+# Start time: 18:41:34 on Dec 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.tb_moving_avg(bhv_tb_moving_avg)
+# Loading work.shift_register(bhv_shift_register)
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:06:58 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 21:06:58 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:06:58 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 21:06:59 on Dec 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:06:59 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# End time: 21:06:59 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:07:06 on Dec 14,2025, Elapsed time: 2:25:32
+# Errors: 0, Warnings: 0
+# vsim work.tb_moving_avg 
+# Start time: 21:07:06 on Dec 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.tb_moving_avg(bhv_tb_moving_avg)
+# Loading work.shift_register(bhv_shift_register)
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:08:58 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 21:08:58 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:08:58 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 21:08:58 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:08:58 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# End time: 21:08:59 on Dec 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 21:09:04 on Dec 14,2025, Elapsed time: 0:01:58
+# Errors: 0, Warnings: 0
+# vsim work.tb_moving_avg 
+# Start time: 21:09:04 on Dec 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.tb_moving_avg(bhv_tb_moving_avg)
+# Loading work.shift_register(bhv_shift_register)
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:51 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 21:14:51 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:51 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# ** Error: shift_register_a.vhd(19): (vcom-1581) No feasible entries for infix operator 'sra'.
+# ** Error: shift_register_a.vhd(19): (vcom-1600) No feasible entries for subprogram "RESIZE".
+#    Visible subprograms are:
+#       (explicit) NUMERIC_STD.RESIZE[UNRESOLVED_SIGNED, NATURAL return UNRESOLVED_SIGNED] at $MODEL_TECH/../vhdl_src/ieee/mti_numeric_std.vhd(1415)
+#       (explicit) NUMERIC_STD.RESIZE[UNRESOLVED_UNSIGNED, NATURAL return UNRESOLVED_UNSIGNED] at $MODEL_TECH/../vhdl_src/ieee/mti_numeric_std.vhd(1425)
+# ** Note: shift_register_a.vhd(47): VHDL Compiler exiting
+# End time: 21:14:51 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./sim.do line 5
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -work work shift_register_a.vhd"
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:15:03 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 21:15:03 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:15:03 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 21:15:03 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:15:03 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# End time: 21:15:03 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:15:10 on Dec 14,2025, Elapsed time: 0:06:06
+# Errors: 1, Warnings: 0
+# vsim work.tb_moving_avg 
+# Start time: 21:15:10 on Dec 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.tb_moving_avg(bhv_tb_moving_avg)
+# Loading work.shift_register(bhv_shift_register)
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:00:37 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity shift_register
+# End time: 22:00:37 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:00:37 on Dec 14,2025
+# vcom -reportprogress 300 -work work shift_register_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling architecture bhv_shift_register of shift_register
+# -- Loading entity shift_register
+# End time: 22:00:38 on Dec 14,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:00:38 on Dec 14,2025
+# vcom -reportprogress 300 -work work tb_moving_avg_filter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity tb_moving_avg
+# -- Compiling architecture bhv_tb_moving_avg of tb_moving_avg
+# -- Loading entity shift_register
+# End time: 22:00:38 on Dec 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 22:00:44 on Dec 14,2025, Elapsed time: 0:45:34
+# Errors: 0, Warnings: 0
+# vsim work.tb_moving_avg 
+# Start time: 22:00:44 on Dec 14,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.tb_moving_avg(bhv_tb_moving_avg)
+# Loading work.shift_register(bhv_shift_register)

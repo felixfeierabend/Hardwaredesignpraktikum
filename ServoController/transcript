@@ -1,0 +1,198 @@
+# Reading pref.tcl
+# vsim -gui . 
+# Start time: 09:48:51 on Nov 28,2025
+# ** Error (suppressible): (vsim-19) Failed to access library '' at "".
+# Invalid argument. (errno = EINVAL)
+# Error loading design
+# End time: 09:48:52 on Nov 28,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:48:58 on Nov 28,2025
+# vcom -reportprogress 300 -work work pwm_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PWM
+# End time: 09:48:58 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:48:58 on Nov 28,2025
+# vcom -reportprogress 300 -work work pwm_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture Bhv_Pwm of Pwm
+# -- Loading entity PWM
+# End time: 09:48:58 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:48:58 on Nov 28,2025
+# vcom -reportprogress 300 -work work ServoPackage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package servo_package
+# End time: 09:48:58 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:48:58 on Nov 28,2025
+# vcom -reportprogress 300 -work work ServoControl_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package servo_package
+# -- Compiling entity servo_controller
+# End time: 09:48:58 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:48:58 on Nov 28,2025
+# vcom -reportprogress 300 -work work ServoControl_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_servo_controller of servo_controller
+# -- Loading package servo_package
+# -- Loading entity servo_controller
+# -- Loading entity PWM
+# End time: 09:48:58 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:48:58 on Nov 28,2025
+# vcom -reportprogress 300 -work work tb_servo.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_servo
+# -- Compiling architecture bhv_tb_servo of tb_servo
+# -- Loading package servo_package
+# -- Loading entity servo_controller
+# ** Warning: tb_servo.vhd(32): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 09:48:59 on Nov 28,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# vsim work.tb_servo 
+# Start time: 09:48:59 on Nov 28,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.servo_package
+# Loading work.tb_servo(bhv_tb_servo)
+# Loading work.servo_controller(bhv_servo_controller)
+# Loading work.pwm(bhv_pwm)
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_servo/servo/pwm
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_servo/servo/pwm
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:05:58 on Nov 28,2025
+# vcom -reportprogress 300 -work work pwm_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PWM
+# End time: 10:05:58 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:05:58 on Nov 28,2025
+# vcom -reportprogress 300 -work work pwm_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture Bhv_Pwm of Pwm
+# -- Loading entity PWM
+# End time: 10:05:59 on Nov 28,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:05:59 on Nov 28,2025
+# vcom -reportprogress 300 -work work ServoPackage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package servo_package
+# End time: 10:05:59 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:05:59 on Nov 28,2025
+# vcom -reportprogress 300 -work work ServoControl_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package servo_package
+# -- Compiling entity servo_controller
+# End time: 10:05:59 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:05:59 on Nov 28,2025
+# vcom -reportprogress 300 -work work ServoControl_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_servo_controller of servo_controller
+# -- Loading package servo_package
+# -- Loading entity servo_controller
+# -- Loading entity PWM
+# End time: 10:05:59 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:05:59 on Nov 28,2025
+# vcom -reportprogress 300 -work work tb_servo.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_servo
+# -- Compiling architecture bhv_tb_servo of tb_servo
+# -- Loading package servo_package
+# -- Loading entity servo_controller
+# ** Warning: tb_servo.vhd(32): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 10:05:59 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 10:06:02 on Nov 28,2025, Elapsed time: 0:17:03
+# Errors: 0, Warnings: 2
+# vsim work.tb_servo 
+# Start time: 10:06:02 on Nov 28,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.servo_package
+# Loading work.tb_servo(bhv_tb_servo)
+# Loading work.servo_controller(bhv_servo_controller)
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 0  Instance: /tb_servo/servo File: ServoControl_a.vhd
+# Loading work.pwm(bhv_pwm)
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_servo/servo/pwm
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_servo/servo/pwm
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 0  Instance: /tb_servo/servo
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 2 ms  Iteration: 1  Instance: /tb_servo/servo
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 4 ms  Iteration: 1  Instance: /tb_servo/servo
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 6 ms  Iteration: 1  Instance: /tb_servo/servo
+# End time: 15:37:19 on Nov 30,2025, Elapsed time: 53:31:17
+# Errors: 0, Warnings: 7

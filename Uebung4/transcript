@@ -1,0 +1,132 @@
+# Reading pref.tcl
+# vsim -gui . 
+# Start time: 09:43:35 on Nov 28,2025
+# ** Error (suppressible): (vsim-19) Failed to access library '' at "".
+# Invalid argument. (errno = EINVAL)
+# Error loading design
+# End time: 09:43:35 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:43:52 on Nov 28,2025
+# vcom -reportprogress 300 -work work e_pwm.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PWM
+# End time: 09:43:53 on Nov 28,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:43:53 on Nov 28,2025
+# vcom -reportprogress 300 -work work a_pwm.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture Bhv_Pwm of Pwm
+# -- Loading entity PWM
+# End time: 09:43:53 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:43:53 on Nov 28,2025
+# vcom -reportprogress 300 -work work DeltaADC_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DeltaADC
+# End time: 09:43:53 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:43:53 on Nov 28,2025
+# vcom -reportprogress 300 -work work DeltaADC_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_DeltaADC of DeltaADC
+# -- Loading entity DeltaADC
+# End time: 09:43:53 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:43:53 on Nov 28,2025
+# vcom -reportprogress 300 -work work strb_gen_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity strobe_generator
+# End time: 09:43:54 on Nov 28,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:43:54 on Nov 28,2025
+# vcom -reportprogress 300 -work work strb_gen_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling architecture bhv_strobe_generator of strobe_generator
+# -- Loading entity strobe_generator
+# End time: 09:43:54 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:43:54 on Nov 28,2025
+# vcom -reportprogress 300 -work work boardADC_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity boardADC
+# End time: 09:43:54 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:43:54 on Nov 28,2025
+# vcom -reportprogress 300 -work work boardADC_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture bhv_boardADC of boardADC
+# -- Loading entity boardADC
+# -- Loading entity strobe_generator
+# -- Loading entity PWM
+# -- Loading entity DeltaADC
+# End time: 09:43:54 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:43:54 on Nov 28,2025
+# vcom -reportprogress 300 -work work tb_DeltaADC.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_delta_adc
+# -- Compiling architecture bhv_tb_delta_adc of tb_delta_adc
+# -- Loading entity boardADC
+# End time: 09:43:54 on Nov 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.tb_delta_adc 
+# Start time: 09:43:54 on Nov 28,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_delta_adc(bhv_tb_delta_adc)
+# Loading work.boardadc(bhv_boardadc)
+# Loading work.strobe_generator(bhv_strobe_generator)
+# Loading work.pwm(bhv_pwm)
+# Loading work.deltaadc(bhv_deltaadc)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: felix  Hostname: DESKTOP-6QB3L6T  ProcessID: 20340
+#           Attempting to use alternate WLF file "./wlftmrtw2f".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftmrtw2f
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_delta_adc/adc/pwm
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /tb_delta_adc/adc/pwm
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 2  Instance: /tb_delta_adc/adc/pwm
+# End time: 10:05:37 on Nov 28,2025, Elapsed time: 0:21:43
+# Errors: 0, Warnings: 5

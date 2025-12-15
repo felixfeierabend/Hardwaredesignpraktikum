@@ -1,0 +1,10 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use numeric_std.all;
+
+use work.all;
+
+architecture bhv_Tilt of Tilt is
+begin
+
+end architecture bhv_Tilt;

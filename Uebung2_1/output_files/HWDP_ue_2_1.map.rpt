@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HWDP_ue_2_1
-Sun Oct 19 18:37:53 2025
+Mon Oct 27 10:26:05 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -10,7 +10,20 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |fsm_board|fsm:FSM|led_fsm_state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: counter:COUNTER
+ 14. Parameter Settings for User Entity Instance: fsm:FSM
+ 15. Port Connectivity Checks: "fsm:FSM"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +47,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sun Oct 19 18:37:53 2025           ;
-; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name               ; HWDP_ue_2_1                                 ;
-; Top-level Entity Name       ; fsm                                         ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Oct 27 10:26:04 2025       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; HWDP_ue_2_1                                 ;
+; Top-level Entity Name           ; fsm_board                                   ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 4                                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -57,8 +75,8 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; fsm                ; HWDP_ue_2_1        ;
+; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
+; Top-level entity name                                                           ; fsm_board          ; HWDP_ue_2_1        ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -155,13 +173,188 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; std_definitions.vhd              ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/std_definitions.vhd ;         ;
+; e_counter.vhd                    ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/e_counter.vhd       ;         ;
+; a_counter.vhd                    ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/a_counter.vhd       ;         ;
+; e_fsm.vhd                        ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/e_fsm.vhd           ;         ;
+; a_fsm.vhd                        ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/a_fsm.vhd           ;         ;
+; tb_counter_fsm.vhd               ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/tb_counter_fsm.vhd  ;         ;
+; board_fsm.vhd                    ; yes             ; User VHDL File  ; C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/board_fsm.vhd       ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimate of Logic utilization (ALMs needed) ; 0                  ;
+;                                             ;                    ;
+; Combinational ALUT usage for logic          ; 0                  ;
+;     -- 7 input functions                    ; 0                  ;
+;     -- 6 input functions                    ; 0                  ;
+;     -- 5 input functions                    ; 0                  ;
+;     -- 4 input functions                    ; 0                  ;
+;     -- <=3 input functions                  ; 0                  ;
+;                                             ;                    ;
+; Dedicated logic registers                   ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 4                  ;
+;                                             ;                    ;
+; Total DSP Blocks                            ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; board_led_o~output ;
+; Maximum fan-out                             ; 1                  ;
+; Total fan-out                               ; 4                  ;
+; Average fan-out                             ; 0.50               ;
++---------------------------------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |fsm_board                 ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 4    ; 0            ; |fsm_board          ; fsm_board   ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------+
+; State Machine - |fsm_board|fsm:FSM|led_fsm_state                                                     ;
++----------------------------+----------------------+----------------------------+---------------------+
+; Name                       ; led_fsm_state.LED_ON ; led_fsm_state.WAIT_COUNTER ; led_fsm_state.START ;
++----------------------------+----------------------+----------------------------+---------------------+
+; led_fsm_state.START        ; 0                    ; 0                          ; 0                   ;
+; led_fsm_state.WAIT_COUNTER ; 0                    ; 1                          ; 1                   ;
+; led_fsm_state.LED_ON       ; 1                    ; 0                          ; 1                   ;
++----------------------------+----------------------+----------------------------+---------------------+
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; counter:COUNTER|counter_value_o[0..3]  ; Lost fanout        ;
+; start_sync[1]                          ; Lost fanout        ;
+; counter:COUNTER|next_counter[0]        ; Lost fanout        ;
+; fsm:FSM|counter_restart_strobe_o       ; Lost fanout        ;
+; counter:COUNTER|next_counter[1..3]     ; Lost fanout        ;
+; start_sync[0]                          ; Lost fanout        ;
+; fsm:FSM|led_fsm_state.START            ; Lost fanout        ;
+; fsm:FSM|led_fsm_state.WAIT_COUNTER     ; Lost fanout        ;
+; fsm:FSM|led_fsm_state.LED_ON           ; Lost fanout        ;
+; Total Number of Removed Registers = 14 ;                    ;
++----------------------------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                  ;
++------------------------------------+--------------------+--------------------------------------------------------------------+
+; Register name                      ; Reason for Removal ; Registers Removed due to This Register                             ;
++------------------------------------+--------------------+--------------------------------------------------------------------+
+; counter:COUNTER|counter_value_o[0] ; Lost Fanouts       ; counter:COUNTER|next_counter[0], fsm:FSM|counter_restart_strobe_o, ;
+;                                    ;                    ; fsm:FSM|led_fsm_state.START, fsm:FSM|led_fsm_state.WAIT_COUNTER    ;
+; counter:COUNTER|counter_value_o[1] ; Lost Fanouts       ; counter:COUNTER|next_counter[1]                                    ;
+; counter:COUNTER|counter_value_o[2] ; Lost Fanouts       ; counter:COUNTER|next_counter[2]                                    ;
+; counter:COUNTER|counter_value_o[3] ; Lost Fanouts       ; counter:COUNTER|next_counter[3]                                    ;
+; start_sync[1]                      ; Lost Fanouts       ; start_sync[0]                                                      ;
++------------------------------------+--------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |fsm_board|counter:COUNTER|next_counter[1]  ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |fsm_board|fsm:FSM|next_led_fsm_state.START ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:COUNTER ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; bitwidth       ; 4     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fsm:FSM ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; max_value      ; 9     ; Signed Integer              ;
+; bitwidth       ; 4     ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "fsm:FSM"                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; led_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+; boundary_port         ; 4                           ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Oct 19 18:37:42 2025
+    Info: Processing started: Mon Oct 27 10:25:39 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HWDP_ue_2_1 -c HWDP_ue_2_1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -178,18 +371,33 @@ Info (12021): Found 1 design units, including 0 entities, in source file a_fsm.v
 Info (12021): Found 2 design units, including 1 entities, in source file tb_counter_fsm.vhd
     Info (12022): Found design unit 1: tb_fsm_counter-bhv_tb_fsm_counter File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/tb_counter_fsm.vhd Line: 9
     Info (12023): Found entity 1: tb_fsm_counter File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/tb_counter_fsm.vhd Line: 6
-Info (12127): Elaborating entity "fsm" for the top level hierarchy
-Warning (10631): VHDL Process Statement warning at a_fsm.vhd(13): inferring latch(es) for signal or variable "led_o", which holds its previous value in one or more paths through the process File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/a_fsm.vhd Line: 13
-Warning (10631): VHDL Process Statement warning at a_fsm.vhd(43): inferring latch(es) for signal or variable "counter_restart_strobe_o", which holds its previous value in one or more paths through the process File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/a_fsm.vhd Line: 43
-Info (10041): Inferred latch for "counter_restart_strobe_o" at a_fsm.vhd(43) File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/a_fsm.vhd Line: 43
-Info (10041): Inferred latch for "led_o" at a_fsm.vhd(13) File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/a_fsm.vhd Line: 13
-Error (10028): Can't resolve multiple constant drivers for net "counter_restart_strobe_o" at a_fsm.vhd(34) File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/a_fsm.vhd Line: 34
-Error (10029): Constant driver at a_fsm.vhd(43) File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/a_fsm.vhd Line: 43
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 3 warnings
-    Error: Peak virtual memory: 4844 megabytes
-    Error: Processing ended: Sun Oct 19 18:37:53 2025
-    Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:26
+Info (12021): Found 2 design units, including 1 entities, in source file board_fsm.vhd
+    Info (12022): Found design unit 1: fsm_board-bhv_fsm_board File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/board_fsm.vhd Line: 14
+    Info (12023): Found entity 1: fsm_board File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/board_fsm.vhd Line: 5
+Info (12127): Elaborating entity "fsm_board" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at board_fsm.vhd(10): used explicit default value for signal "board_led_o" because signal was never assigned a value File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/board_fsm.vhd Line: 10
+Warning (10036): Verilog HDL or VHDL warning at board_fsm.vhd(22): object "board_led" assigned a value but never read File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/board_fsm.vhd Line: 22
+Info (12128): Elaborating entity "counter" for hierarchy "counter:COUNTER" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/board_fsm.vhd Line: 25
+Info (12128): Elaborating entity "fsm" for hierarchy "fsm:FSM" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/board_fsm.vhd Line: 36
+Warning (10492): VHDL Process Statement warning at a_fsm.vhd(37): signal "rst_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/a_fsm.vhd Line: 37
+Warning (10631): VHDL Process Statement warning at a_fsm.vhd(14): inferring latch(es) for signal or variable "led_o", which holds its previous value in one or more paths through the process File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/a_fsm.vhd Line: 14
+Info (10041): Inferred latch for "led_o" at a_fsm.vhd(14) File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/a_fsm.vhd Line: 14
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "board_led_o" is stuck at GND File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/board_fsm.vhd Line: 10
+Info (17049): 14 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "board_rst_i" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/board_fsm.vhd Line: 8
+    Warning (15610): No output dependent on input pin "board_clk_i" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/board_fsm.vhd Line: 7
+    Warning (15610): No output dependent on input pin "board_start_button_i" File: C:/DEV/Uni/WS2025/Hardwaredesign/Uebung2_1/board_fsm.vhd Line: 9
+Info (21057): Implemented 4 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 1 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4854 megabytes
+    Info: Processing ended: Mon Oct 27 10:26:05 2025
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:26
 
 

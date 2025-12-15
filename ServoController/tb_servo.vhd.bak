@@ -1,0 +1,19 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity tb_servo is 
+end entity;
+
+architecture bhv_tb_servo of tb_servo is 
+	signal tb_clk : std_ulogic := '0';
+	signal 
+begin
+	tb_clk <= not(tb_clk) after 1 ns;
+
+	servo : entity work.servo_controller
+	port map(
+		
+	);
+
+end architecture bhv_tb_servo;

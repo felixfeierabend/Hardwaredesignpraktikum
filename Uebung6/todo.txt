@@ -1,0 +1,10 @@
+max wert adc: 250
+bitbreite 8 bit
+
+- bandbreitenänderung in Tilt mittels resize für unsigned notwendig
+- Mit Konstanten für 0° -> 2V und 180° -> 3V min/max errechnen
+konstante adc_zero_deg und adc_180_deg mit 100 bzw. 150 belegen, davon Berechnung ableiten
+Servo auf 0° lassen, auch wenn eingang < 2V
+im PWMServo abfragen, ob der Servo weniger als einen Minimalwert für 0 ist, dann 0 ausgeben, bei Wert größer 180 Grad auf 180 Grad limitieren
+=> Wertebereich einschränken über On_counter_val
+on_counter_val = clock/adc_freq

@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Failed - Thu Oct 23 19:33:40 2025
+Analysis & Synthesis Status : Failed - Sun Nov 02 14:13:09 2025
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : hwdp-ue3
-Top-level Entity Name : e_pwm
+Top-level Entity Name : tb_pwm
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge

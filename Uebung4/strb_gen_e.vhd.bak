@@ -1,0 +1,12 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity strobe_generator is
+generic(
+	
+);
+port(
+	
+);
+
+end entity strobe_generator;

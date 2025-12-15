@@ -1,39 +1,39 @@
 # Reading pref.tcl
 # vsim -gui . 
-# Start time: 19:33:56 on Oct 23,2025
+# Start time: 15:22:52 on Nov 07,2025
 # ** Error (suppressible): (vsim-19) Failed to access library '' at "".
 # Invalid argument. (errno = EINVAL)
 # Error loading design
-# End time: 19:33:57 on Oct 23,2025, Elapsed time: 0:00:01
+# End time: 15:22:52 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 0
 do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work work 
-# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:34:43 on Oct 23,2025
+# Start time: 15:22:58 on Nov 07,2025
 # vcom -reportprogress 300 -work work e_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity PWM
-# End time: 19:34:43 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:22:58 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:34:43 on Oct 23,2025
+# Start time: 15:22:58 on Nov 07,2025
 # vcom -reportprogress 300 -work work a_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling architecture Bhv_Pwm of Pwm
+# -- Compiling architecture BHV_PWM of PWM
 # -- Loading entity PWM
-# End time: 19:34:43 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:22:58 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:34:43 on Oct 23,2025
+# Start time: 15:22:58 on Nov 07,2025
 # vcom -reportprogress 300 -work work tb_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -42,10 +42,10 @@ do sim.do
 # -- Compiling entity tb_pwm
 # -- Compiling architecture bhv_tb_pwm of tb_pwm
 # -- Loading entity PWM
-# End time: 19:34:43 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:22:58 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim work.tb_pwm 
-# Start time: 19:34:43 on Oct 23,2025
+# Start time: 15:22:58 on Nov 07,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -58,28 +58,28 @@ do sim.do
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:37:55 on Oct 23,2025
+# Start time: 15:24:23 on Nov 07,2025
 # vcom -reportprogress 300 -work work e_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity PWM
-# End time: 19:37:55 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:24:23 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:37:55 on Oct 23,2025
+# Start time: 15:24:23 on Nov 07,2025
 # vcom -reportprogress 300 -work work a_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling architecture Bhv_Pwm of Pwm
+# -- Compiling architecture BHV_PWM of PWM
 # -- Loading entity PWM
-# End time: 19:37:56 on Oct 23,2025, Elapsed time: 0:00:01
+# End time: 15:24:23 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:37:56 on Oct 23,2025
+# Start time: 15:24:23 on Nov 07,2025
 # vcom -reportprogress 300 -work work tb_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -88,44 +88,67 @@ do sim.do
 # -- Compiling entity tb_pwm
 # -- Compiling architecture bhv_tb_pwm of tb_pwm
 # -- Loading entity PWM
-# ** Error: tb_pwm.vhd(38): Illegal target for signal assignment.
-# ** Error: tb_pwm.vhd(38): (vcom-1136) Unknown identifier "tb_counter_val_i".
-# ** Note: tb_pwm.vhd(46): VHDL Compiler exiting
-# End time: 19:37:56 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 0
+# End time: 15:24:23 on Nov 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 15:24:24 on Nov 07,2025, Elapsed time: 0:01:26
+# Errors: 0, Warnings: 0
+# vsim work.tb_pwm 
+# Start time: 15:24:24 on Nov 07,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_pwm(bhv_tb_pwm)
+# Loading work.pwm(bhv_pwm)
+do sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:25:31 on Nov 07,2025
+# vcom -reportprogress 300 -work work e_pwm.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PWM
+# ** Error: e_pwm.vhd(15): near ")": (vcom-1576) expecting IDENTIFIER.
+# End time: 15:25:31 on Nov 07,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
 # ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./sim.do line 6
+# Error in macro ./sim.do line 4
 # C:/intelFPGA/20.1/modelsim_ase/win32aloem/vcom failed.
 #     while executing
-# "vcom -work work tb_pwm.vhd"
+# "vcom -work work e_pwm.vhd"
 do sim.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:38:28 on Oct 23,2025
+# Start time: 15:25:40 on Nov 07,2025
 # vcom -reportprogress 300 -work work e_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity PWM
-# End time: 19:38:28 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:25:40 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:38:28 on Oct 23,2025
+# Start time: 15:25:40 on Nov 07,2025
 # vcom -reportprogress 300 -work work a_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling architecture Bhv_Pwm of Pwm
+# -- Compiling architecture BHV_PWM of PWM
 # -- Loading entity PWM
-# End time: 19:38:28 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:25:40 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:38:28 on Oct 23,2025
+# Start time: 15:25:41 on Nov 07,2025
 # vcom -reportprogress 300 -work work tb_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -134,12 +157,12 @@ do sim.do
 # -- Compiling entity tb_pwm
 # -- Compiling architecture bhv_tb_pwm of tb_pwm
 # -- Loading entity PWM
-# End time: 19:38:28 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:25:41 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 19:38:30 on Oct 23,2025, Elapsed time: 0:03:47
+# End time: 15:25:43 on Nov 07,2025, Elapsed time: 0:01:19
 # Errors: 1, Warnings: 0
 # vsim work.tb_pwm 
-# Start time: 19:38:30 on Oct 23,2025
+# Start time: 15:25:43 on Nov 07,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -152,28 +175,28 @@ do sim.do
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:40:24 on Oct 23,2025
+# Start time: 15:27:02 on Nov 07,2025
 # vcom -reportprogress 300 -work work e_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity PWM
-# End time: 19:40:24 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:27:02 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:40:24 on Oct 23,2025
+# Start time: 15:27:02 on Nov 07,2025
 # vcom -reportprogress 300 -work work a_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling architecture Bhv_Pwm of Pwm
+# -- Compiling architecture BHV_PWM of PWM
 # -- Loading entity PWM
-# End time: 19:40:24 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:27:02 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:40:24 on Oct 23,2025
+# Start time: 15:27:02 on Nov 07,2025
 # vcom -reportprogress 300 -work work tb_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -182,12 +205,12 @@ do sim.do
 # -- Compiling entity tb_pwm
 # -- Compiling architecture bhv_tb_pwm of tb_pwm
 # -- Loading entity PWM
-# End time: 19:40:24 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:27:02 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 19:40:26 on Oct 23,2025, Elapsed time: 0:01:56
+# End time: 15:27:05 on Nov 07,2025, Elapsed time: 0:01:22
 # Errors: 0, Warnings: 0
 # vsim work.tb_pwm 
-# Start time: 19:40:26 on Oct 23,2025
+# Start time: 15:27:05 on Nov 07,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -200,17 +223,17 @@ do sim.do
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:40:42 on Oct 23,2025
+# Start time: 15:30:04 on Nov 07,2025
 # vcom -reportprogress 300 -work work e_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity PWM
-# End time: 19:40:42 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:30:04 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:40:42 on Oct 23,2025
+# Start time: 15:30:05 on Nov 07,2025
 # vcom -reportprogress 300 -work work a_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -218,10 +241,10 @@ do sim.do
 # -- Loading package NUMERIC_STD
 # -- Compiling architecture Bhv_Pwm of Pwm
 # -- Loading entity PWM
-# End time: 19:40:42 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:30:05 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:40:42 on Oct 23,2025
+# Start time: 15:30:05 on Nov 07,2025
 # vcom -reportprogress 300 -work work tb_pwm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -230,209 +253,17 @@ do sim.do
 # -- Compiling entity tb_pwm
 # -- Compiling architecture bhv_tb_pwm of tb_pwm
 # -- Loading entity PWM
-# End time: 19:40:42 on Oct 23,2025, Elapsed time: 0:00:00
+# End time: 15:30:05 on Nov 07,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 19:40:43 on Oct 23,2025, Elapsed time: 0:00:17
+# End time: 15:30:07 on Nov 07,2025, Elapsed time: 0:03:02
 # Errors: 0, Warnings: 0
 # vsim work.tb_pwm 
-# Start time: 19:40:43 on Oct 23,2025
+# Start time: 15:30:07 on Nov 07,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.tb_pwm(bhv_tb_pwm)
 # Loading work.pwm(bhv_pwm)
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:43:39 on Oct 23,2025
-# vcom -reportprogress 300 -work work e_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity PWM
-# End time: 19:43:39 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:43:39 on Oct 23,2025
-# vcom -reportprogress 300 -work work a_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling architecture Bhv_Pwm of Pwm
-# -- Loading entity PWM
-# End time: 19:43:39 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:43:39 on Oct 23,2025
-# vcom -reportprogress 300 -work work tb_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pwm
-# -- Compiling architecture bhv_tb_pwm of tb_pwm
-# -- Loading entity PWM
-# End time: 19:43:39 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 19:43:41 on Oct 23,2025, Elapsed time: 0:02:58
-# Errors: 0, Warnings: 0
-# vsim work.tb_pwm 
-# Start time: 19:43:41 on Oct 23,2025
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.tb_pwm(bhv_tb_pwm)
-# Loading work.pwm(bhv_pwm)
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:01:34 on Oct 23,2025
-# vcom -reportprogress 300 -work work e_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity PWM
-# End time: 20:01:34 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:01:34 on Oct 23,2025
-# vcom -reportprogress 300 -work work a_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling architecture Bhv_Pwm of Pwm
-# -- Loading entity PWM
-# End time: 20:01:34 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:01:34 on Oct 23,2025
-# vcom -reportprogress 300 -work work tb_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pwm
-# -- Compiling architecture bhv_tb_pwm of tb_pwm
-# -- Loading entity PWM
-# End time: 20:01:34 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 20:01:36 on Oct 23,2025, Elapsed time: 0:17:55
-# Errors: 0, Warnings: 0
-# vsim work.tb_pwm 
-# Start time: 20:01:36 on Oct 23,2025
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.tb_pwm(bhv_tb_pwm)
-# Loading work.pwm(bhv_pwm)
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:02:20 on Oct 23,2025
-# vcom -reportprogress 300 -work work e_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity PWM
-# End time: 20:02:20 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:02:20 on Oct 23,2025
-# vcom -reportprogress 300 -work work a_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling architecture Bhv_Pwm of Pwm
-# -- Loading entity PWM
-# End time: 20:02:20 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:02:20 on Oct 23,2025
-# vcom -reportprogress 300 -work work tb_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pwm
-# -- Compiling architecture bhv_tb_pwm of tb_pwm
-# -- Loading entity PWM
-# End time: 20:02:20 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 20:02:22 on Oct 23,2025, Elapsed time: 0:00:46
-# Errors: 0, Warnings: 0
-# vsim work.tb_pwm 
-# Start time: 20:02:22 on Oct 23,2025
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.tb_pwm(bhv_tb_pwm)
-# Loading work.pwm(bhv_pwm)
-do sim.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work work 
-# Modifying modelsim.ini
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:04:10 on Oct 23,2025
-# vcom -reportprogress 300 -work work e_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity PWM
-# End time: 20:04:10 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:04:10 on Oct 23,2025
-# vcom -reportprogress 300 -work work a_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling architecture Bhv_Pwm of Pwm
-# -- Loading entity PWM
-# End time: 20:04:10 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:04:10 on Oct 23,2025
-# vcom -reportprogress 300 -work work tb_pwm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_pwm
-# -- Compiling architecture bhv_tb_pwm of tb_pwm
-# -- Loading entity PWM
-# End time: 20:04:10 on Oct 23,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 20:04:12 on Oct 23,2025, Elapsed time: 0:01:50
-# Errors: 0, Warnings: 0
-# vsim work.tb_pwm 
-# Start time: 20:04:12 on Oct 23,2025
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.tb_pwm(bhv_tb_pwm)
-# Loading work.pwm(bhv_pwm)
-# End time: 23:48:06 on Oct 23,2025, Elapsed time: 3:43:54
+# End time: 21:20:08 on Nov 09,2025, Elapsed time: 53:50:01
 # Errors: 0, Warnings: 0

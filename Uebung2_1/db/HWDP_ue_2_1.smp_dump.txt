@@ -1,0 +1,6 @@
+
+State Machine - |fsm_board|fsm:FSM|led_fsm_state
+Name led_fsm_state.LED_ON led_fsm_state.WAIT_COUNTER led_fsm_state.START 
+led_fsm_state.START 0 0 0 
+led_fsm_state.WAIT_COUNTER 0 1 1 
+led_fsm_state.LED_ON 1 0 1 
