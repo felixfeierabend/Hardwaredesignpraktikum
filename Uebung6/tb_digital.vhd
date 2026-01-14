@@ -40,10 +40,10 @@ begin
 		wait for 20 ns;
 		cmp <= '1';
 		wait for 20 ns;
-		cmp <= not cmp after 20 ns;
-		wait for 20 ms;
-
-		
+		for i in 1 to 10000000 loop 
+			cmp <= not cmp;
+			wait for 20 ns;
+		end loop;
 		
 	end process stimuli;
 	

@@ -20,7 +20,7 @@ begin
 
 	output_proc : process (last_valid_value, ADC_valid_strb_i)
 	begin
-		if ADC_valid_strb = '1' then
+		if ADC_valid_strb_i = '1' then
 		next_last_valid_value <= ADC_value_i;
 		end if;
 	

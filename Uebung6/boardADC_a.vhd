@@ -5,7 +5,6 @@ use work.all;
 
 architecture bhv_boardADC of boardADC is 
 	signal sampling_strb : std_ulogic;
-	signal adc_valid : std_ulogic;
 	signal adc_value : std_ulogic_vector (std_package.ADC_BIT_WIDTH - 1 downto 0);
 begin
 	

@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity periodical_strb_gen is
+	port (
+		clk_i : in std_ulogic;
+		rst_i : in std_ulogic;
+		strb_o : out std_ulogic;
+	);
+end entity periodical_strb_gen;
+
+architecture bhv_strb_gen of periodical_strb_gen is
+	signal strb_value : std_ulogic;
+	signal next_strb_value : std_ulogic;
+begin
+
+	reg_proc : process(clk_i) 
+	begin
+		if rising_edge(clk_i) then
+			if rst_i = '1' then
+				strb_value <= '0';
+			else
+				strb_value <= next_strb_value;
+			end if;
+			strb_o <= strb_value;
+	end reg_proc;
+	
+	comb_proc : process(strb_value) 
+	begin
+		
+	end process comb_proc;
+
+end architecture bhv_strb_gen;

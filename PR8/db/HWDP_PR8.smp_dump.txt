@@ -1,0 +1,7 @@
+
+State Machine - |board_cmd_proc|cmd_proc:cmd_proc|fsm_state
+Name fsm_state.WAIT_COMPLETE fsm_state.DRAWING fsm_state.WAIT_FOR_STROBE fsm_state.IDLE 
+fsm_state.IDLE 0 0 0 0 
+fsm_state.WAIT_FOR_STROBE 0 0 1 1 
+fsm_state.DRAWING 0 1 0 1 
+fsm_state.WAIT_COMPLETE 1 0 0 1 

@@ -1,0 +1,11 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity periodical_strb_gen is
+
+end entity periodical_strb_gen;
+
+architecture bhv_strb_gen of periodical_strb_gen is
+begin
+end architecture bhv_strb_gen;

@@ -25,4 +25,4 @@ vsim work.tb_digital
 
 add wave -r *
 
-run 71 ms
+run 210 ms

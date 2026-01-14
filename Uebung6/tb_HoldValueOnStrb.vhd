@@ -30,6 +30,15 @@ begin
 	);
 	
 	stimuli : process begin
+		rst <= '1';
+		wait for 2 ns;
+		rst <= '0';
+		wait for 2 ns;
+		valid_strb <= '1';
+		wait for 2 ns;
+		valid_strb <= '0';
+		wait for 2 ns;
+	
 		adc_val <= (OTHERS => '0');
 		valid_strb <= '1';
 		wait for 2 ns;
