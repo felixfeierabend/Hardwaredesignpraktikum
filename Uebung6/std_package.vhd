@@ -6,8 +6,10 @@ use ieee.math_real.all;
 package std_package is
 
 	constant CLK_FREQ : natural := 50_000_000;
-	constant ADC_PWM_FREQ : natural := 200_000;
-	constant ADC_SAMPLE_FREQ : natural := 50;
+	--constant ADC_PWM_FREQ : natural := 200_000;
+	constant ADC_PWM_FREQ : natural : 2_000_000; -- for testing purposes only
+	--constant ADC_SAMPLE_FREQ : natural := 50;
+	constant ADC_SAMPLE_FREQ : natrual : 500; -- for testing purposes only
 	
 	constant ADC_MAX_VAL : natural := integer(real(CLK_FREQ) / real(ADC_PWM_FREQ));
 	

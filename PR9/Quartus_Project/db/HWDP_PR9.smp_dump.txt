@@ -1,0 +1,6 @@
+
+State Machine - |Tilt_board|btnCtrl:btnCtrl|fsm_state
+Name fsm_state.decrement fsm_state.INCREMENT fsm_state.IDLE 
+fsm_state.IDLE 0 0 0 
+fsm_state.INCREMENT 0 1 1 
+fsm_state.decrement 1 0 1 

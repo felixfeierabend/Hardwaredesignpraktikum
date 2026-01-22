@@ -6,12 +6,15 @@ use work.all;
 architecture bhv_DeltaADC of DeltaADC is
 	signal counter_value : std_ulogic_vector (RESOLUTION - 1 downto 0);
 	signal next_counter_value : std_ulogic_vector (RESOLUTION - 1 downto 0);
+	signal next_adc_value : std_ulogic_vector (RESOLUTION - 1 downto 0);
 	signal prev_compare_val : std_ulogic;
 
 begin
 	
 	counter_proc : process(strobe_i, comparator_i)
 	begin
+		next_adc_value <= next_adc_value;
+
 		if strobe_i = '1' then
 			if (comparator_i = '1') then
 				next_counter_value <= std_ulogic_vector(unsigned(counter_value) + to_unsigned(1, RESOLUTION));
@@ -23,6 +26,10 @@ begin
 				next_counter_value <= std_ulogic_vector(unsigned(counter_value) - to_unsigned(1, RESOLUTION));
 				prev_compare_val <= '0';
 			end if;
+
+			if strobe_i = '1' then
+				next_adc_value <= next_counter_value; 
+			end if;
 		end if;
 	end process counter_proc;
 	
@@ -31,10 +38,8 @@ begin
 		if (rst_i = '1') then
 			counter_value <= (others => '0');
 		elsif rising_edge(clk_i) then
-			counter_value <= next_counter_value;
-			if (strobe_i = '1') then
-				adc_val_o <= counter_value;
-			end if;
+			counter_value <= next_adc_value;			
+			adc_val_o <= counter_value;
 		end if;
 	end process reg_proc;
 	

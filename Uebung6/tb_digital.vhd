@@ -28,22 +28,18 @@ begin
 		ServoX_pwm_pin_o => pwm_servo,
 		sevenseg_o => sevenseg
 	);
-	
-	stimuli : process begin
+
+	rstproc : process begin
 		rst <= '1';
 		wait for 20 ns;
-		rst <= '0';		
-		wait for 10 ms;
-		cmp <= '1';
-		wait for 40 ms;
+		rst <= '0';
+	end process rstproc;
+
+	stimuli : process begin
 		cmp <= '0';
 		wait for 20 ns;
 		cmp <= '1';
-		wait for 20 ns;
-		for i in 1 to 10000000 loop 
-			cmp <= not cmp;
-			wait for 20 ns;
-		end loop;
+		wait for 30 * 
 		
 	end process stimuli;
 	
