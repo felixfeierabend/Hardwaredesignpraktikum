@@ -3,6 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 use work.all;
+use work.std_package.all;
 
 entity Tilt_board is 
 	port (
@@ -11,19 +12,11 @@ entity Tilt_board is
 		x_comp_async_i : in std_ulogic;
 
 		dbg_en_i : in std_ulogic;
-		btnIncrement_i : in std_ulogic;
-		btnDecrement_i : in std_ulogic;
-		switchTen_i : in std_ulogic;
-		--switchServo_i : in std_ulogic;	-- TODO!
-
+		
 		x_pwm_pin_o : out std_ulogic;
 		ServoX_pwm_pin_o : out std_ulogic;
 		sevenseg_o : out std_ulogic_vector(0 to 20);
-		dbg_adc_val_o : out std_ulogic_vector(std_package.ADC_BIT_WIDTH - 1 downto 0);
-		led_dbg_inc_o : out std_ulogic;
-        led_dbg_dec_o : out std_ulogic;
-        led_dbg_calc_inc_o : out std_ulogic;
-        led_dbg_calc_dec_o : out std_ulogic
+		dbg_adc_val_o : out std_ulogic_vector(std_package.ADC_BIT_WIDTH - 1 downto 0)
 	);
 end entity Tilt_board;
 
@@ -41,6 +34,12 @@ architecture bhv_Tilt_board of Tilt_board is
 
 	signal dbg_adc_val : std_ulogic_vector (std_package.ADC_BIT_WIDTH - 1 downto 0);
 	signal dbg_adc_strb : std_ulogic;
+
+	signal moving_avg_data : unsigned(ADC_BIT_WIDTH - 1 downto 0);
+	signal moving_avg_strb : std_ulogic;
+
+	signal adc_val_hold_i : std_ulogic_vector(ADC_BIT_WIDTH - 1 downto 0);
+	signal adc_strb_hold_i : std_ulogic;
 	
 	signal ones : std_ulogic_vector (3 downto 0);
 	signal tens : std_ulogic_vector (3 downto 0);
@@ -56,8 +55,25 @@ begin
 	dbg_adc_val_o <= dbg_adc_val;
 
 	binary <= NULL_MASK & HoldValue;
+
+	adc_val_hold_i <= std_ulogic_vector(moving_avg_data) when switchMovingAvg_i = '1' else adc_val;
+	adc_strb_hold_i <= moving_avg_strb when switchMovingAvg_i = '1' else adc_valid_strb;
+
+	moving_avg : entity work.moving_avg
+	generic map (
+		BITWIDTH => ADC_BIT_WIDTH,
+		REG_LENGTH => REG_LENGTH
+	)
+	port map (
+		clk_i => clk_i,
+		reset_i => rst_n,
+		strb_data_valid_i => adc_valid_strb,
+		data_i => unsigned(adc_val),
+		strb_data_valid_o => moving_avg_strb,
+		data_o => moving_avg_data
+	);
 	
-	sync_in : entity work.synchronizer_chain
+	x_comp_sync : entity work.synchronizer_chain
 	generic map (
 		CHAIN_LENGTH => SYNC_CHAIN_LENGTH
 	)
@@ -77,10 +93,10 @@ begin
 		switchTen_i => switchTen_i,
 		adc_value_o => dbg_adc_val,
 		adc_strb_o => dbg_adc_strb,
-		led_dbg_inc_o => led_dbg_inc_o,
-		led_dbg_dec_o => led_dbg_dec_o,
-		led_dbg_calc_inc_o => led_dbg_calc_inc_o,
-		led_dbg_calc_dec_o => led_dbg_calc_dec_o
+		led_dbg_inc_o => open,
+		led_dbg_dec_o => open,
+		led_dbg_calc_inc_o => open,
+		led_dbg_calc_dec_o => open
 	);
 
 	adc : entity work.DeltaADC
@@ -103,8 +119,8 @@ begin
 	port map (
 		clk_i => clk_i,
 		rst_i => rst_n,
-		ADC_valid_strb_i => adc_valid_strb,
-		ADC_value_i => adc_val,
+		ADC_valid_strb_i => adc_strb_hold_i,
+		ADC_value_i => adc_val_hold_i,
 		HoldValue_o => HoldValue
 	);
 	

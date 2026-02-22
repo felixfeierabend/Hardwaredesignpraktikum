@@ -28,8 +28,8 @@ package std_package is
 	constant ADC_SAMPLE_FREQ : natural := 50;
 
 	constant ADC_MAX_VAL : natural := integer(floor(real(CLK_FREQ) / real(ADC_PWM_FREQ)));
-	constant ADC_MEAN_VAL : natural := integer(floor(real(ADC_MAX_VAL) / 2.0));
-
+	constant ADC_MIN_VAL : natural := integer(floor(real(ADC_MAX_VAL) / 2.0));
+	constant ADC_MEAN_VAL : natural := integer(floor(real(ADC_MAX_VAL - ADC_MIN_VAL) / 2.0));
 	constant ADC_SAMPLE_SCALER : natural := integer(floor(real(CLK_FREQ) / real(ADC_SAMPLE_FREQ)));
 
 	-- tilt-constants
@@ -52,7 +52,8 @@ package std_package is
 	constant BIT_WIDTH : natural := natural(ceil(log2(real(SERVO_MAX_TICKS))));
 	constant ADC_BIT_WIDTH : natural := natural(ceil(log2(real(ADC_MAX_VAL))));
 
-	--constant TILT_SCALER : integer := integer(1.0 / real(SERVO_RANGE_TICKS));
+	-- filter constants
+	constant REG_LENGTH : natural := 4;
 
 	-- debounce
 	

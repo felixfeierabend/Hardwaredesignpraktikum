@@ -22,8 +22,8 @@ entity btnCtrl is
 end entity btnCtrl;
 
 architecture bhv_btnCtrl of btnCtrl is
-	constant MIN_VAL: unsigned(ADC_BIT_WIDTH downto 0) := to_unsigned(TILT_MIN_VAL, ADC_BIT_WIDTH + 1);
-	constant MAX_VAL : unsigned(ADC_BIT_WIDTH downto 0) := to_unsigned(TILT_MAX_VAL, ADC_BIT_WIDTH + 1);
+	constant MIN_VAL : unsigned(ADC_BIT_WIDTH - 1 downto 0) := to_unsigned(ADC_MIN_VAL, ADC_BIT_WIDTH);
+	constant MAX_VAL : unsigned(ADC_BIT_WIDTH - 1 downto 0) := to_unsigned(ADC_MAX_VAL, ADC_BIT_WIDTH);
 
 	type fsm_button_debounce_state is (IDLE, INCREMENT, DECREMENT, CALC_INC, CALC_DEC);
 	signal fsm_state, next_fsm_state : fsm_button_debounce_state;
@@ -93,8 +93,8 @@ begin
                 led_dbg_calc_dec_o <= '0';
 
             when CALC_INC =>
-                if (to_integer(unsigned(adc_value)) + incValue) > to_integer(MAX_VAL) then
-                    next_adc_value <= std_ulogic_vector(MAX_VAL(ADC_BIT_WIDTH - 1 downto 0));
+                if (to_integer(unsigned(adc_value)) + incValue) > ADC_MAX_VAL then
+                    next_adc_value <= std_ulogic_vector(MAX_VAL);
                 else
                     next_adc_value <= std_ulogic_vector(unsigned(adc_value) + incValue);
                 end if;
@@ -109,8 +109,8 @@ begin
                 led_dbg_inc_o <= '1';
             
             when CALC_DEC => 
-                if (to_integer(unsigned(adc_value)) - incValue) < to_integer(MIN_VAL) then
-                    next_adc_value <= std_ulogic_vector(MIN_VAL(ADC_BIT_WIDTH - 1 downto 0));
+                if (to_integer(unsigned(adc_value)) - incValue) < ADC_MIN_VAL then
+                    next_adc_value <= std_ulogic_vector(MIN_VAL);
                 else
                     next_adc_value <= std_ulogic_vector(unsigned(adc_value) - incValue);
                 end if;

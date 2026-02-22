@@ -53,7 +53,7 @@ end entity;
 
 
 architecture rtl of DE2_Standard is
-	signal sevenseg : std_ulogic_vector (20 downto 0);
+	signal sevenseg : std_ulogic_vector (0 to 20);
 
 begin
 
@@ -67,15 +67,12 @@ begin
 		btnDecrement_i => KEY(2),
 		switchTen_i => SW(0),
 		dbg_en_i => SW(1),
+		switchMovingAvg_i => SW(2),
 		sevenseg_o => sevenseg,
 		ServoX_pwm_pin_o => GPIO(0),
 		x_pwm_pin_o => GPIO(1),
 		x_comp_async_i => GPIO(2),
-		dbg_adc_val_o => LEDR(ADC_BIT_WIDTH - 1 downto 0),
-		led_dbg_inc_o => LEDG(0),
-		led_dbg_dec_o => LEDG(1),
-		led_dbg_calc_inc_o => LEDG(2),
-		led_dbg_calc_dec_o => LEDG(3)
+		dbg_adc_val_o => LEDR(ADC_BIT_WIDTH - 1 downto 0)
 	);
 	
 	HEX0 <= sevenseg(6 downto 0);
