@@ -28,6 +28,8 @@ begin
 
     stimuli : process 
     begin
+        btnIncrement <= '0';
+        btnDecrement <= '0';
         rst <= '1';
         wait for 20 ns;
         rst <= '0';

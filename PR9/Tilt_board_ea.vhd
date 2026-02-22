@@ -18,7 +18,12 @@ entity Tilt_board is
 
 		x_pwm_pin_o : out std_ulogic;
 		ServoX_pwm_pin_o : out std_ulogic;
-		sevenseg_o : out std_ulogic_vector(0 to 20)
+		sevenseg_o : out std_ulogic_vector(0 to 20);
+		dbg_adc_val_o : out std_ulogic_vector(std_package.ADC_BIT_WIDTH - 1 downto 0);
+		led_dbg_inc_o : out std_ulogic;
+        led_dbg_dec_o : out std_ulogic;
+        led_dbg_calc_inc_o : out std_ulogic;
+        led_dbg_calc_dec_o : out std_ulogic
 	);
 end entity Tilt_board;
 
@@ -40,8 +45,15 @@ architecture bhv_Tilt_board of Tilt_board is
 	signal ones : std_ulogic_vector (3 downto 0);
 	signal tens : std_ulogic_vector (3 downto 0);
 	signal hundreds : std_ulogic_vector (3 downto 0);
+
+	signal rst_n, increment_n, decrement_n : std_ulogic;
 	
 begin
+	rst_n <= not(rst_i);
+	increment_n <= not(btnIncrement_i);
+	decrement_n <= not(btnDecrement_i);
+
+	dbg_adc_val_o <= dbg_adc_val;
 
 	binary <= NULL_MASK & HoldValue;
 	
@@ -51,7 +63,7 @@ begin
 	)
 	port map (
 		clk_i => clk_i,
-		rst_i => not(rst_i),
+		rst_i => rst_n,
 		input_i => x_comp_async_i,
 		output_o => comp_sync
 	);
@@ -59,12 +71,16 @@ begin
 	btnCtrl : entity work.btnCtrl
 	port map (
 		clk_i => clk_i,
-		rst_i => not(rst_i),
-		btnIncrement_i => not(btnIncrement_i),
-		btnDecrement_i => not(btnDecrement_i),
+		rst_i => rst_n,
+		btnIncrement_i => increment_n,
+		btnDecrement_i => decrement_n,
 		switchTen_i => switchTen_i,
 		adc_value_o => dbg_adc_val,
-		adc_strb_o => dbg_adc_strb	
+		adc_strb_o => dbg_adc_strb,
+		led_dbg_inc_o => led_dbg_inc_o,
+		led_dbg_dec_o => led_dbg_dec_o,
+		led_dbg_calc_inc_o => led_dbg_calc_inc_o,
+		led_dbg_calc_dec_o => led_dbg_calc_dec_o
 	);
 
 	adc : entity work.DeltaADC
@@ -74,7 +90,7 @@ begin
 		pwm_o => x_pwm_pin_o,
 		comparator_i => comp_sync,
 		clk_i => clk_i,
-		rst_i => not(rst_i),
+		rst_i => rst_n,
 		dbg_en_i => dbg_en_i,
 		dbg_valid_strb_i => dbg_adc_strb,
 		dbg_adc_val_i => dbg_adc_val
@@ -86,7 +102,7 @@ begin
 	)
 	port map (
 		clk_i => clk_i,
-		rst_i => not(rst_i),
+		rst_i => rst_n,
 		ADC_valid_strb_i => adc_valid_strb,
 		ADC_value_i => adc_val,
 		HoldValue_o => HoldValue
@@ -106,7 +122,7 @@ begin
 		clk_i => clk_i,
 		on_time_i => On_counter_val,
 		pwm_o => ServoX_pwm_pin_o,
-		reset_i => not(rst_i)
+		reset_i => rst_n
 	);
 	
 	bin2bcd : entity work.bin2bcd

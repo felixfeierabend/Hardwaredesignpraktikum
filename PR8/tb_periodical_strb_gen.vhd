@@ -11,6 +11,7 @@ architecture bhv_tb_periodical_strb_gen of tb_periodical_strb_gen is
 	constant PRESCALER : natural := 10;
 	signal clk : std_ulogic := '0';
 	signal rst : std_ulogic := '1';
+	signal sync_rst : std_ulogic := '0';
 	
 begin
 
@@ -21,6 +22,7 @@ begin
 	port map (
 		clk_i => clk,
 		rst_i => rst,
+		sync_rst_i => sync_rst,
 		strb_o => open
 	);
 	
@@ -31,7 +33,11 @@ begin
 		rst <= '1';
 		wait for 20 ns;
 		rst <= '0';
-		wait for 800 ns;
+		wait for 230 ns;
+		rst <= '1';
+		wait for 20 ns;
+		rst <= '0';
+		wait for 730 ns;
 	end process stimuli;
 
 end architecture bhv_tb_periodical_strb_gen;

@@ -1,0 +1,129 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.all;
+use work.std_package.all;
+
+entity btnCtrl is
+    port (
+        clk_i : in std_ulogic;
+        rst_i : in std_logic;
+        btnIncrement_i : in std_ulogic;
+        btnDecrement_i : in std_ulogic;
+        switchTen_i : in std_ulogic;
+        
+        adc_value_o : out std_ulogic_vector(ADC_BIT_WIDTH - 1 downto 0);
+        adc_strb_o : out std_ulogic
+    );
+end entity btnCtrl;
+
+architecture bhv_btnCtrl of btnCtrl is
+    type fsm_button_debounce_state is (IDLE, INCREMENT, decrement);
+    signal fsm_state, next_fsm_state : fsm_button_debounce_state;
+    signal adc_value, next_adc_value : std_ulogic_vector(ADC_BIT_WIDTH - 1 downto 0);
+    signal adc_strb, next_adc_strb : std_ulogic;
+    signal incValue : integer := 1;
+    signal increment_s, decrement_s, switchTen_s : std_ulogic;
+begin
+
+    increment_s <= btnIncrement_i;
+    decrement_s <= btnDecrement_i;
+    switchTen_s <= switchTen_i;
+
+    -- dbnc_increment : entity work.debouncer
+    -- generic map (
+    --     DEBOUNCE_DELAY => DEBOUNCE_DELAY_CLK_CYCLES
+    -- )
+    -- port map (
+    --     clk_i => clk_i,
+    --     rst_i => rst_i,
+    --     btn_i => btnIncrement_i,
+    --     dbnc_o => increment_s
+    -- );
+
+    -- dbnc_decrement : entity work.debouncer
+    -- generic map (
+    --     DEBOUNCE_DELAY => DEBOUNCE_DELAY_CLK_CYCLES
+    -- )
+    -- port map (
+    --     clk_i => clk_i,
+    --     rst_i => rst_i,
+    --     btn_i => btnDecrement_i,
+    --     dbnc_o => decrement_s
+    -- );
+
+    -- dbnc_switchTen : entity work.debouncer
+    -- generic map (
+    --     DEBOUNCE_DELAY => DEBOUNCE_DELAY_CLK_CYCLES
+    -- )
+    -- port map (
+    --     clk_i => clk_i,
+    --     rst_i => rst_i,
+    --     btn_i => switchTen_i,
+    --     dbnc_o => switchTen_s
+    -- );
+
+    inc_val_proc : process(switchTen_i)
+    begin
+        if switchTen_i = '1' then
+            incValue <= 1;
+        else
+            incValue <= 10;
+        end if;
+    end process;
+
+    fsm_debounce_proc : process(fsm_state, increment_s, decrement_s, switchTen_s, adc_value, adc_strb)
+    begin
+        next_fsm_state <= fsm_state;
+        next_adc_value <= adc_value;
+        next_adc_strb <= adc_strb;
+        case fsm_state is
+            when IDLE =>
+                next_adc_strb <= '0';
+                if increment_s = '1' then
+                    next_fsm_state <= INCREMENT;
+                elsif decrement_s = '1' then
+                    next_fsm_state <= DECREMENT;                    
+                end if;
+
+            when INCREMENT =>
+                next_adc_strb <= '1';
+                next_fsm_state <= IDLE;                
+
+                next_adc_value <= std_ulogic_vector(unsigned(adc_value) + incValue);
+                if (unsigned(adc_value) + incValue) > to_unsigned(ADC_MAX_VAL, ADC_BIT_WIDTH) then
+                    next_adc_value <= std_ulogic_vector(to_unsigned(ADC_MAX_VAL, ADC_BIT_WIDTH));
+                end if;
+            
+            when DECREMENT =>
+                next_adc_strb <= '1';
+                next_fsm_state <= IDLE;
+
+                next_adc_value <= std_ulogic_vector(unsigned(adc_value) - incValue);
+                if (unsigned(adc_value) - incValue) < 0 then
+                    next_adc_value <= (others => '0');
+                end if;
+
+            when others =>
+                next_fsm_state <= IDLE;
+        end case;
+    end process fsm_debounce_proc;
+
+    reg_proc : process(clk_i, rst_i)
+    begin
+        if rst_i = '1' then
+            adc_strb <= '0';
+            adc_value <= std_ulogic_vector(to_unsigned(ADC_MEAN_VAL, ADC_BIT_WIDTH));
+            fsm_state <= IDLE;
+            adc_value_o <= std_ulogic_vector(to_unsigned(ADC_MEAN_VAL, ADC_BIT_WIDTH));
+            adc_strb_o <= '0';
+        elsif rising_edge(clk_i) then
+            adc_strb <= next_adc_strb;
+            adc_strb_o <= adc_strb;
+            adc_value <= next_adc_value;
+            adc_value_o <= adc_value;
+            fsm_state <= next_fsm_state;
+        end if;
+    end process reg_proc;
+
+end architecture bhv_btnCtrl;

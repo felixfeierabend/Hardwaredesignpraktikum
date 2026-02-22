@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'btnCtrl:btnCtrl|fsm_state.IDLE'
+Slack : -1.713
+TNS   : -3.389
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -0.967
+TNS   : -1.782
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.649
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'btnCtrl:btnCtrl|fsm_state.IDLE'
+Slack : 1.302
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'btnCtrl:btnCtrl|fsm_state.IDLE'
+Slack : 0.434
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'btnCtrl:btnCtrl|fsm_state.IDLE'
+Slack : -1.549
+TNS   : -3.065
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.861
+TNS   : -1.593
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.604
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'btnCtrl:btnCtrl|fsm_state.IDLE'
+Slack : 1.274
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'btnCtrl:btnCtrl|fsm_state.IDLE'
+Slack : 0.412
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'btnCtrl:btnCtrl|fsm_state.IDLE'
+Slack : -0.490
+TNS   : -0.968
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.316
+TNS   : -0.558
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'btnCtrl:btnCtrl|fsm_state.IDLE'
+Slack : 0.759
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -5.507
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'btnCtrl:btnCtrl|fsm_state.IDLE'
+Slack : 0.474
+TNS   : 0.000
+
+------------------------------------------------------------

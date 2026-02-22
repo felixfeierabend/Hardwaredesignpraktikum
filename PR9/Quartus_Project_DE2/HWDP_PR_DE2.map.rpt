@@ -1,0 +1,977 @@
+Analysis & Synthesis report for HWDP_PR_DE2
+Sun Feb 22 14:40:33 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|fsm_state
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Tilt_board:tilt|synchronizer_chain:sync_in
+ 13. Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment
+ 14. Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen
+ 15. Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen
+ 16. Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement
+ 17. Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen
+ 18. Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen
+ 19. Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen
+ 20. Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen
+ 21. Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen
+ 22. Parameter Settings for User Entity Instance: Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen
+ 23. Parameter Settings for User Entity Instance: Tilt_board:tilt|DeltaADC:adc|PWM:pwm
+ 24. Parameter Settings for User Entity Instance: Tilt_board:tilt|HoldValueOnStrb:holdValOnStrb
+ 25. Parameter Settings for User Entity Instance: Tilt_board:tilt|Tilt:tilt
+ 26. Parameter Settings for User Entity Instance: Tilt_board:tilt|servo_controller:servoPwm|PWM:pwm
+ 27. Parameter Settings for Inferred Entity Instance: Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0
+ 28. lpm_mult Parameter Settings by Entity Instance
+ 29. Port Connectivity Checks: "Tilt_board:tilt|bin2bcd:bin2bcd"
+ 30. Port Connectivity Checks: "Tilt_board:tilt|servo_controller:servoPwm|PWM:pwm"
+ 31. Port Connectivity Checks: "Tilt_board:tilt|DeltaADC:adc|PWM:pwm"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Feb 22 14:40:33 2026           ;
+; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                      ; HWDP_PR_DE2                                     ;
+; Top-level Entity Name              ; DE2_Standard                                    ;
+; Family                             ; Cyclone IV GX                                   ;
+; Total logic elements               ; 569                                             ;
+;     Total combinational functions  ; 537                                             ;
+;     Dedicated logic registers      ; 217                                             ;
+; Total registers                    ; 217                                             ;
+; Total pins                         ; 138                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total GXB Receiver Channel PCS     ; 0                                               ;
+; Total GXB Receiver Channel PMA     ; 0                                               ;
+; Total GXB Transmitter Channel PCS  ; 0                                               ;
+; Total GXB Transmitter Channel PMA  ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CGX150DF31C7    ;                    ;
+; Top-level entity name                                            ; DE2_Standard       ; HWDP_PR_DE2        ;
+; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; ../mux_ea.vhd                    ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/mux_ea.vhd                                ;         ;
+; ../periodical_strb_gen_ea.vhd    ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/periodical_strb_gen_ea.vhd                ;         ;
+; ../debouncer_ea.vhd              ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/debouncer_ea.vhd                          ;         ;
+; ../Tilt_e.vhd                    ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_e.vhd                                ;         ;
+; ../Tilt_board_ea.vhd             ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd                         ;         ;
+; ../Tilt_a.vhd                    ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_a.vhd                                ;         ;
+; ../synchronizer_chain.vhd        ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/synchronizer_chain.vhd                    ;         ;
+; ../strb_gen_e.vhd                ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_e.vhd                            ;         ;
+; ../strb_gen_a.vhd                ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd                            ;         ;
+; ../std_package.vhd               ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/std_package.vhd                           ;         ;
+; ../ServoControl_ea.vhd           ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/ServoControl_ea.vhd                       ;         ;
+; ../pwm_e.vhd                     ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/pwm_e.vhd                                 ;         ;
+; ../pwm_a.vhd                     ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/pwm_a.vhd                                 ;         ;
+; ../HoldValueOnStrb_e.vhd         ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/HoldValueOnStrb_e.vhd                     ;         ;
+; ../HoldValueOnStrb_a.vhd         ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/HoldValueOnStrb_a.vhd                     ;         ;
+; ../deltaADC_ea.vhd               ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/deltaADC_ea.vhd                           ;         ;
+; ../DE2_Standard.vhd              ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd                          ;         ;
+; ../btnCtrl_ea.vhd                ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/btnCtrl_ea.vhd                            ;         ;
+; ../bin2bcd_ea.vhd                ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/bin2bcd_ea.vhd                            ;         ;
+; ../bcd_to_7seg_ea.vhd            ; yes             ; User VHDL File               ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/bcd_to_7seg_ea.vhd                        ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; aglobal251.inc                   ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/aglobal251.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_gkh.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Quartus_Project_DE2/db/add_sub_gkh.tdf    ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/altshift.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 138              ;
+;                          ;                  ;
+; DSP block 9-bit elements ; 0                ;
+;                          ;                  ;
+; Maximum fan-out node     ; CLOCK_50~input   ;
+; Maximum fan-out          ; 217              ;
+; Total fan-out            ; 2284             ;
+; Average fan-out          ; 2.14             ;
++--------------------------+------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                       ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                       ; Entity Name         ; Library Name ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |DE2_Standard                                     ; 537 (0)             ; 217 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 138  ; 0            ; |DE2_Standard                                                                                                                                             ; DE2_Standard        ; work         ;
+;    |Tilt_board:tilt|                              ; 537 (0)             ; 217 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt                                                                                                                             ; Tilt_board          ; work         ;
+;       |DeltaADC:adc|                              ; 106 (10)            ; 58 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|DeltaADC:adc                                                                                                                ; DeltaADC            ; work         ;
+;          |PWM:pwm|                                ; 19 (19)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|DeltaADC:adc|PWM:pwm                                                                                                        ; PWM                 ; work         ;
+;          |strobe_generator:strobe_gen|            ; 77 (77)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen                                                                                    ; strobe_generator    ; work         ;
+;       |HoldValueOnStrb:holdValOnStrb|             ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|HoldValueOnStrb:holdValOnStrb                                                                                               ; HoldValueOnStrb     ; work         ;
+;       |Tilt:tilt|                                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|Tilt:tilt                                                                                                                   ; Tilt                ; work         ;
+;       |bcd_to_7seg:bcd2sevenseg_hundreds|         ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|bcd_to_7seg:bcd2sevenseg_hundreds                                                                                           ; bcd_to_7seg         ; work         ;
+;       |bcd_to_7seg:bcd2sevenseg_ones|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|bcd_to_7seg:bcd2sevenseg_ones                                                                                               ; bcd_to_7seg         ; work         ;
+;       |bcd_to_7seg:bcd2sevenseg_tens|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|bcd_to_7seg:bcd2sevenseg_tens                                                                                               ; bcd_to_7seg         ; work         ;
+;       |bin2bcd:bin2bcd|                           ; 29 (29)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|bin2bcd:bin2bcd                                                                                                             ; bin2bcd             ; work         ;
+;       |btnCtrl:btnCtrl|                           ; 308 (71)            ; 128 (23)                  ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl                                                                                                             ; btnCtrl             ; work         ;
+;          |debouncer:dbnc_decrement|               ; 79 (2)              ; 35 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement                                                                                    ; debouncer           ; work         ;
+;             |periodical_strb_gen:strb_gen|        ; 77 (0)              ; 34 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen                                                       ; periodical_strb_gen ; work         ;
+;                |strobe_generator:strb_gen|        ; 77 (77)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen                             ; strobe_generator    ; work         ;
+;          |debouncer:dbnc_increment|               ; 79 (2)              ; 35 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment                                                                                    ; debouncer           ; work         ;
+;             |periodical_strb_gen:strb_gen|        ; 77 (0)              ; 34 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen                                                       ; periodical_strb_gen ; work         ;
+;                |strobe_generator:strb_gen|        ; 77 (77)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen                             ; strobe_generator    ; work         ;
+;          |debouncer:dbnc_switchTen|               ; 79 (2)              ; 35 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen                                                                                    ; debouncer           ; work         ;
+;             |periodical_strb_gen:strb_gen|        ; 77 (0)              ; 34 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen                                                       ; periodical_strb_gen ; work         ;
+;                |strobe_generator:strb_gen|        ; 77 (77)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen                             ; strobe_generator    ; work         ;
+;       |servo_controller:servoPwm|                 ; 70 (0)              ; 20 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|servo_controller:servoPwm                                                                                                   ; servo_controller    ; work         ;
+;          |PWM:pwm|                                ; 41 (41)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|servo_controller:servoPwm|PWM:pwm                                                                                           ; PWM                 ; work         ;
+;          |lpm_mult:Mult0|                         ; 29 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0                                                                                    ; lpm_mult            ; work         ;
+;             |multcore:mult_core|                  ; 29 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0|multcore:mult_core                                                                 ; multcore            ; work         ;
+;                |mpar_add:padder|                  ; 11 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; mpar_add            ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 11 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub         ; work         ;
+;                      |add_sub_gkh:auto_generated| ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_gkh:auto_generated ; add_sub_gkh         ; work         ;
+;       |synchronizer_chain:sync_in|                ; 0 (0)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |DE2_Standard|Tilt_board:tilt|synchronizer_chain:sync_in                                                                                                  ; synchronizer_chain  ; work         ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|fsm_state                                                    ;
++---------------------+--------------------+--------------------+---------------------+---------------------+----------------+
+; Name                ; fsm_state.CALC_DEC ; fsm_state.CALC_INC ; fsm_state.DECREMENT ; fsm_state.INCREMENT ; fsm_state.IDLE ;
++---------------------+--------------------+--------------------+---------------------+---------------------+----------------+
+; fsm_state.IDLE      ; 0                  ; 0                  ; 0                   ; 0                   ; 0              ;
+; fsm_state.INCREMENT ; 0                  ; 0                  ; 0                   ; 1                   ; 1              ;
+; fsm_state.DECREMENT ; 0                  ; 0                  ; 1                   ; 0                   ; 1              ;
+; fsm_state.CALC_INC  ; 0                  ; 1                  ; 0                   ; 0                   ; 1              ;
+; fsm_state.CALC_DEC  ; 1                  ; 0                  ; 0                   ; 0                   ; 1              ;
++---------------------+--------------------+--------------------+---------------------+---------------------+----------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 217   ;
+; Number of registers using Synchronous Clear  ; 28    ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 217   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 24    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                      ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                       ; Fan out ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value_o[0]                                                                                          ; 2       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value_o[2]                                                                                          ; 2       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value_o[3]                                                                                          ; 2       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value_o[4]                                                                                          ; 2       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value_o[5]                                                                                          ; 2       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value_o[6]                                                                                          ; 2       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value[0]                                                                                            ; 5       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value[2]                                                                                            ; 5       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value[3]                                                                                            ; 5       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value[4]                                                                                            ; 5       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value[5]                                                                                            ; 5       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|adc_value[6]                                                                                            ; 5       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|sync_rst                                          ; 33      ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|sync_rst                                          ; 33      ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[19]                                                        ; 3       ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[18]                                                        ; 3       ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[17]                                                        ; 3       ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[16]                                                        ; 3       ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[14]                                                        ; 3       ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[9]                                                         ; 3       ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[5]                                                         ; 3       ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[4]                                                         ; 3       ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[3]                                                         ; 3       ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[2]                                                         ; 3       ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[1]                                                         ; 3       ;
+; Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[0]                                                         ; 4       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[19] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[18] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[17] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[16] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[14] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[9]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[5]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[4]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[3]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[2]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[1]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[0]  ; 4       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[19] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[18] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[17] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[16] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[14] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[9]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[5]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[4]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[3]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[2]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[1]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[0]  ; 4       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|sync_rst                                          ; 33      ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[19] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[18] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[17] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[16] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[14] ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[9]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[5]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[4]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[3]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[2]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[1]  ; 3       ;
+; Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[0]  ; 4       ;
+; Total number of inverted registers = 63                                                                                                 ;         ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE2_Standard|Tilt_board:tilt|DeltaADC:adc|counter_value[1] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|adc_value[7]  ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|adc_value[5]  ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 9 LEs                ; 6 LEs                  ; No         ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|Selector1     ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|Selector2     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|synchronizer_chain:sync_in ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; chain_length   ; 2     ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment ;
++----------------+---------+----------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                       ;
++----------------+---------+----------------------------------------------------------------------------+
+; debounce_delay ; 1000000 ; Signed Integer                                                             ;
++----------------+---------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen ;
++----------------+---------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                                    ;
++----------------+---------+---------------------------------------------------------------------------------------------------------+
+; prescaler      ; 1000000 ; Signed Integer                                                                                          ;
++----------------+---------+---------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen ;
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                                                              ;
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------------------+
+; strobe_freq    ; 1000000 ; Signed Integer                                                                                                                    ;
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement ;
++----------------+---------+----------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                       ;
++----------------+---------+----------------------------------------------------------------------------+
+; debounce_delay ; 1000000 ; Signed Integer                                                             ;
++----------------+---------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen ;
++----------------+---------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                                    ;
++----------------+---------+---------------------------------------------------------------------------------------------------------+
+; prescaler      ; 1000000 ; Signed Integer                                                                                          ;
++----------------+---------+---------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen ;
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                                                              ;
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------------------+
+; strobe_freq    ; 1000000 ; Signed Integer                                                                                                                    ;
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen ;
++----------------+---------+----------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                       ;
++----------------+---------+----------------------------------------------------------------------------+
+; debounce_delay ; 1000000 ; Signed Integer                                                             ;
++----------------+---------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen ;
++----------------+---------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                                    ;
++----------------+---------+---------------------------------------------------------------------------------------------------------+
+; prescaler      ; 1000000 ; Signed Integer                                                                                          ;
++----------------+---------+---------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen ;
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                                                              ;
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------------------+
+; strobe_freq    ; 1000000 ; Signed Integer                                                                                                                    ;
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen ;
++----------------+---------+----------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                       ;
++----------------+---------+----------------------------------------------------------------------------+
+; strobe_freq    ; 1000000 ; Signed Integer                                                             ;
++----------------+---------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|DeltaADC:adc|PWM:pwm ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; counter_len    ; 8     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|HoldValueOnStrb:holdValOnStrb ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; resolution     ; 8     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|Tilt:tilt ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; resolution     ; 8     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Tilt_board:tilt|servo_controller:servoPwm|PWM:pwm ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; counter_len    ; 20    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0 ;
++------------------------------------------------+---------------+------------------------------------------+
+; Parameter Name                                 ; Value         ; Type                                     ;
++------------------------------------------------+---------------+------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON            ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF           ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS                            ; ON            ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF           ; IGNORE_CASCADE                           ;
+; LPM_WIDTHA                                     ; 8             ; Untyped                                  ;
+; LPM_WIDTHB                                     ; 9             ; Untyped                                  ;
+; LPM_WIDTHP                                     ; 17            ; Untyped                                  ;
+; LPM_WIDTHR                                     ; 17            ; Untyped                                  ;
+; LPM_WIDTHS                                     ; 1             ; Untyped                                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED      ; Untyped                                  ;
+; LPM_PIPELINE                                   ; 0             ; Untyped                                  ;
+; LATENCY                                        ; 0             ; Untyped                                  ;
+; INPUT_A_IS_CONSTANT                            ; NO            ; Untyped                                  ;
+; INPUT_B_IS_CONSTANT                            ; YES           ; Untyped                                  ;
+; USE_EAB                                        ; OFF           ; Untyped                                  ;
+; MAXIMIZE_SPEED                                 ; 5             ; Untyped                                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV GX ; Untyped                                  ;
+; CARRY_CHAIN                                    ; MANUAL        ; Untyped                                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT           ; TECH_MAPPER_APEX20K                      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO          ; Untyped                                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0             ; Untyped                                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0             ; Untyped                                  ;
+; CBXI_PARAMETER                                 ; NOTHING       ; Untyped                                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx            ; Untyped                                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx            ; Untyped                                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF           ; Untyped                                  ;
++------------------------------------------------+---------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                   ;
++---------------------------------------+----------------------------------------------------------+
+; Name                                  ; Value                                                    ;
++---------------------------------------+----------------------------------------------------------+
+; Number of entity instances            ; 1                                                        ;
+; Entity Instance                       ; Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 8                                                        ;
+;     -- LPM_WIDTHB                     ; 9                                                        ;
+;     -- LPM_WIDTHP                     ; 17                                                       ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                 ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                       ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                      ;
+;     -- USE_EAB                        ; OFF                                                      ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                     ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                       ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                       ;
++---------------------------------------+----------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Tilt_board:tilt|bin2bcd:bin2bcd"                                                               ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; binary_i[15..8] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; thousands_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; tenthousands_o  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Tilt_board:tilt|servo_controller:servoPwm|PWM:pwm" ;
++------------------------------+-------+----------+-----------------------------+
+; Port                         ; Type  ; Severity ; Details                     ;
++------------------------------+-------+----------+-----------------------------+
+; period_counter_val_i[19..16] ; Input ; Info     ; Stuck at VCC                ;
+; period_counter_val_i[13..10] ; Input ; Info     ; Stuck at GND                ;
+; period_counter_val_i[8..7]   ; Input ; Info     ; Stuck at GND                ;
+; period_counter_val_i[5..0]   ; Input ; Info     ; Stuck at GND                ;
+; period_counter_val_i[15]     ; Input ; Info     ; Stuck at GND                ;
+; period_counter_val_i[14]     ; Input ; Info     ; Stuck at VCC                ;
+; period_counter_val_i[9]      ; Input ; Info     ; Stuck at VCC                ;
+; period_counter_val_i[6]      ; Input ; Info     ; Stuck at VCC                ;
++------------------------------+-------+----------+-----------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "Tilt_board:tilt|DeltaADC:adc|PWM:pwm" ;
++----------------------------+-------+----------+------------------+
+; Port                       ; Type  ; Severity ; Details          ;
++----------------------------+-------+----------+------------------+
+; period_counter_val_i[7..3] ; Input ; Info     ; Stuck at VCC     ;
+; period_counter_val_i[2]    ; Input ; Info     ; Stuck at GND     ;
+; period_counter_val_i[1]    ; Input ; Info     ; Stuck at VCC     ;
+; period_counter_val_i[0]    ; Input ; Info     ; Stuck at GND     ;
++----------------------------+-------+----------+------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 138                         ;
+; cycloneiii_ff         ; 217                         ;
+;     CLR               ; 165                         ;
+;     CLR SCLR          ; 28                          ;
+;     ENA CLR           ; 16                          ;
+;     ENA CLR SLD       ; 8                           ;
+; cycloneiii_io_obuf    ; 37                          ;
+; cycloneiii_lcell_comb ; 543                         ;
+;     arith             ; 221                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 174                         ;
+;         3 data inputs ; 46                          ;
+;     normal            ; 322                         ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 69                          ;
+;         2 data inputs ; 90                          ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 145                         ;
+;                       ;                             ;
+; Max LUT depth         ; 6.30                        ;
+; Average LUT depth     ; 3.85                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Sun Feb 22 14:40:27 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HWDP_PR_DE2 -c HWDP_PR_DE2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Warning (12090): Entity "mux" obtained from "../mux_ea.vhd" instead of from Quartus Prime megafunction library File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/mux_ea.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/mux_ea.vhd
+    Info (12022): Found design unit 1: mux-bhv_mux File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/mux_ea.vhd Line: 13
+    Info (12023): Found entity 1: mux File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/mux_ea.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/periodical_strb_gen_ea.vhd
+    Info (12022): Found design unit 1: periodical_strb_gen-bhv_strb_gen File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/periodical_strb_gen_ea.vhd Line: 18
+    Info (12023): Found entity 1: periodical_strb_gen File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/periodical_strb_gen_ea.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/debouncer_ea.vhd
+    Info (12022): Found design unit 1: debouncer-bhv_debouncer File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/debouncer_ea.vhd Line: 21
+    Info (12023): Found entity 1: debouncer File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/debouncer_ea.vhd Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_e.vhd
+    Info (12023): Found entity 1: Tilt File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_e.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd
+    Info (12022): Found design unit 1: Tilt_board-bhv_Tilt_board File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd Line: 30
+    Info (12023): Found entity 1: Tilt_board File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd Line: 7
+Info (12021): Found 1 design units, including 0 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_a.vhd
+    Info (12022): Found design unit 1: Tilt-bhv_Tilt File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_a.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/synchronizer_chain.vhd
+    Info (12022): Found design unit 1: synchronizer_chain-bhv_synchronizer_chain File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/synchronizer_chain.vhd Line: 19
+    Info (12023): Found entity 1: synchronizer_chain File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/synchronizer_chain.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_e.vhd
+    Info (12023): Found entity 1: strobe_generator File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_e.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd
+    Info (12022): Found design unit 1: strobe_generator-bhv_strobe_generator File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/std_package.vhd
+    Info (12022): Found design unit 1: std_package File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/std_package.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/ServoControl_ea.vhd
+    Info (12022): Found design unit 1: servo_controller-bhv_servo_controller File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/ServoControl_ea.vhd Line: 18
+    Info (12023): Found entity 1: servo_controller File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/ServoControl_ea.vhd Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/pwm_e.vhd
+    Info (12023): Found entity 1: PWM File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/pwm_e.vhd Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/pwm_a.vhd
+    Info (12022): Found design unit 1: Pwm-Bhv_Pwm File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/pwm_a.vhd Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/HoldValueOnStrb_e.vhd
+    Info (12023): Found entity 1: HoldValueOnStrb File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/HoldValueOnStrb_e.vhd Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/HoldValueOnStrb_a.vhd
+    Info (12022): Found design unit 1: HoldValueOnStrb-bhv_HoldValueOnStrb File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/HoldValueOnStrb_a.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/deltaADC_ea.vhd
+    Info (12022): Found design unit 1: DeltaADC-bhv_DeltaADC File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/deltaADC_ea.vhd Line: 22
+    Info (12023): Found entity 1: DeltaADC File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/deltaADC_ea.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd
+    Info (12022): Found design unit 1: DE2_Standard-rtl File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 55
+    Info (12023): Found entity 1: DE2_Standard File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/btnCtrl_ea.vhd
+    Info (12022): Found design unit 1: btnCtrl-bhv_btnCtrl File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/btnCtrl_ea.vhd Line: 24
+    Info (12023): Found entity 1: btnCtrl File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/btnCtrl_ea.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/bin2bcd_ea.vhd
+    Info (12022): Found design unit 1: bin2bcd-rtl File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/bin2bcd_ea.vhd Line: 16
+    Info (12023): Found entity 1: bin2bcd File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/bin2bcd_ea.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/bcd_to_7seg_ea.vhd
+    Info (12022): Found design unit 1: bcd_to_7seg-rtl File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/bcd_to_7seg_ea.vhd Line: 13
+    Info (12023): Found entity 1: bcd_to_7seg File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/bcd_to_7seg_ea.vhd Line: 7
+Info (12127): Elaborating entity "DE2_Standard" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at DE2_Standard.vhd(31): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 31
+Warning (10541): VHDL Signal Declaration warning at DE2_Standard.vhd(32): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 32
+Warning (10541): VHDL Signal Declaration warning at DE2_Standard.vhd(33): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 33
+Warning (10541): VHDL Signal Declaration warning at DE2_Standard.vhd(34): used implicit default value for signal "HEX7" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 34
+Warning (10873): Using initial value X (don't care) for net "LEDG[8..4]" at DE2_Standard.vhd(40) File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 40
+Warning (10873): Using initial value X (don't care) for net "LEDR[17..8]" at DE2_Standard.vhd(41) File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 41
+Info (12128): Elaborating entity "Tilt_board" for hierarchy "Tilt_board:tilt" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 62
+Info (12128): Elaborating entity "synchronizer_chain" for hierarchy "Tilt_board:tilt|synchronizer_chain:sync_in" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd Line: 60
+Info (12128): Elaborating entity "btnCtrl" for hierarchy "Tilt_board:tilt|btnCtrl:btnCtrl" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at btnCtrl_ea.vhd(97): signal "incValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/btnCtrl_ea.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at btnCtrl_ea.vhd(100): signal "incValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/btnCtrl_ea.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at btnCtrl_ea.vhd(113): signal "incValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/btnCtrl_ea.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at btnCtrl_ea.vhd(116): signal "incValue" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/btnCtrl_ea.vhd Line: 116
+Info (12128): Elaborating entity "debouncer" for hierarchy "Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/btnCtrl_ea.vhd Line: 36
+Info (12128): Elaborating entity "periodical_strb_gen" for hierarchy "Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/debouncer_ea.vhd Line: 24
+Info (12128): Elaborating entity "strobe_generator" for hierarchy "Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/periodical_strb_gen_ea.vhd Line: 21
+Info (12128): Elaborating entity "DeltaADC" for hierarchy "Tilt_board:tilt|DeltaADC:adc" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd Line: 86
+Info (12128): Elaborating entity "PWM" for hierarchy "Tilt_board:tilt|DeltaADC:adc|PWM:pwm" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/deltaADC_ea.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at pwm_a.vhd(25): signal "ON_counter_val_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/pwm_a.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at pwm_a.vhd(27): signal "Period_counter_val_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/pwm_a.vhd Line: 27
+Info (12128): Elaborating entity "HoldValueOnStrb" for hierarchy "Tilt_board:tilt|HoldValueOnStrb:holdValOnStrb" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at HoldValueOnStrb_a.vhd(25): signal "ADC_value_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/HoldValueOnStrb_a.vhd Line: 25
+Info (12128): Elaborating entity "Tilt" for hierarchy "Tilt_board:tilt|Tilt:tilt" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd Line: 111
+Info (12128): Elaborating entity "servo_controller" for hierarchy "Tilt_board:tilt|servo_controller:servoPwm" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd Line: 120
+Info (12128): Elaborating entity "PWM" for hierarchy "Tilt_board:tilt|servo_controller:servoPwm|PWM:pwm" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/ServoControl_ea.vhd Line: 23
+Warning (10492): VHDL Process Statement warning at pwm_a.vhd(25): signal "ON_counter_val_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/pwm_a.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at pwm_a.vhd(27): signal "Period_counter_val_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/pwm_a.vhd Line: 27
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "Tilt_board:tilt|bin2bcd:bin2bcd" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd Line: 128
+Info (12128): Elaborating entity "bcd_to_7seg" for hierarchy "Tilt_board:tilt|bcd_to_7seg:bcd2sevenseg_ones" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Tilt_board_ea.vhd Line: 138
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Tilt_board:tilt|servo_controller:servoPwm|Mult0" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/ServoControl_ea.vhd Line: 21
+Info (12130): Elaborated megafunction instantiation "Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/ServoControl_ea.vhd Line: 21
+Info (12133): Instantiated megafunction "Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0" with the following parameter: File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/ServoControl_ea.vhd Line: 21
+    Info (12134): Parameter "LPM_WIDTHA" = "8"
+    Info (12134): Parameter "LPM_WIDTHB" = "9"
+    Info (12134): Parameter "LPM_WIDTHP" = "17"
+    Info (12134): Parameter "LPM_WIDTHR" = "17"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0" File: /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0" File: /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0" File: /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_gkh.tdf
+    Info (12023): Found entity 1: add_sub_gkh File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/Quartus_Project_DE2/db/add_sub_gkh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "Tilt_board:tilt|servo_controller:servoPwm|lpm_mult:Mult0" File: /home/felix/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[0]" and its non-tri-state driver. File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[1]" and its non-tri-state driver. File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO[2]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[3]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[4]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[5]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[6]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[7]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[8]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[9]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[10]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[11]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[12]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[13]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[14]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[15]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[16]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[17]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[18]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[19]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[20]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[21]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[22]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[23]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[24]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[25]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[26]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[29]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[30]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[31]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[32]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[33]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[34]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13040): bidirectional pin "GPIO[35]" has no driver File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+Warning (13032): The following tri-state nodes are fed by constants
+    Warning (13033): The pin "FAN_CTRL" is fed by GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 43
+Info (13000): Registers with preset signals will power-up high File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/btnCtrl_ea.vhd Line: 136
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO[0]~synth" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+    Warning (13010): Node "GPIO[1]~synth" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 37
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 28
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 31
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 31
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 31
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 31
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 31
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 31
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 31
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 32
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 32
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 32
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 32
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 32
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 32
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 32
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 33
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 33
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 33
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 33
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 33
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 33
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 33
+    Warning (13410): Pin "HEX7[0]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 34
+    Warning (13410): Pin "HEX7[1]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 34
+    Warning (13410): Pin "HEX7[2]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 34
+    Warning (13410): Pin "HEX7[3]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 34
+    Warning (13410): Pin "HEX7[4]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 34
+    Warning (13410): Pin "HEX7[5]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 34
+    Warning (13410): Pin "HEX7[6]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 34
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 40
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 40
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 40
+    Warning (13410): Pin "LEDG[7]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 40
+    Warning (13410): Pin "LEDG[8]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 40
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 41
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 41
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 41
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 41
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 41
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 41
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 41
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 41
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 41
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 41
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[19] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[18] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[17] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[16] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[14] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[9] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[5] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[4] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[3] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[2] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[1] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|DeltaADC:adc|strobe_generator:strobe_gen|cycles_until_strobe[0] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[19] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[18] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[17] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[16] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[14] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[9] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[5] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[4] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[3] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[2] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[1] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_increment|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[0] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[19] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[18] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[17] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[16] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[14] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[9] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[5] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[4] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[3] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[2] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[1] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_decrement|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[0] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[19] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[18] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[17] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[16] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[14] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[9] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[5] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[4] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[3] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[2] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[1] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+    Critical Warning (18010): Register Tilt_board:tilt|btnCtrl:btnCtrl|debouncer:dbnc_switchTen|periodical_strb_gen:strb_gen|strobe_generator:strb_gen|cycles_until_strobe[0] will power up to High File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/strb_gen_a.vhd Line: 13
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 19 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 17
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 18
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 22
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[10]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[11]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[12]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[13]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[14]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[15]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[16]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[17]" File: /home/felix/DEV/Uni/WS2025/Hardwaredesign/PR9/DE2_Standard.vhd Line: 25
+Info (21057): Implemented 708 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 25 input pins
+    Info (21059): Implemented 76 output pins
+    Info (21060): Implemented 37 bidirectional pins
+    Info (21061): Implemented 570 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 174 warnings
+    Info: Peak virtual memory: 575 megabytes
+    Info: Processing ended: Sun Feb 22 14:40:33 2026
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:15
+
+

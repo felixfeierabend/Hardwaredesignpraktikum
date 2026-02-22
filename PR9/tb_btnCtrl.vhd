@@ -44,9 +44,9 @@ begin
         increment <= '0'; 
         wait for 1 ns;
         increment <= '1';
-        wait for 16 ns;
+        wait for 35 ns;
         increment <= '0';
-        wait for 60 ns;
+        wait for 100 ns;
 
         
     end process stimuli;

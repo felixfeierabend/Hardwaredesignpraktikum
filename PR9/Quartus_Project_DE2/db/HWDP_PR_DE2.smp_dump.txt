@@ -1,0 +1,8 @@
+
+State Machine - |DE2_Standard|Tilt_board:tilt|btnCtrl:btnCtrl|fsm_state
+Name fsm_state.CALC_DEC fsm_state.CALC_INC fsm_state.DECREMENT fsm_state.INCREMENT fsm_state.IDLE 
+fsm_state.IDLE 0 0 0 0 0 
+fsm_state.INCREMENT 0 0 0 1 1 
+fsm_state.DECREMENT 0 0 1 0 1 
+fsm_state.CALC_INC 0 1 0 0 1 
+fsm_state.CALC_DEC 1 0 0 0 1 

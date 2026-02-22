@@ -1,0 +1,20 @@
+Fitter Status : Successful - Sun Feb 22 14:40:45 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : HWDP_PR_DE2
+Top-level Entity Name : DE2_Standard
+Family : Cyclone IV GX
+Device : EP4CGX150DF31C7
+Timing Models : Final
+Total logic elements : 556 / 149,760 ( < 1 % )
+    Total combinational functions : 537 / 149,760 ( < 1 % )
+    Dedicated logic registers : 217 / 149,760 ( < 1 % )
+Total registers : 217
+Total pins : 138 / 508 ( 27 % )
+Total virtual pins : 0
+Total memory bits : 0 / 6,635,520 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 720 ( 0 % )
+Total GXB Receiver Channel PCS : 0 / 8 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 8 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 8 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 8 ( 0 % )
+Total PLLs : 0 / 8 ( 0 % )
