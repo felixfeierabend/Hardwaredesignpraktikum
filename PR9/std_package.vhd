@@ -35,9 +35,6 @@ package std_package is
 	constant SERVO_RANGE_LEN : natural := integer(ceil(log2(real(SERVO_RANGE_TICKS))));
 	constant SCALE_FACTOR_INPUT : natural := integer(real(SERVO_RANGE_TICKS) / real(ADC_MAX_VAL));
 
-	constant PEN_DOWN_VAL : natural := 0;
-	constant PEN_UP_VAL : natural := 2**SERVO_CNT_LEN - 1;
-
 	-- tilt-constants
 
 	constant MIN_VOLTAGE : real := 2.0;
@@ -63,5 +60,9 @@ package std_package is
 	
 	constant DEBOUNCE_DELAY_TIME : real := 0.02;
 	constant DEBOUNCE_DELAY_CLK_CYCLES : natural := natural(ceil(real(CLK_FREQ) * DEBOUNCE_DELAY_TIME));
+
+	constant PEN_DOWN_VAL : natural := 0;
+	-- constant PEN_UP_VAL : natural := 2**SERVO_CNT_LEN - 1;
+	constant PEN_UP_VAL : natural := TILT_MAX_VAL;
 
 end package std_package;

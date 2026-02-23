@@ -16,6 +16,8 @@ entity cmd_proc is
 		
 		x_out : out std_ulogic_vector (SERVO_CNT_LEN - 1 downto 0);
 		y_out : out std_ulogic_vector (SERVO_CNT_LEN - 1 downto 0);
-		z_out : out std_ulogic_vector (SERVO_CNT_LEN - 1 downto 0)
+		z_out : out std_ulogic_vector (SERVO_CNT_LEN - 1 downto 0);
+
+		dbg_strb_o : out std_ulogic
 	);
 end entity;
