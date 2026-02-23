@@ -109,8 +109,8 @@ begin
                 led_dbg_inc_o <= '1';
             
             when CALC_DEC => 
-                if (to_integer(unsigned(adc_value)) - incValue) < ADC_MIN_VAL then
-                    next_adc_value <= std_ulogic_vector(MIN_VAL);
+                if (to_integer(unsigned(adc_value)) - incValue) < 0 then
+                    next_adc_value <= (others => '0');
                 else
                     next_adc_value <= std_ulogic_vector(unsigned(adc_value) - incValue);
                 end if;

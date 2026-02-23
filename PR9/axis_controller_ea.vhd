@@ -65,7 +65,7 @@ begin
     en_dbg_x_axis <= not(sw_dbg_y_axis_sync) and sw_en_dbg_sync;
     en_dbg_y_axis <= sw_dbg_y_axis_sync and sw_en_dbg_sync;
 
-    On_counter_val_tilt_z <= 0; -- TODO!!!!!
+    On_counter_val_tilt_z <= PEN_DOWN_VAL when sw_z_axis_sync = '0' else PEN_UP_VAL; 
 
     On_counter_val_sel_x <= to_integer(unsigned(On_counter_val_proc_x)) when processing = '1' else On_counter_val_tilt_x;
     On_counter_val_sel_y <= to_integer(unsigned(On_counter_val_proc_y)) when processing = '1' else On_coutner_val_tilt_y;
@@ -173,10 +173,18 @@ begin
 		reset_i => rst_n
 	);
 
+    servoPwmZ : entity work.servo_controller
+    port map (
+        clk_i => clk_i,
+        on_time_i => On_counter_val_sel_z,
+        pwm_o => ServoZ_pwm_pin_o,
+        reset_i => rst_n
+    );
+
     cmd_proc : entity work.cmd_proc
     generic map (
         SERVO_CNT_LEN => SERVO_CNT_LEN,
-        WAIT_PRESCALER => SERVO_PERIOD_TICKS,
+        WAIT_PRESCALER => CMD_SCALER,
         D => DIVFACTORBW
     )
     port map (
