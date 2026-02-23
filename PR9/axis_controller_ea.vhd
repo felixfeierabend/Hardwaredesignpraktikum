@@ -32,9 +32,7 @@ entity axis_controller is
 
         ServoX_pwm_pin_o : out std_ulogic;
         ServoY_pwm_pin_o : out std_ulogic;
-        ServoZ_pwm_pin_o : out std_ulogic;
-
-        dbg_strb_o : out std_ulogic
+        ServoZ_pwm_pin_o : out std_ulogic
     );
 end entity axis_controller;
 
@@ -196,8 +194,7 @@ begin
         StartStrb_i => K_start_strb,
         x_out => On_counter_val_proc_x,
         y_out => On_counter_val_proc_y,
-        z_out => On_counter_val_proc_z,
-        dbg_strb_o => dbg_strb_o
+        z_out => On_counter_val_proc_z
     );
 
     drawK_strbgen : entity work.strbgen_K

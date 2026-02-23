@@ -84,9 +84,7 @@ begin
 		y_comp_async => GPIO(6),
 
 		x_sevenseg_o => sevenseg_x,
-		y_sevenseg_o => sevenseg_y,
-
-		dbg_strb_o => GPIO(7)
+		y_sevenseg_o => sevenseg_y
 
 	);
 	

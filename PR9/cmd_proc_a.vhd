@@ -35,8 +35,6 @@ begin
 		sync_rst_i => rst_i,
 		strb_o => wait_strb
 	);
-
-	dbg_strb_o <= wait_strb;
 	
 	x_out <= r_sum(SERVO_CNT_LEN + D - 1 downto D);
 	y_out <= theta_sum(SERVO_CNT_LEN + D - 1 downto D);
@@ -59,7 +57,7 @@ begin
 		end if;
 	end process reg_proc;
 	
-	fsm_comb : process(fsm_state, StartStrb_i, wait_strb, r_sum, theta_sum)
+	fsm_comb : process(fsm_state, StartStrb_i, wait_strb)
 	begin
 		next_fsm_state <= fsm_state;
 		next_address <= address;
@@ -93,12 +91,16 @@ begin
 				end if;
 			when WAIT_FOR_STROBE =>
 				sequential_rst <= '0';
+				next_r_sum <= std_ulogic_vector(unsigned(r_sum) + unsigned(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1)));
+				next_theta_sum <= std_ulogic_vector(unsigned(theta_sum) + unsigned(command_data(SERVO_CNT_LEN - 1 downto 0)));
 				drawing_o <= '1';
 				if wait_strb = '1' then
 					next_fsm_state <= WAIT_COMPLETE;
 				end if;
 			when WAIT_COMPLETE =>
 				drawing_o <= '1';
+				next_r_sum <= std_ulogic_vector(unsigned(r_sum) + unsigned(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1)));
+				next_theta_sum <= std_ulogic_vector(unsigned(theta_sum) + unsigned(command_data(SERVO_CNT_LEN - 1 downto 0)));
 				sequential_rst <= '1';
 				next_command_count <= command_count + 1;
 				next_address <= address + 1;

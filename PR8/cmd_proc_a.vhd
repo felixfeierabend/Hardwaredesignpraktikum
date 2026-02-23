@@ -4,14 +4,15 @@ use ieee.numeric_std.all;
 
 use work.all;
 use work.std_package.all;
+use work.commands.all;
 
 architecture bhv_cmd_proc of work.cmd_proc is 
 	type fsm_state_type is (IDLE, WAIT_FOR_STROBE, DRAWING, WAIT_COMPLETE);
 	signal fsm_state, next_fsm_state : fsm_state_type;
-	signal address, next_address : unsigned (COMCNTBW - 1 downto 0);
+	signal address, next_address : unsigned (commands.COMCNTBW - 1 downto 0);
 	signal command_data : std_ulogic_vector (2 * SERVO_CNT_LEN - 1 downto 0);
-	signal r_sum : std_ulogic_vector(SERVO_CNT_LEN + D - 1 downto 0) := std_ulogic_vector(to_unsigned(SERVO_MIN_TICKS, SERVO_CNT_LEN + D));
-	signal theta_sum : std_ulogic_vector(SERVO_CNT_LEN + D - 1 downto 0) := std_ulogic_vector(to_unsigned(SERVO_MIN_TICKS + SERVO_PERIOD_TICKS / 2, SERVO_CNT_LEN + D));
+	signal r_sum, next_r_sum : std_ulogic_vector(SERVO_CNT_LEN + D - 1 downto 0) := std_ulogic_vector(to_unsigned(SERVO_MIN_TICKS, SERVO_CNT_LEN + D));
+	signal theta_sum, next_theta_sum : std_ulogic_vector(SERVO_CNT_LEN + D - 1 downto 0) := std_ulogic_vector(to_unsigned(SERVO_MIN_TICKS + SERVO_PERIOD_TICKS / 2, SERVO_CNT_LEN + D));
 	signal sequential_rst, wait_strb : std_ulogic;
 	signal command_count, next_command_count : integer;
 	signal z_value, next_z_value : std_ulogic_vector (SERVO_CNT_LEN - 1 downto 0);
@@ -94,8 +95,8 @@ begin
 				end if;
 			when WAIT_COMPLETE =>
 				drawing_o <= '1';
-				r_sum <= std_ulogic_vector(unsigned(r_sum) + unsigned(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1)));
-				theta_sum <= std_ulogic_vector(unsigned(theta_sum) + unsigned(command_data(SERVO_CNT_LEN - 1 downto 0)));
+				next_r_sum <= std_ulogic_vector(unsigned(r_sum) + unsigned(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1)));
+				next_theta_sum <= std_ulogic_vector(unsigned(theta_sum) + unsigned(command_data(SERVO_CNT_LEN - 1 downto 0)));
 				sequential_rst <= '1';
 				next_command_count <= command_count + 1;
 				next_address <= address + 1;

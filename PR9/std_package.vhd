@@ -55,6 +55,7 @@ package std_package is
 
 	--cmd proc constants
 	constant CMD_SCALER : natural := integer(floor(real(CLK_FREQ) / real(SERVO_FREQ)));
+	--constant CMD_SCALER : natural := 1;
 
 	-- debounce
 	

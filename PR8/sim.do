@@ -15,4 +15,4 @@ vsim work.tb_cmd_proc
 
 add wave -r *
 
-run 51 ms
+run 101 ms
