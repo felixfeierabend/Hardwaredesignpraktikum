@@ -4,6 +4,7 @@ use ieee.numeric_std.all;
 
 use work.all;
 use work.std_package.all;
+use work.commands.all;
 
 architecture bhv_cmd_proc of work.cmd_proc is 
 	type fsm_state_type is (IDLE, WAIT_FOR_STROBE, DRAWING, WAIT_COMPLETE);

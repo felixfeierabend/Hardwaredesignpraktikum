@@ -12,11 +12,13 @@ entity Tilt_board is
 		x_comp_async_i : in std_ulogic;
 
 		dbg_en_i : in std_ulogic;
-		
+		dbg_adc_val_i : in std_ulogic_vector(std_package.ADC_BIT_WIDTH - 1 downto 0);
+		dbg_adc_valid_strb_i : in std_ulogic;
+		switchMovingAvg_i : in std_ulogic;
+
 		x_pwm_pin_o : out std_ulogic;
-		ServoX_pwm_pin_o : out std_ulogic;
-		sevenseg_o : out std_ulogic_vector(0 to 20);
-		dbg_adc_val_o : out std_ulogic_vector(std_package.ADC_BIT_WIDTH - 1 downto 0)
+		On_counter_val_tilt_o : out natural;
+		sevenseg_o : out std_ulogic_vector(0 to 20)
 	);
 end entity Tilt_board;
 
@@ -29,11 +31,7 @@ architecture bhv_Tilt_board of Tilt_board is
 	signal adc_valid_strb : std_ulogic;
 	signal adc_val : std_ulogic_vector (std_package.ADC_BIT_WIDTH - 1 downto 0);
 	signal comp_sync : std_ulogic;
-	signal On_counter_val : natural;
 	signal binary : std_ulogic_vector (15 downto 0);
-
-	signal dbg_adc_val : std_ulogic_vector (std_package.ADC_BIT_WIDTH - 1 downto 0);
-	signal dbg_adc_strb : std_ulogic;
 
 	signal moving_avg_data : unsigned(ADC_BIT_WIDTH - 1 downto 0);
 	signal moving_avg_strb : std_ulogic;
@@ -49,10 +47,6 @@ architecture bhv_Tilt_board of Tilt_board is
 	
 begin
 	rst_n <= not(rst_i);
-	increment_n <= not(btnIncrement_i);
-	decrement_n <= not(btnDecrement_i);
-
-	dbg_adc_val_o <= dbg_adc_val;
 
 	binary <= NULL_MASK & HoldValue;
 
@@ -83,21 +77,6 @@ begin
 		input_i => x_comp_async_i,
 		output_o => comp_sync
 	);
-	
-	btnCtrl : entity work.btnCtrl
-	port map (
-		clk_i => clk_i,
-		rst_i => rst_n,
-		btnIncrement_i => increment_n,
-		btnDecrement_i => decrement_n,
-		switchTen_i => switchTen_i,
-		adc_value_o => dbg_adc_val,
-		adc_strb_o => dbg_adc_strb,
-		led_dbg_inc_o => open,
-		led_dbg_dec_o => open,
-		led_dbg_calc_inc_o => open,
-		led_dbg_calc_dec_o => open
-	);
 
 	adc : entity work.DeltaADC
 	port map (
@@ -108,8 +87,8 @@ begin
 		clk_i => clk_i,
 		rst_i => rst_n,
 		dbg_en_i => dbg_en_i,
-		dbg_valid_strb_i => dbg_adc_strb,
-		dbg_adc_val_i => dbg_adc_val
+		dbg_valid_strb_i => dbg_adc_valid_strb_i,
+		dbg_adc_val_i => dbg_adc_val_i
 	);
 	
 	holdValOnStrb : entity work.HoldValueOnStrb
@@ -130,15 +109,7 @@ begin
 	)
 	port map (
 		HoldValue_i => HoldValue,
-		On_counter_val_o => On_counter_val
-	);
-	
-	servoPwm : entity work.servo_controller
-	port map (
-		clk_i => clk_i,
-		on_time_i => On_counter_val,
-		pwm_o => ServoX_pwm_pin_o,
-		reset_i => rst_n
+		On_counter_val_o => On_counter_val_tilt_o
 	);
 	
 	bin2bcd : entity work.bin2bcd

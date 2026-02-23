@@ -25,13 +25,13 @@ port
 	SW              	:in    	std_ulogic_vector(17 downto 0);
 
 	------------ Seg7 ------------
-	HEX0            	:out   	std_ulogic_vector(6 downto 0);
-	HEX1            	:out   	std_ulogic_vector(6 downto 0);
-	HEX2            	:out   	std_ulogic_vector(6 downto 0);
-	HEX3            	:out   	std_ulogic_vector(6 downto 0);
-	HEX4            	:out   	std_ulogic_vector(6 downto 0);
-	HEX5            	:out   	std_ulogic_vector(6 downto 0);
-	HEX7				:out	std_ulogic_vector(6 downto 0);
+	HEX0            	:out   	std_ulogic_vector(0 to 6);
+	HEX1            	:out   	std_ulogic_vector(0 to 6);
+	HEX2            	:out   	std_ulogic_vector(0 to 6);
+	HEX3            	:out   	std_ulogic_vector(0 to 6);
+	HEX4            	:out   	std_ulogic_vector(0 to 6);
+	HEX5            	:out   	std_ulogic_vector(0 to 6);
+	HEX7					:out		std_ulogic_vector(0 to 6);
 	
 	------------ GPIO ------------
 	GPIO				:inout	std_ulogic_vector(35 downto 0);
@@ -53,31 +53,50 @@ end entity;
 
 
 architecture rtl of DE2_Standard is
-	signal sevenseg : std_ulogic_vector (0 to 20);
+	signal sevenseg_x : std_ulogic_vector (0 to 20);
+	signal sevenseg_y : std_ulogic_vector (0 to 20);
 
 begin
 
 	FAN_CTRL <= '0';
 
-	tilt : entity work.Tilt_board
+	axis_controller : entity work.axis_controller
 	port map (
 		clk_i => CLOCK_50,
+
 		rst_i => KEY(0),
-		btnIncrement_i => KEY(1),
-		btnDecrement_i => KEY(2),
-		switchTen_i => SW(0),
-		dbg_en_i => SW(1),
-		switchMovingAvg_i => SW(2),
-		sevenseg_o => sevenseg,
+		btn_dbg_inc_async => KEY(1),
+		btn_dbg_dec_async => KEY(2),
+		btn_drawK_async => KEY(3),
+
+		sw_dbg_10_async => SW(0),
+		sw_en_dbg_async => SW(1),
+		sw_en_filter_async => SW(2),
+		sw_dbg_y_axis_async => SW(3),
+		sw_z_axis_async => SW(4),
+
 		ServoX_pwm_pin_o => GPIO(0),
-		x_pwm_pin_o => GPIO(1),
-		x_comp_async_i => GPIO(2),
-		dbg_adc_val_o => LEDR(ADC_BIT_WIDTH - 1 downto 0)
+		ServoY_pwm_pin_o => GPIO(1),
+		ServoZ_pwm_pin_o => GPIO(2),
+		x_pwm_pin_o => GPIO(3),
+		y_pwm_pin_o => GPIO(4),
+		x_comp_async => GPIO(5),
+		y_comp_async => GPIO(6),
+
+		x_sevenseg_o => sevenseg_x,
+		y_sevenseg_o => sevenseg_y
+
 	);
 	
-	HEX0 <= sevenseg(6 downto 0);
-	HEX1 <= sevenseg(13 downto 7);
-	HEX2 <= sevenseg(20 downto 14);
+	HEX0 <= sevenseg_x(0 to 6);
+	HEX1 <= sevenseg_x(7 to 13);
+	HEX2 <= sevenseg_x(14 to 20);
+
+	HEX3 <= sevenseg_y(0 to 6);
+	HEX4 <= sevenseg_y(7 to 13);
+	HEX5 <= sevenseg_y(14 to 20);
+
+
 
 end rtl;
 

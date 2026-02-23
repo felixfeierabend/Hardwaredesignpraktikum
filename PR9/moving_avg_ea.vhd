@@ -49,13 +49,13 @@ begin
 	
 	comb_proc : process(data_i, next_valid_strb, shift_reg_mem) begin
 		next_sum <= sum;
-		next_shift_reg_mem <= next_shift_reg_mem;
+		next_shift_reg_mem <= shift_reg_mem;
 		
 		if (strb_data_valid_i = '1') then
 			next_shift_reg_mem(0) <= data_i;
 			next_sum <= sum - shift_reg_mem(REG_LENGTH - 1) + data_i;
 			for i in 1 to 2**REG_LENGTH - 1 loop
-				next_shift_reg_mem(i) <= next_shift_reg_mem(i - 1);
+				next_shift_reg_mem(i) <= shift_reg_mem(i - 1);
 			end loop;
 		end if;
 	end process comb_proc;

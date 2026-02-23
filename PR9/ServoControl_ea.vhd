@@ -16,8 +16,15 @@ end entity servo_controller;
 
 
 architecture bhv_servo_controller of servo_controller is
+	constant PWM_MIN_VAL : unsigned(SERVO_CNT_LEN - 1 downto 0) := to_unsigned(SERVO_MIN_TICKS, SERVO_CNT_LEN);
+	constant PWM_MAX_VAL : unsigned(SERVO_CNT_LEN - 1 downto 0) := to_unsigned(SERVO_MAX_TICKS, SERVO_CNT_LEN);
+	constant PWM_PERIOD_VAL : unsigned(SERVO_CNT_LEN - 1 downto 0) := to_unsigned(SERVO_PERIOD_TICKS, SERVO_CNT_LEN);
 	signal on_counter_val : unsigned (BIT_WIDTH - 1 downto 0);
 begin
+	-- on_counter_val <= PWM_MIN_VAL when on_time_i < SERVO_MIN_TICKS else 
+	-- 				  PWM_MAX_VAL when on_time_i > SERVO_MAX_TICKS else 
+	-- 				  to_unsigned(on_time_i * SCALE_FACTOR_INPUT, SERVO_CNT_LEN);
+
 	on_counter_val <= to_unsigned(on_time_i * SCALE_FACTOR_INPUT, BIT_WIDTH);
 
 	pwm : entity work.PWM

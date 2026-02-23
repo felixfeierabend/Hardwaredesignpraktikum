@@ -19,8 +19,9 @@ package std_package is
 	constant SERVO_MAX_TICKS : natural := integer(real(CLK_FREQ) * SERVO_MAX_TIME);
 	constant SERVO_MIN_TICKS : natural := integer(real(SERVO_MAX_TICKS) / 2.0);
 	constant SERVO_MEAN_TICKS : natural := integer((real(SERVO_MAX_TICKS) + real(SERVO_MIN_TICKS)) / 2.0);
-
-	constant SERVO_RANGE_TICKS : natural := SERVO_MAX_TICKS - SERVO_MIN_TICKS;
+	constant SERVO_CNT_LEN : natural := integer(ceil(log2(real(SERVO_PERIOD_TICKS))));
+	constant SERVO_RANGE_TICKS : natural := SERVO_MAX_TICKS - SERVO_MIN_TICKS + 1;
+	constant SERVO_RANGE_LEN : natural := integer(ceil(log2(real(SERVO_RANGE_TICKS))));
 
 	-- ADC-constants/configuration-values
 
