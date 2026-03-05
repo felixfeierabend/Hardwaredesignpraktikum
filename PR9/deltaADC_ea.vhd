@@ -64,9 +64,13 @@ begin
             next_counter_value <= dbg_adc_val_i;
         elsif dbg_en_i = '0' and sampling_strb_o = '1' then 
             if (comparator_i = '1') then
-                next_counter_value <= std_ulogic_vector(unsigned(counter_value) + 1);
+				if to_integer(unsigned(counter_value) + 1) < std_package.ADC_MAX_VAL then
+                	next_counter_value <= std_ulogic_vector(unsigned(counter_value) + 1);
+				end if;
             else
-                next_counter_value <= std_ulogic_vector(unsigned(counter_value) - 1);
+				if to_integer(unsigned(counter_value) - 1) > std_package.ADC_MIN_VAL then
+                	next_counter_value <= std_ulogic_vector(unsigned(counter_value) - 1);
+				end if;
             end if;
         end if;
 	end process adc_comb_proc;

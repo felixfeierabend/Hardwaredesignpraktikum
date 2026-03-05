@@ -1,18 +1,21 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use ieee.math_real.all;
 
 use work.all;
 use work.std_package.all;
 use work.commands.all;
 
 architecture bhv_cmd_proc of work.cmd_proc is 
+	--constant THETA_START_VAL : signed := to_signed(natural(floor(real(2**SERVO_CNT_LEN - 1) / 2.0)));
+
 	type fsm_state_type is (IDLE, WAIT_FOR_STROBE, DRAWING, WAIT_COMPLETE);
 	signal fsm_state, next_fsm_state : fsm_state_type;
 	signal address, next_address : unsigned (COMCNTBW - 1 downto 0);
 	signal command_data : std_ulogic_vector (2 * SERVO_CNT_LEN - 1 downto 0);
-	signal r_sum, next_r_sum : std_ulogic_vector(SERVO_CNT_LEN + D - 1 downto 0) := std_ulogic_vector(to_unsigned(SERVO_MIN_TICKS, SERVO_CNT_LEN + D));
-	signal theta_sum, next_theta_sum : std_ulogic_vector(SERVO_CNT_LEN + D - 1 downto 0) := std_ulogic_vector(to_unsigned(SERVO_MIN_TICKS + SERVO_PERIOD_TICKS / 2, SERVO_CNT_LEN + D));
+	signal r_sum, next_r_sum : signed(SERVO_CNT_LEN + D - 1 downto 0) := signed(to_unsigned(SERVO_MIN_TICKS, SERVO_CNT_LEN + D));
+	signal theta_sum, next_theta_sum : signed(SERVO_CNT_LEN + D - 1 downto 0) := signed(to_unsigned(SERVO_MIN_TICKS + SERVO_PERIOD_TICKS / 2, SERVO_CNT_LEN + D));
 	signal sequential_rst, wait_strb : std_ulogic;
 	signal command_count, next_command_count : integer;
 	signal z_value, next_z_value : std_ulogic_vector (SERVO_CNT_LEN - 1 downto 0);
@@ -36,8 +39,8 @@ begin
 		strb_o => wait_strb
 	);
 	
-	x_out <= r_sum(SERVO_CNT_LEN + D - 1 downto D);
-	y_out <= theta_sum(SERVO_CNT_LEN + D - 1 downto D);
+	x_out <= std_ulogic_vector(r_sum(SERVO_CNT_LEN + D - 1 downto D));
+	y_out <= std_ulogic_vector(theta_sum(SERVO_CNT_LEN + D - 1 downto D));
 	z_out <= z_value;
 	
 	reg_proc : process(clk_i, rst_i)
@@ -71,8 +74,8 @@ begin
 			when IDLE =>
 				next_address <= (others => '0');
 				sequential_rst <= '1';
-				next_r_sum <= std_ulogic_vector(to_unsigned(SERVO_MIN_TICKS, SERVO_CNT_LEN + D));
-				next_theta_sum <= std_ulogic_vector(to_unsigned(SERVO_MIN_TICKS + SERVO_PERIOD_TICKS / 2, SERVO_CNT_LEN + D));
+				next_r_sum <= to_signed(SERVO_MIN_TICKS, SERVO_CNT_LEN + D);
+				next_theta_sum <= to_signed(SERVO_MIN_TICKS + SERVO_PERIOD_TICKS / 2, SERVO_CNT_LEN + D);
 				next_z_value <= std_ulogic_vector(to_unsigned(std_package.SERVO_MAX_TICKS, SERVO_CNT_LEN));
 				next_command_count <= 0;
 				if StartStrb_i = '1' then
@@ -80,8 +83,8 @@ begin
 				end if;				
 			when DRAWING => 
 				drawing_o <= '1';
-				next_r_sum <= std_ulogic_vector(unsigned(r_sum) + unsigned(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1)));
-				next_theta_sum <= std_ulogic_vector(unsigned(theta_sum) + unsigned(command_data(SERVO_CNT_LEN - 1 downto 0)));
+				next_r_sum <= r_sum + signed(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1));
+				next_theta_sum <= theta_sum + signed(command_data(SERVO_CNT_LEN - 1 downto 0));
 				sequential_rst <= '0';
 				next_fsm_state <= WAIT_FOR_STROBE;
 				if command_count > 11 and command_count < commands.NCOMMANDS - 2 then
@@ -91,16 +94,16 @@ begin
 				end if;
 			when WAIT_FOR_STROBE =>
 				sequential_rst <= '0';
-				next_r_sum <= std_ulogic_vector(unsigned(r_sum) + unsigned(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1)));
-				next_theta_sum <= std_ulogic_vector(unsigned(theta_sum) + unsigned(command_data(SERVO_CNT_LEN - 1 downto 0)));
+				next_r_sum <= signed(r_sum) + signed(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1));
+				next_theta_sum <= signed(theta_sum) + signed(command_data(SERVO_CNT_LEN - 1 downto 0));
 				drawing_o <= '1';
 				if wait_strb = '1' then
 					next_fsm_state <= WAIT_COMPLETE;
 				end if;
 			when WAIT_COMPLETE =>
 				drawing_o <= '1';
-				next_r_sum <= std_ulogic_vector(unsigned(r_sum) + unsigned(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1)));
-				next_theta_sum <= std_ulogic_vector(unsigned(theta_sum) + unsigned(command_data(SERVO_CNT_LEN - 1 downto 0)));
+				next_r_sum <= signed(r_sum) + signed(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1));
+				next_theta_sum <= signed(theta_sum) + signed(command_data(SERVO_CNT_LEN - 1 downto 0));
 				sequential_rst <= '1';
 				next_command_count <= command_count + 1;
 				next_address <= address + 1;

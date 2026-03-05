@@ -21,7 +21,7 @@ entity moving_avg is
 end entity moving_avg;
 
 architecture bhv_moving_avg of moving_avg is
-	type filter_array_type is array (0 to 2 ** REG_LENGTH - 1) of unsigned (BITWIDTH - 1 downto 0);	
+	type filter_array_type is array (0 to 2 ** REG_LENGTH) of unsigned (BITWIDTH - 1 downto 0);	
 	
 	signal shift_reg_mem : filter_array_type := (others => (others => '0'));
 	signal next_shift_reg_mem : filter_array_type := (others => (others => '0'));
@@ -53,8 +53,8 @@ begin
 		
 		if (strb_data_valid_i = '1') then
 			next_shift_reg_mem(0) <= data_i;
-			next_sum <= sum - shift_reg_mem(REG_LENGTH - 1) + data_i;
-			for i in 1 to 2**REG_LENGTH - 1 loop
+			next_sum <= (sum + data_i) - shift_reg_mem(2 ** REG_LENGTH);
+			for i in 1 to 2**REG_LENGTH loop
 				next_shift_reg_mem(i) <= shift_reg_mem(i - 1);
 			end loop;
 		end if;
