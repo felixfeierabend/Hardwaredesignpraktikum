@@ -12,6 +12,7 @@ port (
     dbg_en_i : in std_ulogic;
     dbg_valid_strb_i : in std_ulogic;
     dbg_adc_val_i : in std_ulogic_vector(std_package.ADC_BIT_WIDTH - 1 downto 0);
+	dbg_sel_i : in std_ulogic;
 
 	adc_val_o : out std_ulogic_vector(std_package.ADC_BIT_WIDTH - 1 downto 0);
 	adc_valid_strb : out std_ulogic;
@@ -60,18 +61,25 @@ begin
 			sampling_strb <= sampling_strb_o;
 		end if;
 
-        if dbg_en_i = '1' and dbg_valid_strb_i = '1' then
+        if dbg_en_i = '1' and dbg_sel_i = '1' and dbg_valid_strb_i = '1' then
             next_counter_value <= dbg_adc_val_i;
+			if to_integer(unsigned(dbg_adc_val_i)) >= std_package.ADC_MAX_VAL then
+				next_counter_value <= std_ulogic_vector(to_unsigned(std_package.ADC_MAX_VAL, std_package.ADC_BIT_WIDTH));
+			elsif to_integer(unsigned(dbg_adc_val_i)) <= 0 then
+				next_counter_value <= std_ulogic_vector(to_unsigned(0, std_package.ADC_BIT_WIDTH));
+			end if;
         elsif dbg_en_i = '0' and sampling_strb_o = '1' then 
             if (comparator_i = '1') then
 				if to_integer(unsigned(counter_value) + 1) < std_package.ADC_MAX_VAL then
                 	next_counter_value <= std_ulogic_vector(unsigned(counter_value) + 1);
 				end if;
             else
-				if to_integer(unsigned(counter_value) - 1) > std_package.ADC_MIN_VAL then
+				if to_integer(unsigned(counter_value) - 1) > 0 then
                 	next_counter_value <= std_ulogic_vector(unsigned(counter_value) - 1);
 				end if;
             end if;
+		elsif dbg_en_i = '1' and dbg_sel_i = '0' then
+			next_counter_value <= std_ulogic_vector(to_unsigned(std_package.ADC_MEAN_VAL, std_package.ADC_BIT_WIDTH));
         end if;
 	end process adc_comb_proc;
 	

@@ -93,8 +93,8 @@ begin
                 led_dbg_calc_dec_o <= '0';
 
             when CALC_INC =>
-                if (to_integer(unsigned(adc_value)) + incValue) > ADC_MAX_VAL then
-                    next_adc_value <= std_ulogic_vector(MAX_VAL);
+                if (to_integer(unsigned(adc_value)) + incValue) >= (ADC_MAX_VAL - 1) then
+                    next_adc_value <= std_ulogic_vector(MAX_VAL - 1);
                 else
                     next_adc_value <= std_ulogic_vector(unsigned(adc_value) + incValue);
                 end if;
@@ -109,7 +109,7 @@ begin
                 led_dbg_inc_o <= '1';
             
             when CALC_DEC => 
-                if (to_integer(unsigned(adc_value)) - incValue) < 0 then
+                if (to_integer(unsigned(adc_value)) - incValue) <= 0 then
                     next_adc_value <= (others => '0');
                 else
                     next_adc_value <= std_ulogic_vector(unsigned(adc_value) - incValue);

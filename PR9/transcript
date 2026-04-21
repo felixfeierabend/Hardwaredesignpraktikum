@@ -1,17 +1,17 @@
 # vsim . 
-# Start time: 16:43:09 on Feb 21,2026
+# Start time: 11:18:49 on Apr 16,2026
 # ** Error (suppressible): (vsim-19) Failed to access library '' at "".
 # No such file or directory. (errno = ENOENT)
 # Error loading design
-# End time: 16:43:09 on Feb 21,2026, Elapsed time: 0:00:00
+# End time: 11:18:49 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 0
-do simBtnCtrl.do
+do simCmdProc.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:43:15 on Feb 21,2026
+# Start time: 11:19:26 on Apr 16,2026
 # vcom -reportprogress 300 -work work std_package.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -19,10 +19,55 @@ do simBtnCtrl.do
 # -- Loading package NUMERIC_STD
 # -- Loading package MATH_REAL
 # -- Compiling package std_package
-# End time: 16:43:15 on Feb 21,2026, Elapsed time: 0:00:00
+# End time: 11:19:26 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:43:15 on Feb 21,2026
+# Start time: 11:19:26 on Apr 16,2026
+# vcom -reportprogress 300 -work work strb_gen_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity strobe_generator
+# End time: 11:19:27 on Apr 16,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:19:27 on Apr 16,2026
+# vcom -reportprogress 300 -work work strb_gen_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling architecture bhv_strobe_generator of strobe_generator
+# -- Loading entity strobe_generator
+# End time: 11:19:27 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:19:27 on Apr 16,2026
+# vcom -reportprogress 300 -work work Commands_p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Compiling package commands
+# End time: 11:19:27 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:19:27 on Apr 16,2026
+# vcom -reportprogress 300 -work work CommandROM_ea.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Loading package commands
+# -- Compiling entity command_rom
+# -- Compiling architecture rtl of command_rom
+# End time: 11:19:27 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:19:27 on Apr 16,2026
 # vcom -reportprogress 300 -work work periodical_strb_gen_ea.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -32,65 +77,77 @@ do simBtnCtrl.do
 # -- Compiling entity periodical_strb_gen
 # -- Compiling architecture bhv_strb_gen of periodical_strb_gen
 # -- Loading entity strobe_generator
-# End time: 16:43:15 on Feb 21,2026, Elapsed time: 0:00:00
+# End time: 11:19:27 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:43:15 on Feb 21,2026
-# vcom -reportprogress 300 -work work debouncer_ea.vhd 
+# Start time: 11:19:27 on Apr 16,2026
+# vcom -reportprogress 300 -work work cmd_proc_e.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity debouncer
-# -- Compiling architecture bhv_debouncer of debouncer
+# -- Compiling entity cmd_proc
+# End time: 11:19:27 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:19:27 on Apr 16,2026
+# vcom -reportprogress 300 -work work cmd_proc_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
 # -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Loading package commands
+# -- Compiling architecture bhv_cmd_proc of cmd_proc
+# -- Loading entity cmd_proc
+# -- Loading entity command_rom
 # -- Loading entity periodical_strb_gen
-# End time: 16:43:15 on Feb 21,2026, Elapsed time: 0:00:00
+# End time: 11:19:27 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:43:15 on Feb 21,2026
-# vcom -reportprogress 300 -work work btnCtrl_ea.vhd 
+# Start time: 11:19:27 on Apr 16,2026
+# vcom -reportprogress 300 -work work tb_cmd_proc.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Loading package MATH_REAL
 # -- Loading package std_package
-# -- Compiling entity btnCtrl
-# -- Compiling architecture bhv_btnCtrl of btnCtrl
-# End time: 16:43:15 on Feb 21,2026, Elapsed time: 0:00:00
+# -- Loading package commands
+# -- Compiling entity tb_cmd_proc
+# -- Compiling architecture bhv_tb_cmd_proc of tb_cmd_proc
+# -- Loading entity cmd_proc
+# End time: 11:19:28 on Apr 16,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:43:15 on Feb 21,2026
-# vcom -reportprogress 300 -work work tb_btnCtrl.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_btnCtrl
-# -- Compiling architecture bhv_tb_btnCtrl of tb_btnCtrl
-# -- Loading package MATH_REAL
-# -- Loading package std_package
-# -- Loading entity btnCtrl
-# End time: 16:43:15 on Feb 21,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim work.tb_btnCtrl 
-# Start time: 16:43:15 on Feb 21,2026
+# vsim work.tb_cmd_proc 
+# Start time: 11:19:28 on Apr 16,2026
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
 # Loading work.std_package
-# Loading work.tb_btnctrl(bhv_tb_btnctrl)
-# Loading work.btnctrl(bhv_btnctrl)
-do simBtnCtrl.do
+# Loading work.commands
+# Loading work.tb_cmd_proc(bhv_tb_cmd_proc)
+# Loading work.cmd_proc(bhv_cmd_proc)
+# Loading work.command_rom(rtl)
+# Loading work.periodical_strb_gen(bhv_strb_gen)
+# Loading work.strobe_generator(bhv_strobe_generator)
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 24 (23 downto 0). Right is 30 (29 downto 0).
+#    Time: 70 ns  Iteration: 1  Process: /tb_cmd_proc/dut/fsm_comb File: cmd_proc_a.vhd
+# Fatal error in Process fsm_comb at cmd_proc_a.vhd line 87
+# 
+# HDL call sequence:
+# Stopped at cmd_proc_a.vhd 87 Process fsm_comb
+# 
+do simCmdProc.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:45:26 on Feb 22,2026
+# Start time: 11:21:40 on Apr 16,2026
 # vcom -reportprogress 300 -work work std_package.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -98,10 +155,55 @@ do simBtnCtrl.do
 # -- Loading package NUMERIC_STD
 # -- Loading package MATH_REAL
 # -- Compiling package std_package
-# End time: 11:45:27 on Feb 22,2026, Elapsed time: 0:00:01
+# End time: 11:21:40 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:45:27 on Feb 22,2026
+# Start time: 11:21:40 on Apr 16,2026
+# vcom -reportprogress 300 -work work strb_gen_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity strobe_generator
+# End time: 11:21:40 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:21:40 on Apr 16,2026
+# vcom -reportprogress 300 -work work strb_gen_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling architecture bhv_strobe_generator of strobe_generator
+# -- Loading entity strobe_generator
+# End time: 11:21:40 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:21:40 on Apr 16,2026
+# vcom -reportprogress 300 -work work Commands_p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Compiling package commands
+# End time: 11:21:40 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:21:40 on Apr 16,2026
+# vcom -reportprogress 300 -work work CommandROM_ea.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Loading package commands
+# -- Compiling entity command_rom
+# -- Compiling architecture rtl of command_rom
+# End time: 11:21:40 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:21:40 on Apr 16,2026
 # vcom -reportprogress 300 -work work periodical_strb_gen_ea.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -111,71 +213,72 @@ do simBtnCtrl.do
 # -- Compiling entity periodical_strb_gen
 # -- Compiling architecture bhv_strb_gen of periodical_strb_gen
 # -- Loading entity strobe_generator
-# End time: 11:45:27 on Feb 22,2026, Elapsed time: 0:00:00
+# End time: 11:21:40 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:45:27 on Feb 22,2026
-# vcom -reportprogress 300 -work work debouncer_ea.vhd 
+# Start time: 11:21:40 on Apr 16,2026
+# vcom -reportprogress 300 -work work cmd_proc_e.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity debouncer
-# -- Compiling architecture bhv_debouncer of debouncer
+# -- Compiling entity cmd_proc
+# End time: 11:21:41 on Apr 16,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:21:41 on Apr 16,2026
+# vcom -reportprogress 300 -work work cmd_proc_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
 # -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Loading package commands
+# -- Compiling architecture bhv_cmd_proc of cmd_proc
+# -- Loading entity cmd_proc
+# -- Loading entity command_rom
 # -- Loading entity periodical_strb_gen
-# End time: 11:45:27 on Feb 22,2026, Elapsed time: 0:00:00
+# End time: 11:21:41 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:45:27 on Feb 22,2026
-# vcom -reportprogress 300 -work work btnCtrl_ea.vhd 
+# Start time: 11:21:41 on Apr 16,2026
+# vcom -reportprogress 300 -work work tb_cmd_proc.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Loading package MATH_REAL
 # -- Loading package std_package
-# -- Compiling entity btnCtrl
-# -- Compiling architecture bhv_btnCtrl of btnCtrl
-# End time: 11:45:27 on Feb 22,2026, Elapsed time: 0:00:00
+# -- Loading package commands
+# -- Compiling entity tb_cmd_proc
+# -- Compiling architecture bhv_tb_cmd_proc of tb_cmd_proc
+# -- Loading entity cmd_proc
+# End time: 11:21:41 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:45:27 on Feb 22,2026
-# vcom -reportprogress 300 -work work tb_btnCtrl.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_btnCtrl
-# -- Compiling architecture bhv_tb_btnCtrl of tb_btnCtrl
-# -- Loading package MATH_REAL
-# -- Loading package std_package
-# -- Loading entity btnCtrl
-# End time: 11:45:27 on Feb 22,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 11:45:27 on Feb 22,2026, Elapsed time: 19:02:12
-# Errors: 0, Warnings: 0
-# vsim work.tb_btnCtrl 
-# Start time: 11:45:27 on Feb 22,2026
+# End time: 11:21:42 on Apr 16,2026, Elapsed time: 0:02:14
+# Errors: 1, Warnings: 0
+# vsim work.tb_cmd_proc 
+# Start time: 11:21:42 on Apr 16,2026
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
 # Loading work.std_package
-# Loading work.tb_btnctrl(bhv_tb_btnctrl)
-# Loading work.btnctrl(bhv_btnctrl)
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 0  Instance: /tb_btnctrl/btnCtrl File: btnCtrl_ea.vhd
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 0  Instance: /tb_btnctrl/btnCtrl File: btnCtrl_ea.vhd
-do simBtnCtrl.do
+# Loading work.commands
+# Loading work.tb_cmd_proc(bhv_tb_cmd_proc)
+# Loading work.cmd_proc(bhv_cmd_proc)
+# Loading work.command_rom(rtl)
+# Loading work.periodical_strb_gen(bhv_strb_gen)
+# Loading work.strobe_generator(bhv_strobe_generator)
+do simCmdProc.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:48:30 on Feb 22,2026
+# Start time: 11:30:44 on Apr 16,2026
 # vcom -reportprogress 300 -work work std_package.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -183,10 +286,55 @@ do simBtnCtrl.do
 # -- Loading package NUMERIC_STD
 # -- Loading package MATH_REAL
 # -- Compiling package std_package
-# End time: 11:48:30 on Feb 22,2026, Elapsed time: 0:00:00
+# End time: 11:30:44 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:48:30 on Feb 22,2026
+# Start time: 11:30:44 on Apr 16,2026
+# vcom -reportprogress 300 -work work strb_gen_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity strobe_generator
+# End time: 11:30:44 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:30:44 on Apr 16,2026
+# vcom -reportprogress 300 -work work strb_gen_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling architecture bhv_strobe_generator of strobe_generator
+# -- Loading entity strobe_generator
+# End time: 11:30:44 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:30:44 on Apr 16,2026
+# vcom -reportprogress 300 -work work Commands_p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Compiling package commands
+# End time: 11:30:44 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:30:44 on Apr 16,2026
+# vcom -reportprogress 300 -work work CommandROM_ea.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Loading package commands
+# -- Compiling entity command_rom
+# -- Compiling architecture rtl of command_rom
+# End time: 11:30:44 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:30:44 on Apr 16,2026
 # vcom -reportprogress 300 -work work periodical_strb_gen_ea.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -196,63 +344,195 @@ do simBtnCtrl.do
 # -- Compiling entity periodical_strb_gen
 # -- Compiling architecture bhv_strb_gen of periodical_strb_gen
 # -- Loading entity strobe_generator
-# End time: 11:48:30 on Feb 22,2026, Elapsed time: 0:00:00
+# End time: 11:30:44 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:48:30 on Feb 22,2026
-# vcom -reportprogress 300 -work work debouncer_ea.vhd 
+# Start time: 11:30:44 on Apr 16,2026
+# vcom -reportprogress 300 -work work cmd_proc_e.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity debouncer
-# -- Compiling architecture bhv_debouncer of debouncer
+# -- Compiling entity cmd_proc
+# End time: 11:30:45 on Apr 16,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:30:45 on Apr 16,2026
+# vcom -reportprogress 300 -work work cmd_proc_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
 # -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Loading package commands
+# -- Compiling architecture bhv_cmd_proc of cmd_proc
+# -- Loading entity cmd_proc
+# -- Loading entity command_rom
 # -- Loading entity periodical_strb_gen
-# End time: 11:48:30 on Feb 22,2026, Elapsed time: 0:00:00
+# End time: 11:30:45 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:48:30 on Feb 22,2026
-# vcom -reportprogress 300 -work work btnCtrl_ea.vhd 
+# Start time: 11:30:45 on Apr 16,2026
+# vcom -reportprogress 300 -work work tb_cmd_proc.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Loading package MATH_REAL
 # -- Loading package std_package
-# -- Compiling entity btnCtrl
-# -- Compiling architecture bhv_btnCtrl of btnCtrl
-# End time: 11:48:30 on Feb 22,2026, Elapsed time: 0:00:00
+# -- Loading package commands
+# -- Compiling entity tb_cmd_proc
+# -- Compiling architecture bhv_tb_cmd_proc of tb_cmd_proc
+# -- Loading entity cmd_proc
+# End time: 11:30:45 on Apr 16,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 11:48:30 on Feb 22,2026
-# vcom -reportprogress 300 -work work tb_btnCtrl.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_btnCtrl
-# -- Compiling architecture bhv_tb_btnCtrl of tb_btnCtrl
-# -- Loading package MATH_REAL
-# -- Loading package std_package
-# -- Loading entity btnCtrl
-# End time: 11:48:30 on Feb 22,2026, Elapsed time: 0:00:00
+# End time: 11:30:46 on Apr 16,2026, Elapsed time: 0:09:04
 # Errors: 0, Warnings: 0
-# End time: 11:48:30 on Feb 22,2026, Elapsed time: 0:03:03
-# Errors: 0, Warnings: 2
-# vsim work.tb_btnCtrl 
-# Start time: 11:48:30 on Feb 22,2026
+# vsim work.tb_cmd_proc 
+# Start time: 11:30:46 on Apr 16,2026
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
 # Loading work.std_package
-# Loading work.tb_btnctrl(bhv_tb_btnctrl)
-# Loading work.btnctrl(bhv_btnctrl)
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 0  Instance: /tb_btnctrl/btnCtrl File: btnCtrl_ea.vhd
-# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
-#    Time: 0 ps  Iteration: 0  Instance: /tb_btnctrl/btnCtrl File: btnCtrl_ea.vhd
-# End time: 14:51:47 on Feb 22,2026, Elapsed time: 3:03:17
-# Errors: 0, Warnings: 2
+# Loading work.commands
+# Loading work.tb_cmd_proc(bhv_tb_cmd_proc)
+# Loading work.cmd_proc(bhv_cmd_proc)
+# Loading work.command_rom(rtl)
+# Loading work.periodical_strb_gen(bhv_strb_gen)
+# Loading work.strobe_generator(bhv_strobe_generator)
+# WARNING: No extended dataflow license exists
+do simCmdProc.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:34:23 on Apr 16,2026
+# vcom -reportprogress 300 -work work std_package.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling package std_package
+# End time: 11:34:23 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:34:23 on Apr 16,2026
+# vcom -reportprogress 300 -work work strb_gen_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity strobe_generator
+# End time: 11:34:23 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:34:24 on Apr 16,2026
+# vcom -reportprogress 300 -work work strb_gen_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling architecture bhv_strobe_generator of strobe_generator
+# -- Loading entity strobe_generator
+# End time: 11:34:24 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:34:24 on Apr 16,2026
+# vcom -reportprogress 300 -work work Commands_p.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Compiling package commands
+# End time: 11:34:24 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:34:24 on Apr 16,2026
+# vcom -reportprogress 300 -work work CommandROM_ea.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Loading package commands
+# -- Compiling entity command_rom
+# -- Compiling architecture rtl of command_rom
+# End time: 11:34:24 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:34:24 on Apr 16,2026
+# vcom -reportprogress 300 -work work periodical_strb_gen_ea.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Compiling entity periodical_strb_gen
+# -- Compiling architecture bhv_strb_gen of periodical_strb_gen
+# -- Loading entity strobe_generator
+# End time: 11:34:24 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:34:24 on Apr 16,2026
+# vcom -reportprogress 300 -work work cmd_proc_e.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cmd_proc
+# End time: 11:34:24 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:34:24 on Apr 16,2026
+# vcom -reportprogress 300 -work work cmd_proc_a.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Loading package commands
+# -- Compiling architecture bhv_cmd_proc of cmd_proc
+# -- Loading entity cmd_proc
+# -- Loading entity command_rom
+# -- Loading entity periodical_strb_gen
+# End time: 11:34:24 on Apr 16,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:34:24 on Apr 16,2026
+# vcom -reportprogress 300 -work work tb_cmd_proc.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package MATH_REAL
+# -- Loading package std_package
+# -- Loading package commands
+# -- Compiling entity tb_cmd_proc
+# -- Compiling architecture bhv_tb_cmd_proc of tb_cmd_proc
+# -- Loading entity cmd_proc
+# End time: 11:34:25 on Apr 16,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 11:34:25 on Apr 16,2026, Elapsed time: 0:03:39
+# Errors: 0, Warnings: 0
+# vsim work.tb_cmd_proc 
+# Start time: 11:34:25 on Apr 16,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.std_package
+# Loading work.commands
+# Loading work.tb_cmd_proc(bhv_tb_cmd_proc)
+# Loading work.cmd_proc(bhv_cmd_proc)
+# Loading work.command_rom(rtl)
+# Loading work.periodical_strb_gen(bhv_strb_gen)
+# Loading work.strobe_generator(bhv_strobe_generator)
+# WARNING: No extended dataflow license exists

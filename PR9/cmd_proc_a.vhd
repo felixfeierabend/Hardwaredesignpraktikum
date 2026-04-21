@@ -7,10 +7,10 @@ use work.all;
 use work.std_package.all;
 use work.commands.all;
 
-architecture bhv_cmd_proc of work.cmd_proc is 
+architecture bhv_cmd_proc of cmd_proc is 
 	--constant THETA_START_VAL : signed := to_signed(natural(floor(real(2**SERVO_CNT_LEN - 1) / 2.0)));
 
-	type fsm_state_type is (IDLE, WAIT_FOR_STROBE, DRAWING, WAIT_COMPLETE);
+	type fsm_state_type is (IDLE, WAIT_FOR_STROBE, WAIT_INCREMENT, WAIT_COMPLETE, FETCH_CMD);
 	signal fsm_state, next_fsm_state : fsm_state_type;
 	signal address, next_address : unsigned (COMCNTBW - 1 downto 0);
 	signal command_data : std_ulogic_vector (2 * SERVO_CNT_LEN - 1 downto 0);
@@ -18,6 +18,7 @@ architecture bhv_cmd_proc of work.cmd_proc is
 	signal theta_sum, next_theta_sum : signed(SERVO_CNT_LEN + D - 1 downto 0) := signed(to_unsigned(SERVO_MIN_TICKS + SERVO_PERIOD_TICKS / 2, SERVO_CNT_LEN + D));
 	signal sequential_rst, wait_strb : std_ulogic;
 	signal command_count, next_command_count : integer;
+	signal partial_count, next_partial_count : integer;
 	signal z_value, next_z_value : std_ulogic_vector (SERVO_CNT_LEN - 1 downto 0);
 	
 begin
@@ -39,8 +40,8 @@ begin
 		strb_o => wait_strb
 	);
 	
-	x_out <= std_ulogic_vector(r_sum(SERVO_CNT_LEN + D - 1 downto D));
-	y_out <= std_ulogic_vector(theta_sum(SERVO_CNT_LEN + D - 1 downto D));
+	x_out <= std_ulogic_vector(r_sum(SERVO_CNT_LEN + D - 1 downto D) sll partial_count);
+	y_out <= std_ulogic_vector(theta_sum(SERVO_CNT_LEN + D - 1 downto D) sll partial_count);
 	z_out <= z_value;
 	
 	reg_proc : process(clk_i, rst_i)
@@ -50,6 +51,7 @@ begin
 			address <= (others => '0');
 			command_count <= 0;
 			z_value <= std_ulogic_vector(to_unsigned(std_package.SERVO_MAX_TICKS, SERVO_CNT_LEN));
+			partial_count <= 0;
 		elsif rising_edge(clk_i) then
 			fsm_state <= next_fsm_state;
 			address <= next_address;
@@ -57,69 +59,135 @@ begin
 			z_value <= next_z_value;
 			r_sum <= next_r_sum;
 			theta_sum <= next_theta_sum;
+			partial_count <= next_partial_count;
 		end if;
 	end process reg_proc;
-	
+
 	fsm_comb : process(fsm_state, StartStrb_i, wait_strb)
 	begin
 		next_fsm_state <= fsm_state;
 		next_address <= address;
-		next_command_count <= command_count;
-		next_z_value <= z_value;
-		drawing_o <= '0';
 		next_r_sum <= r_sum;
 		next_theta_sum <= theta_sum;
-		
+		drawing_o <= '0';
+		next_command_count <= command_count;
+		next_z_value <= z_value;
+		next_partial_count <= partial_count;
+
 		case fsm_state is
-			when IDLE =>
+			when IDLE => 
 				next_address <= (others => '0');
-				sequential_rst <= '1';
 				next_r_sum <= to_signed(SERVO_MIN_TICKS, SERVO_CNT_LEN + D);
-				next_theta_sum <= to_signed(SERVO_MIN_TICKS + SERVO_PERIOD_TICKS / 2, SERVO_CNT_LEN + D);
-				next_z_value <= std_ulogic_vector(to_unsigned(std_package.SERVO_MAX_TICKS, SERVO_CNT_LEN));
+				next_theta_sum <= to_signed(SERVO_MIN_TICKS + SERVO_PERIOD_TICKS / 2 + D, SERVO_CNT_LEN + D);
 				next_command_count <= 0;
 				if StartStrb_i = '1' then
-					next_fsm_state <= DRAWING;
-				end if;				
-			when DRAWING => 
+					next_fsm_state <= FETCH_CMD;
+				end if;
+
+			when FETCH_CMD =>
+				next_r_sum <= r_sum + resize(signed(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN / 2)), D + SERVO_CNT_LEN);
+				next_theta_sum <= theta_sum + resize(signed(command_data(SERVO_CNT_LEN - 1 downto 0)), D + SERVO_CNT_LEN);
 				drawing_o <= '1';
-				next_r_sum <= r_sum + signed(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1));
-				next_theta_sum <= theta_sum + signed(command_data(SERVO_CNT_LEN - 1 downto 0));
-				sequential_rst <= '0';
-				next_fsm_state <= WAIT_FOR_STROBE;
 				if command_count > 11 and command_count < commands.NCOMMANDS - 2 then
 					next_z_value <= std_ulogic_vector(to_unsigned(std_package.SERVO_MIN_TICKS, SERVO_CNT_LEN));
 				else 
 					next_z_value <= std_ulogic_vector(to_unsigned(std_package.SERVO_MAX_TICKS, SERVO_CNT_LEN));
 				end if;
-			when WAIT_FOR_STROBE =>
+
+				if command_count = commands.NCOMMANDS - 3 then
+					next_z_value <= std_ulogic_vector(to_unsigned(std_package.SERVO_MAX_TICKS, SERVO_CNT_LEN));
+				end if;
+				next_command_count <= command_count + 1;
+
+				next_fsm_state <= WAIT_FOR_STROBE;
+
+			when WAIT_FOR_STROBE => 
 				sequential_rst <= '0';
-				next_r_sum <= signed(r_sum) + signed(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1));
-				next_theta_sum <= signed(theta_sum) + signed(command_data(SERVO_CNT_LEN - 1 downto 0));
 				drawing_o <= '1';
 				if wait_strb = '1' then
 					next_fsm_state <= WAIT_COMPLETE;
 				end if;
+
 			when WAIT_COMPLETE =>
-				drawing_o <= '1';
-				next_r_sum <= signed(r_sum) + signed(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1));
-				next_theta_sum <= signed(theta_sum) + signed(command_data(SERVO_CNT_LEN - 1 downto 0));
-				sequential_rst <= '1';
-				next_command_count <= command_count + 1;
-				next_address <= address + 1;
-				if command_count = commands.NCOMMANDS - 3 then
-					next_z_value <= std_ulogic_vector(to_unsigned(std_package.SERVO_MAX_TICKS, SERVO_CNT_LEN));
-				end if;
-				if command_count >= commands.NCOMMANDS then
-					next_fsm_state <= IDLE;
-					next_command_count <= 0;
+				if partial_count >= D then
+					next_address <= address + 1;
+					next_partial_count <= 0;
+					next_fsm_state <= FETCH_CMD;
+					if command_count >= commands.NCOMMANDS then
+						next_fsm_state <= IDLE;
+						next_command_count <= 0;
+					end if;
 				else
-					next_fsm_state <= DRAWING;
+					next_partial_count <= partial_count + 1;
+					next_fsm_state <= WAIT_FOR_STROBE;
 				end if;
-			when others => 
+				
+			when others =>
 				next_fsm_state <= IDLE;
-		end case;	
-		
+
+		end case;
 	end process fsm_comb;
+	
+	-- fsm_comb : process(fsm_state, StartStrb_i, wait_strb)
+	-- begin
+	-- 	next_fsm_state <= fsm_state;
+	-- 	next_address <= address;
+	-- 	next_command_count <= command_count;
+	-- 	next_z_value <= z_value;
+	-- 	drawing_o <= '0';
+	-- 	next_r_sum <= r_sum;
+	-- 	next_theta_sum <= theta_sum;
+		
+	-- 	case fsm_state is
+	-- 		when IDLE =>
+	-- 			next_address <= (others => '0');
+	-- 			sequential_rst <= '1';
+	-- 			next_r_sum <= to_signed(SERVO_MIN_TICKS, SERVO_CNT_LEN + D);
+	-- 			next_theta_sum <= to_signed(SERVO_MIN_TICKS + SERVO_PERIOD_TICKS / 2, SERVO_CNT_LEN + D);
+	-- 			next_z_value <= std_ulogic_vector(to_unsigned(std_package.SERVO_MAX_TICKS, SERVO_CNT_LEN));
+	-- 			next_command_count <= 0;
+	-- 			if StartStrb_i = '1' then
+	-- 				next_fsm_state <= DRAWING;
+	-- 			end if;				
+	-- 		when DRAWING => 
+	-- 			drawing_o <= '1';
+	-- 			next_r_sum <= r_sum + signed(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1));
+	-- 			next_theta_sum <= theta_sum + signed(command_data(SERVO_CNT_LEN - 1 downto 0));
+	-- 			sequential_rst <= '0';
+	-- 			next_fsm_state <= WAIT_FOR_STROBE;
+	-- 			if command_count > 11 and command_count < commands.NCOMMANDS - 2 then
+	-- 				next_z_value <= std_ulogic_vector(to_unsigned(std_package.SERVO_MIN_TICKS, SERVO_CNT_LEN));
+	-- 			else 
+	-- 				next_z_value <= std_ulogic_vector(to_unsigned(std_package.SERVO_MAX_TICKS, SERVO_CNT_LEN));
+	-- 			end if;
+	-- 		when WAIT_FOR_STROBE =>
+	-- 			sequential_rst <= '0';
+	-- 			next_r_sum <= signed(r_sum) + signed(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1));
+	-- 			next_theta_sum <= signed(theta_sum) + signed(command_data(SERVO_CNT_LEN - 1 downto 0));
+	-- 			drawing_o <= '1';
+	-- 			if wait_strb = '1' then
+	-- 				next_fsm_state <= WAIT_COMPLETE;
+	-- 			end if;
+	-- 		when WAIT_COMPLETE =>
+	-- 			drawing_o <= '1';
+	-- 			next_r_sum <= signed(r_sum) + signed(command_data(2 * SERVO_CNT_LEN - 1 downto SERVO_CNT_LEN - 1));
+	-- 			next_theta_sum <= signed(theta_sum) + signed(command_data(SERVO_CNT_LEN - 1 downto 0));
+	-- 			sequential_rst <= '1';
+	-- 			next_command_count <= command_count + 1;
+	-- 			next_address <= address + 1;
+	-- 			if command_count = commands.NCOMMANDS - 3 then
+	-- 				next_z_value <= std_ulogic_vector(to_unsigned(std_package.SERVO_MAX_TICKS, SERVO_CNT_LEN));
+	-- 			end if;
+	-- 			if command_count >= commands.NCOMMANDS then
+	-- 				next_fsm_state <= IDLE;
+	-- 				next_command_count <= 0;
+	-- 			else
+	-- 				next_fsm_state <= DRAWING;
+	-- 			end if;
+	-- 		when others => 
+	-- 			next_fsm_state <= IDLE;
+	-- 	end case;	
+		
+	-- end process fsm_comb;
 	
 end architecture bhv_cmd_proc;

@@ -55,6 +55,7 @@ architecture bhv_axis_controller of axis_controller is
     signal On_counter_val_proc_x, On_counter_val_proc_y, On_counter_val_proc_z : std_ulogic_vector(SERVO_CNT_LEN - 1 downto 0);
     signal processing : std_ulogic;
     signal K_start_strb : std_ulogic;
+    signal dbg_sel_x_axis : std_ulogic;
 begin
     rst_n <= not(rst_i);
 
@@ -62,8 +63,9 @@ begin
     decrement_n <= not(btn_dbg_dec_async);
     drawK_n <= not(btn_drawK_sync);
 
-    en_dbg_x_axis <= not(sw_dbg_y_axis_sync) and sw_en_dbg_sync;
-    en_dbg_y_axis <= sw_dbg_y_axis_sync and sw_en_dbg_sync;
+    en_dbg_x_axis <= sw_en_dbg_sync;
+    en_dbg_y_axis <= sw_en_dbg_sync;
+    dbg_sel_x_axis <= not(sw_dbg_y_axis_sync);
 
     On_counter_val_tilt_z <= PEN_DOWN_VAL when sw_z_axis_sync = '0' else PEN_UP_VAL; 
 
@@ -135,6 +137,7 @@ begin
         dbg_en_i => en_dbg_x_axis,
         dbg_adc_val_i => dbg_adc_val,
         dbg_adc_valid_strb_i => dbg_adc_strb,
+        dbg_sel_i => dbg_sel_x_axis,
         
         x_pwm_pin_o => x_pwm_pin_o,
         On_counter_val_tilt_o => On_counter_val_tilt_x,
@@ -150,6 +153,7 @@ begin
         dbg_en_i => en_dbg_y_axis,
         dbg_adc_val_i => dbg_adc_val,
         dbg_adc_valid_strb_i => dbg_adc_strb,
+        dbg_sel_i => sw_dbg_y_axis_sync,
 
         x_pwm_pin_o => y_pwm_pin_o,
         On_counter_val_tilt_o => On_coutner_val_tilt_y,
@@ -185,7 +189,7 @@ begin
     generic map (
         SERVO_CNT_LEN => SERVO_CNT_LEN,
         WAIT_PRESCALER => CMD_SCALER,
-        D => DIVFACTORBW
+        D => 2**DIVFACTORBW
     )
     port map (
         clk_i => clk_i,

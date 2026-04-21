@@ -31,7 +31,7 @@ port
 	HEX3            	:out   	std_ulogic_vector(0 to 6);
 	HEX4            	:out   	std_ulogic_vector(0 to 6);
 	HEX5            	:out   	std_ulogic_vector(0 to 6);
-	HEX7					:out		std_ulogic_vector(0 to 6);
+	HEX7				:out	std_ulogic_vector(0 to 6);
 	
 	------------ GPIO ------------
 	GPIO				:inout	std_ulogic_vector(35 downto 0);

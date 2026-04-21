@@ -1,6 +1,16 @@
 
-State Machine - |Tilt_board|btnCtrl:btnCtrl|fsm_state
-Name fsm_state.decrement fsm_state.INCREMENT fsm_state.IDLE 
-fsm_state.IDLE 0 0 0 
-fsm_state.INCREMENT 0 1 1 
-fsm_state.decrement 1 0 1 
+State Machine - |axis_controller|cmd_proc:cmd_proc|fsm_state
+Name fsm_state.WAIT_COMPLETE fsm_state.DRAWING fsm_state.WAIT_FOR_STROBE fsm_state.FETCH_CMD fsm_state.IDLE 
+fsm_state.IDLE 0 0 0 0 0 
+fsm_state.FETCH_CMD 0 0 0 1 1 
+fsm_state.WAIT_FOR_STROBE 0 0 1 0 1 
+fsm_state.DRAWING 0 1 0 0 1 
+fsm_state.WAIT_COMPLETE 1 0 0 0 1 
+
+State Machine - |axis_controller|btnCtrl:btnCtrl|fsm_state
+Name fsm_state.CALC_DEC fsm_state.CALC_INC fsm_state.DECREMENT fsm_state.INCREMENT fsm_state.IDLE 
+fsm_state.IDLE 0 0 0 0 0 
+fsm_state.INCREMENT 0 0 0 1 1 
+fsm_state.DECREMENT 0 0 1 0 1 
+fsm_state.CALC_INC 0 1 0 0 1 
+fsm_state.CALC_DEC 1 0 0 0 1 

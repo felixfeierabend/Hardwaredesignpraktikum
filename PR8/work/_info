@@ -14,7 +14,7 @@ w1768167006
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 52
+!i122 119
 R0
 8cmd_proc_e.vhd
 Fcmd_proc_e.vhd
@@ -24,32 +24,32 @@ VO^`5f43dA]=Ja6c3dHV263
 !s100 Y4[KAK2G]TW1DXikl<jNn0
 Z4 OV;C;2020.1;71
 32
-Z5 !s110 1771686714
+Z5 !s110 1771869548
 !i10b 1
-Z6 !s108 1771686714.000000
+Z6 !s108 1771869548.000000
 !s90 -reportprogress|300|-work|work|cmd_proc_e.vhd|
 !s107 cmd_proc_e.vhd|
 !i113 1
 Z7 o-work work
 Z8 tExplicit 1 CvgOpt 0
 Abhv_cmd_proc
-w1769426936
+w1771869273
 Z9 DEx4 work 19 periodical_strb_gen 0 22 dC:HLTo`CkSO2]XGDHUY]1
-Z10 DPx4 work 8 commands 0 22 2iW<@]9YR6nY@^71l^hHd2
-Z11 DEx4 work 11 command_rom 0 22 m;@S;1c9Y>Wd@Q6gKIGYR0
-Z12 DEx4 work 8 cmd_proc 0 22 O^`5f43dA]=Ja6c3dHV263
+Z10 DEx4 work 11 command_rom 0 22 m;@S;1c9Y>Wd@Q6gKIGYR0
+Z11 DEx4 work 8 cmd_proc 0 22 O^`5f43dA]=Ja6c3dHV263
+Z12 DPx4 work 8 commands 0 22 2iW<@]9YR6nY@^71l^hHd2
 Z13 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
 Z14 DPx4 work 11 std_package 0 22 PBC4k?NZjlM8>o`ifWkC:3
 R1
 R2
 R3
-!i122 53
+!i122 120
 8cmd_proc_a.vhd
 Fcmd_proc_a.vhd
-l19
-L8 110
-V4JLS>;lRMlCaz_ON<_P6F1
-!s100 iV<Q=BZ<n63E1XO`6TR9=3
+l20
+L9 110
+VRE7b4D^W`FY1:]HCX19A40
+!s100 JlC2YiLc[j85oCdShYU130
 R4
 32
 R5
@@ -62,13 +62,13 @@ R7
 R8
 Ecommand_rom
 Z15 w1768167855
-R10
+R12
 R13
 R14
 R1
 R2
 R3
-!i122 50
+!i122 117
 R0
 Z16 8CommandROM_ea.vhd
 Z17 FCommandROM_ea.vhd
@@ -87,14 +87,14 @@ Z19 !s107 CommandROM_ea.vhd|
 R7
 R8
 Artl
-R10
+R12
 R13
 R14
 R1
 R2
 R3
-R11
-!i122 50
+R10
+!i122 117
 l18
 L16 12
 VReES>nTUkccPNDMhWNhzX1
@@ -115,7 +115,7 @@ R14
 R1
 R2
 R3
-!i122 49
+!i122 116
 w1768167506
 R0
 8Commands_p.vhd
@@ -140,7 +140,7 @@ R13
 R1
 R2
 R3
-!i122 51
+!i122 118
 R0
 Z21 8periodical_strb_gen_ea.vhd
 Z22 Fperiodical_strb_gen_ea.vhd
@@ -165,7 +165,7 @@ R1
 R2
 R3
 R9
-!i122 51
+!i122 118
 l80
 L78 23
 VIWiOa3z0>NJn?IfjlidQb3
@@ -185,7 +185,7 @@ R13
 R1
 R2
 R3
-!i122 47
+!i122 114
 w1768167796
 R0
 8std_package.vhd
@@ -196,9 +196,9 @@ VPBC4k?NZjlM8>o`ifWkC:3
 !s100 eAfb6<TOg^=T;:n>U:=6L3
 R4
 32
-Z26 !s110 1771686713
+R5
 !i10b 1
-Z27 !s108 1771686713.000000
+R6
 !s90 -reportprogress|300|-work|work|std_package.vhd|
 !s107 std_package.vhd|
 !i113 1
@@ -208,7 +208,7 @@ Estrobe_generator
 w1768817558
 R2
 R3
-!i122 48
+!i122 115
 R0
 8strb_gen_e.vhd
 Fstrb_gen_e.vhd
@@ -218,9 +218,9 @@ V[Md<IloFRYX94jB;O=`nl0
 !s100 ^?mlZgDaKUXf`@PUJIA]Z3
 R4
 32
-R26
+R5
 !i10b 1
-R27
+R6
 !s90 -reportprogress|300|-work|work|strb_gen_e.vhd|
 !s107 strb_gen_e.vhd|
 !i113 1
@@ -231,7 +231,7 @@ w1768818565
 R25
 R2
 R3
-!i122 49
+!i122 116
 8strb_gen_a.vhd
 Fstrb_gen_a.vhd
 l9
@@ -242,55 +242,56 @@ R4
 32
 R5
 !i10b 1
-R27
+R6
 !s90 -reportprogress|300|-work|work|strb_gen_a.vhd|
 !s107 strb_gen_a.vhd|
 !i113 1
 R7
 R8
 Etb_cmd_proc
-Z28 w1768169402
+Z26 w1771869078
+R13
 R1
 R2
 R3
-!i122 53
+!i122 120
 R0
-Z29 8tb_cmd_proc.vhd
-Z30 Ftb_cmd_proc.vhd
+Z27 8tb_cmd_proc.vhd
+Z28 Ftb_cmd_proc.vhd
 l0
-L6 1
-V6_h8>dgJoKMDIlf9I2Wlj3
-!s100 >3EC^mNRoMAK<ZFlLgP?[2
+L7 1
+V^C6QonXLE>ighBLDK9g[G0
+!s100 knlB;9n:MZkjkOYgK^<jo0
 R4
 32
 R5
 !i10b 1
 R6
-Z31 !s90 -reportprogress|300|-work|work|tb_cmd_proc.vhd|
-Z32 !s107 tb_cmd_proc.vhd|
+Z29 !s90 -reportprogress|300|-work|work|tb_cmd_proc.vhd|
+Z30 !s107 tb_cmd_proc.vhd|
 !i113 1
 R7
 R8
 Abhv_tb_cmd_proc
-R13
 R14
-R12
+R11
+R13
 R1
 R2
 R3
-Z33 DEx4 work 11 tb_cmd_proc 0 22 6_h8>dgJoKMDIlf9I2Wlj3
-!i122 53
-l14
-Z34 L9 37
-Z35 V0D8ER0i3h3M:6E<6E^OSc1
-Z36 !s100 @>U>8UYmE8fH[3aBn7Z^_3
+Z31 DEx4 work 11 tb_cmd_proc 0 22 ^C6QonXLE>ighBLDK9g[G0
+!i122 120
+l17
+Z32 L10 39
+Z33 VE5MRNji=VE8d=8?nL<X?=1
+Z34 !s100 YR>XGQHMfGYeA4^V?U2Uk3
 R4
 32
 R5
 !i10b 1
 R6
-R31
-R32
+R29
+R30
 !i113 1
 R7
 R8

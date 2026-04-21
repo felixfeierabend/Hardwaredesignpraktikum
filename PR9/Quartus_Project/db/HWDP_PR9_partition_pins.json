@@ -8,87 +8,179 @@
 					"strict" : false
 				},
 				{
+					"name" : "x_sevenseg_o[20]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[19]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[18]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[17]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[16]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[14]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[13]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[12]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[11]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[10]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[9]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[8]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[7]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[6]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[5]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[4]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[3]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[2]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[1]",
+					"strict" : false
+				},
+				{
+					"name" : "x_sevenseg_o[0]",
+					"strict" : false
+				},
+				{
+					"name" : "y_pwm_pin_o",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[20]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[19]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[18]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[17]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[16]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[14]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[13]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[12]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[11]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[10]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[9]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[8]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[7]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[6]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[5]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[4]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[3]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[2]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[1]",
+					"strict" : false
+				},
+				{
+					"name" : "y_sevenseg_o[0]",
+					"strict" : false
+				},
+				{
 					"name" : "ServoX_pwm_pin_o",
 					"strict" : false
 				},
 				{
-					"name" : "sevenseg_o[20]",
+					"name" : "ServoY_pwm_pin_o",
 					"strict" : false
 				},
 				{
-					"name" : "sevenseg_o[19]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[18]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[17]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[16]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[14]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[13]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[12]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[11]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[10]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[9]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[8]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[7]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[6]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[5]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[4]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[3]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[2]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[1]",
-					"strict" : false
-				},
-				{
-					"name" : "sevenseg_o[0]",
+					"name" : "ServoZ_pwm_pin_o",
 					"strict" : false
 				},
 				{
@@ -100,23 +192,43 @@
 					"strict" : false
 				},
 				{
-					"name" : "dbg_en_i",
+					"name" : "sw_dbg_y_axis_async",
 					"strict" : false
 				},
 				{
-					"name" : "btnIncrement_i",
+					"name" : "sw_en_dbg_async",
 					"strict" : false
 				},
 				{
-					"name" : "btnDecrement_i",
+					"name" : "btn_dbg_dec_async",
 					"strict" : false
 				},
 				{
-					"name" : "switchTen_i",
+					"name" : "btn_dbg_inc_async",
 					"strict" : false
 				},
 				{
-					"name" : "x_comp_async_i",
+					"name" : "x_comp_async",
+					"strict" : false
+				},
+				{
+					"name" : "sw_en_filter_async",
+					"strict" : false
+				},
+				{
+					"name" : "y_comp_async",
+					"strict" : false
+				},
+				{
+					"name" : "sw_z_axis_async",
+					"strict" : false
+				},
+				{
+					"name" : "sw_dbg_10_async",
+					"strict" : false
+				},
+				{
+					"name" : "btn_drawK_async",
 					"strict" : false
 				}
 			]

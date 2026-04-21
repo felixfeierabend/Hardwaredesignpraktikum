@@ -12,6 +12,7 @@ entity Tilt_board is
 		x_comp_async_i : in std_ulogic;
 
 		dbg_en_i : in std_ulogic;
+		dbg_sel_i : in std_ulogic;
 		dbg_adc_val_i : in std_ulogic_vector(std_package.ADC_BIT_WIDTH - 1 downto 0);
 		dbg_adc_valid_strb_i : in std_ulogic;
 		switchMovingAvg_i : in std_ulogic;
@@ -88,7 +89,8 @@ begin
 		rst_i => rst_n,
 		dbg_en_i => dbg_en_i,
 		dbg_valid_strb_i => dbg_adc_valid_strb_i,
-		dbg_adc_val_i => dbg_adc_val_i
+		dbg_adc_val_i => dbg_adc_val_i,
+		dbg_sel_i => dbg_sel_i
 	);
 	
 	holdValOnStrb : entity work.HoldValueOnStrb

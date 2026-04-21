@@ -8,14 +8,14 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/DEV/Uni/WS2025/Hardwaredesign/Uebung7
+dC:/DEV/Uni/WS2025/Hardwaredesign/Uebung7
 Eshift_register
-w1765745947
-Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
-Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 30
-R0
+w1765745948
+Z0 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 53
+Z3 d/home/felix/DEV/Uni/WS2025/Hardwaredesign/Uebung7
 8shift_register_e.vhd
 Fshift_register_e.vhd
 l0
@@ -24,81 +24,105 @@ V1obT[8fH1CkS6F[gim_dM1
 !s100 RgLOSkBhHHOWdTU5=TSIJ2
 Z4 OV;C;2020.1;71
 32
-!s110 1765746037
+Z5 !s110 1772744889
 !i10b 1
-Z5 !s108 1765746037.000000
+Z6 !s108 1772744889.000000
 !s90 -reportprogress|300|-work|work|shift_register_e.vhd|
 !s107 shift_register_e.vhd|
 !i113 1
-Z6 o-work work
-Z7 tExplicit 1 CvgOpt 0
+Z7 o-work work
+Z8 tExplicit 1 CvgOpt 0
 Abhv_shift_register
-w1765746033
-Z8 DEx4 work 14 shift_register 0 22 1obT[8fH1CkS6F[gim_dM1
-Z9 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+w1772744885
+Z9 DEx4 work 14 shift_register 0 22 1obT[8fH1CkS6F[gim_dM1
+Z10 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+R0
 R1
 R2
-R3
-!i122 31
-8shift_register_a.vhd
-Fshift_register_a.vhd
-l15
-L6 41
-VfiK?06YR`a_027eQoV8NE1
-!s100 Ye_mV>e74ZCl9=]f0_>NX3
+!i122 54
+Z11 8shift_register_a.vhd
+Z12 Fshift_register_a.vhd
+l52
+L43 41
+VNXAQ7T9FD20Ji@N?F2<281
+!s100 SolS[4mRS`Y:bj;S[PCCO0
 R4
 32
-Z10 !s110 1765746038
-!i10b 1
 R5
-!s90 -reportprogress|300|-work|work|shift_register_a.vhd|
-!s107 shift_register_a.vhd|
-!i113 1
+!i10b 1
 R6
+Z13 !s90 -reportprogress|300|-work|work|shift_register_a.vhd|
+Z14 !s107 shift_register_a.vhd|
+!i113 1
 R7
-Etb_moving_avg
-Z11 w1765742751
+R8
+Artl_moving_avg_filter
+w1772704323
 R9
+R10
+R0
 R1
 R2
-R3
-!i122 31
+!i122 38
+R11
+R12
+l16
+L6 35
+V@1;WkBnlc5njOSFVd8:^n2
+!s100 55<7TnNzLZoA3ILDFYF_A1
+R4
+32
+!s110 1772704338
+!i10b 1
+!s108 1772704338.000000
+R13
+R14
+!i113 1
+R7
+R8
+Etb_moving_avg
+Z15 w1765742752
+R10
 R0
-Z12 8tb_moving_avg_filter.vhd
-Z13 Ftb_moving_avg_filter.vhd
+R1
+R2
+!i122 54
+R3
+Z16 8tb_moving_avg_filter.vhd
+Z17 Ftb_moving_avg_filter.vhd
 l0
 L8 1
 V8EmYoooN1DKFC]dk];gOI2
 !s100 U_MamLfZcfechNAffO?[M1
 R4
 32
-R10
+R5
 !i10b 1
-Z14 !s108 1765746038.000000
-Z15 !s90 -reportprogress|300|-work|work|tb_moving_avg_filter.vhd|
-Z16 !s107 tb_moving_avg_filter.vhd|
-!i113 1
 R6
+Z18 !s90 -reportprogress|300|-work|work|tb_moving_avg_filter.vhd|
+Z19 !s107 tb_moving_avg_filter.vhd|
+!i113 1
 R7
-Abhv_tb_moving_avg
 R8
+Abhv_tb_moving_avg
 R9
+R10
+R0
 R1
 R2
-R3
-Z17 DEx4 work 13 tb_moving_avg 0 22 8EmYoooN1DKFC]dk];gOI2
-!i122 31
+Z20 DEx4 work 13 tb_moving_avg 0 22 8EmYoooN1DKFC]dk];gOI2
+!i122 54
 l20
-Z18 L11 54
-Z19 VdFek]>YYgHR9=MSzXM3f33
-Z20 !s100 ]P^F0d2VN8576mGiKdDo63
+Z21 L11 54
+Z22 VdFek]>YYgHR9=MSzXM3f33
+Z23 !s100 ]P^F0d2VN8576mGiKdDo63
 R4
 32
-R10
+R5
 !i10b 1
-R14
-R15
-R16
-!i113 1
 R6
+R18
+R19
+!i113 1
 R7
+R8
